@@ -15,6 +15,7 @@ public class Main {
 		//Duong dai ca da connment tai day
 		car.show();
 		context.close(); 
+		//Duong dai ca
 	}
 	
 	//Duong dai ca da commnet tai day
