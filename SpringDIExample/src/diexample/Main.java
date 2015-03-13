@@ -12,7 +12,7 @@ public class Main {
 					ClassPathXmlApplicationContext("di-context.xml");
 		Car car=(Car)context.getBean("car");
 		
-		//Duong dai ca da connment tai day
+		
 		car.show();
 		context.close(); 
 	
