@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="emp" class="spring.Employee">
+		<property name="message" value="This is a message" />
+	</bean>
+	
+	<bean id="doBeforeMethodBean" class="spring.DoBeforeMethod" />
+	
+	<bean id="empProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target" ref="emp"></property>
+		<property name="interceptorNames">
+			<list>
+				<value>doBeforeMethodBean</value>
+			</list>
+		</property>
+	</bean>
+
+</beans>  
