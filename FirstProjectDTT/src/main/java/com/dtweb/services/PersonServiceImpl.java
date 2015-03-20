@@ -21,4 +21,17 @@ public class PersonServiceImpl implements PersonService{
 		this.personDAO = personDAO;
 	}
 
+	public void remove(int id) {
+		personDAO.remove(id);
+	}
+
+	public Person getPersonById(int id) {
+		
+		return personDAO.getPersonById(id);
+	}
+
+	public void update(Person p) {
+		personDAO.update(p);
+	}
+
 }

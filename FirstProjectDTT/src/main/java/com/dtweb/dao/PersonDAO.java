@@ -11,4 +11,9 @@ public interface PersonDAO {
      
     public List<Person> list();
      
+    public void remove(int id);
+    
+    public Person getPersonById(int id);
+    
+    public void update(Person p);
 }
