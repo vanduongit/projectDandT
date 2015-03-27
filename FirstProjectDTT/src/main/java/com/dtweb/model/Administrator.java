@@ -3,17 +3,49 @@
  */
 package com.dtweb.model;
 
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * @author Thong Nguyen
  *
  */
-public class Administrator {
+@Entity
+@Table(name = "ADMINISTRATOR")
+public class Administrator implements Serializable {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8201806810539003686L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "ID", unique = true, nullable = false)
 	private int id;
+	
+	@Column(name = "NAME", length = 256)
 	private String name;
+	
+	@Column(name = "USER_NAME", length = 50)
 	private String username;
+	
+	@Column(name = "PASSWORD", length = 50, nullable = false)
 	private String password;
+	
+	@Column(name = "ROLE", length = 50, nullable = false)
 	private String role;
+	
+	@Column(name = "ORD")
 	private int ord;
+	
+	@Column(name = "ACTIVE")
 	private int active;
 	/**
 	 * @return the id
