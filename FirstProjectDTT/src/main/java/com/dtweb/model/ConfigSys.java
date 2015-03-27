@@ -3,13 +3,32 @@
  */
 package com.dtweb.model;
 
+import java.io.Serializable;
 import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  * @author Thong Nguyen
  *
  */
-public class ConfigSys {
+
+@Entity
+@Table(name = "configsys")
+public class ConfigSys implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	
 	private int id;
 	private String name;
 	private String value;
@@ -21,6 +40,9 @@ public class ConfigSys {
 	/**
 	 * @return the id
 	 */
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "ID", unique = true, nullable = false)
 	public int getId() {
 		return id;
 	}
@@ -33,6 +55,7 @@ public class ConfigSys {
 	/**
 	 * @return the name
 	 */
+	@Column(name = "NAME",  nullable = false, length = 200)
 	public String getName() {
 		return name;
 	}
@@ -45,6 +68,7 @@ public class ConfigSys {
 	/**
 	 * @return the value
 	 */
+	@Column(name = "VALUE",  nullable = false, length = 200)
 	public String getValue() {
 		return value;
 	}
@@ -57,6 +81,7 @@ public class ConfigSys {
 	/**
 	 * @return the description
 	 */
+	@Column(name = "DESCRIPTION",  nullable = false)
 	public String getDescription() {
 		return description;
 	}
@@ -69,6 +94,8 @@ public class ConfigSys {
 	/**
 	 * @return the createDate
 	 */
+	@Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "DATE_CREATED", nullable = false)	
 	public Date getCreateDate() {
 		return createDate;
 	}
@@ -81,6 +108,8 @@ public class ConfigSys {
 	/**
 	 * @return the effDate
 	 */
+	@Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "DATE_EFF")	
 	public Date getEffDate() {
 		return effDate;
 	}
@@ -93,6 +122,8 @@ public class ConfigSys {
 	/**
 	 * @return the expDate
 	 */
+	@Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "DATE_EXP")	
 	public Date getExpDate() {
 		return expDate;
 	}
@@ -105,6 +136,7 @@ public class ConfigSys {
 	/**
 	 * @return the active
 	 */
+	@Column(name = "ACTIVE")
 	public int getActive() {
 		return active;
 	}
