@@ -11,6 +11,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  * @author Thong Nguyen
@@ -25,17 +27,39 @@ public class Customer {
 	@Column(name = "ID", unique = true, nullable = false)
 	private int id;
 	
-	@Column(name = "ID", unique = true, nullable = false)
+	@Column(name = "NAME", unique = true, nullable = false, length = 256)
 	private String name;
+	
+	@Column(name = "USERNAME", unique = true, nullable = false, length = 64)
 	private String username;
+	
+	@Column(name = "PASSWORD", unique = false, nullable = false, length = 64)
 	private String password;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "BIRTHDAY")
 	private Date birthday;
+	
+	@Column(name = "PROVINCE", length = 100)
 	private String province;
+	
+	@Column(name = "CUS_PHONE", length = 100)
 	private String cusPhone;
+	
+	@Column(name = "CUS_EMAIL", length = 100)
 	private String cusEmail;
+	
+	@Column(name = "CUS_ADDRESS", length = 200)
 	private String cusAddress;
+	
+	@Column(name = "CUS_ADDRESS_SHIP", length = 200)
 	private String cusAddressShip;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "DATE_CREATE")
 	private Date createDate;
+	
+	@Column(name = "ACTIVE")
 	private int active;
 	/**
 	 * @return the id

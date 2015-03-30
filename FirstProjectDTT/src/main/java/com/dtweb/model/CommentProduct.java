@@ -11,7 +11,7 @@ import java.util.Date;
  */
 public class CommentProduct {
 
-	private int id;
+	
 	private int proId;
 	private String name;
 	private String email;

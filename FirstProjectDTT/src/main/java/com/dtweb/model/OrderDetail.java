@@ -5,20 +5,49 @@ package com.dtweb.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
 /**
  * @author Thong Nguyen
  *
  */
 public class OrderDetail {
-	private int id;
-	private int orderId;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "ID", length = 200, nullable = false)
+	private int id;	
+	
+	@Column(name = "PRO_ID")
 	private int proId;
+	
+	@Column(name = "QUANTITY")
 	private int quantity;
+	
+	@Column(name = "ORIGINAL_PRICE")
 	private float originalPrice;
+	
+	@Column(name = "PAY_PRICE")
 	private float payPrice;
+	
+	@Column(name = "DATE")
 	private Date date;
+	
+	@Column(name = "STATUS")
 	private int status;
-	private int promoId;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "ID_PROMO", nullable = false)
+	private Promotion promotion;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "ORDER_ID", nullable = false)
+	private Order order;
 	/**
 	 * @return the id
 	 */
@@ -26,23 +55,24 @@ public class OrderDetail {
 		return id;
 	}
 	/**
+	 * @return the order
+	 */
+	public Order getOrder() {
+		return order;
+	}
+	/**
+	 * @param order the order to set
+	 */
+	public void setOrder(Order order) {
+		this.order = order;
+	}
+	/**
 	 * @param id the id to set
 	 */
 	public void setId(int id) {
 		this.id = id;
 	}
-	/**
-	 * @return the orderId
-	 */
-	public int getOrderId() {
-		return orderId;
-	}
-	/**
-	 * @param orderId the orderId to set
-	 */
-	public void setOrderId(int orderId) {
-		this.orderId = orderId;
-	}
+	
 	/**
 	 * @return the proId
 	 */
@@ -115,32 +145,33 @@ public class OrderDetail {
 	public void setStatus(int status) {
 		this.status = status;
 	}
-	/**
-	 * @return the promoId
-	 */
-	public int getPromoId() {
-		return promoId;
-	}
-	/**
-	 * @param promoId the promoId to set
-	 */
-	public void setPromoId(int promoId) {
-		this.promoId = promoId;
-	}
-	public OrderDetail(int orderId, int proId, int quantity,
-			float originalPrice, float payPrice, Date date, int status,
-			int promoId) {
+	
+	
+	
+	
+	public OrderDetail(int proId, int quantity, float originalPrice,
+			float payPrice, Date date, int status, Promotion promotion,
+			Order order) {
 		super();
-		this.orderId = orderId;
 		this.proId = proId;
 		this.quantity = quantity;
 		this.originalPrice = originalPrice;
 		this.payPrice = payPrice;
 		this.date = date;
 		this.status = status;
-		this.promoId = promoId;
+		this.promotion = promotion;
+		this.order = order;
 	}
-	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "OrderDetail [proId=" + proId + ", quantity=" + quantity
+				+ ", originalPrice=" + originalPrice + ", payPrice=" + payPrice
+				+ ", date=" + date + ", status=" + status + ", promotion="
+				+ promotion + ", order=" + order + "]";
+	}
 	public OrderDetail() {		
 	}
 	

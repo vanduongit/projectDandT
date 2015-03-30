@@ -4,26 +4,73 @@
 package com.dtweb.model;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.Column;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  * @author Thong Nguyen
  *
  */
 public class Order {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "ID", length = 200, nullable = false)
 	private int id;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "DATE", nullable = false)
 	private Date date;
+	
+	@Column(name = "CODE", nullable = false, length = 100)
 	private String code;
+	
+	@Column(name = "TYPEPAY", length = 50)
 	private String typePay;
+	
+	@Column(name = "STATUS")
 	private int status;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "IDATE")
 	private Date idate;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "XDATE")
 	private Date xdate;
+	
+	@Column(name = "REQUEST")
 	private String request;
+	
+	@Column(name = "CUS_NAME", length = 100)
 	private String cusName;
+	
+	@Column(name = "CUS_PHONE", nullable = false, length = 100)
 	private String cusPhone;
+	
+	@Column(name = "CUS_EMAIL", nullable = false, length = 100)
 	private String cusEmail;
+	
+	@Column(name = "CUS_ADDRESS", length = 200)
 	private String cusAddress;
+	
+	@Column(name = "CUS_ADDRESS_SHIP", length = 200)
 	private String cusAddressShip;
+	
+	@Column(name = "PROVINCE", length = 50)
 	private String province;
+	
+	private Set<OrderDetail> orderDetails = new HashSet<OrderDetail>(
+			0);
+	
 	/**
 	 * @return the id
 	 */
@@ -35,6 +82,19 @@ public class Order {
 	 */
 	public void setId(int id) {
 		this.id = id;
+	}
+	/**
+	 * @return the orderDetails
+	 */
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "order")
+	public Set<OrderDetail> getOrderDetails() {
+		return orderDetails;
+	}
+	/**
+	 * @param orderDetails the orderDetails to set
+	 */
+	public void setOrderDetails(Set<OrderDetail> orderDetails) {
+		this.orderDetails = orderDetails;
 	}
 	/**
 	 * @return the date

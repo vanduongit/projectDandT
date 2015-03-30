@@ -4,6 +4,11 @@
 package com.dtweb.model;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
 
 /**
  * @author Thong Nguyen
@@ -19,6 +24,22 @@ public class Promotion {
 	private float discountValue;
 	private String description;
 	private int active;
+	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "promotion")
+	private Set<OrderDetail> orderDetails = new HashSet<OrderDetail>(
+			0);
+	/**
+	 * @return the orderDetails
+	 */
+	public Set<OrderDetail> getOrderDetails() {
+		return orderDetails;
+	}
+	/**
+	 * @param orderDetails the orderDetails to set
+	 */
+	public void setOrderDetails(Set<OrderDetail> orderDetails) {
+		this.orderDetails = orderDetails;
+	}
 	/**
 	 * @return the id
 	 */
@@ -127,9 +148,11 @@ public class Promotion {
 	public void setActive(int active) {
 		this.active = active;
 	}
+	
+	
 	public Promotion(String content, Date startDate, Date endDate, int proId,
 			float discountPercent, float discountValue, String description,
-			int active) {
+			int active, Set<OrderDetail> orderDetails) {
 		super();
 		this.content = content;
 		this.startDate = startDate;
@@ -139,8 +162,8 @@ public class Promotion {
 		this.discountValue = discountValue;
 		this.description = description;
 		this.active = active;
+		this.orderDetails = orderDetails;
 	}
-	
 	public Promotion() {		
 	}
 	
