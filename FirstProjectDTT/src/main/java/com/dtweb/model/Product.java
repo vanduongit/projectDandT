@@ -5,52 +5,141 @@ package com.dtweb.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+
 /**
  * @author Thong Nguyen
  *
  */
 public class Product {
+	
+	@Column(name = "ID")
 	private int id;
+	
+	@Column(name = "TAG")
 	private String tag;
+	
+	@Column(name = "NAME")
 	private String name;
+	
+	@Column(name = "CONTENT")
 	private String content;
+	
+	@Column(name = "DETAIL")
 	private String detail;
+	
+	@Column(name = "PRIORITY")
+	private int priority;
+	
+	@Column(name = "INDEX")
 	private int index;
+	
+	@Column(name = "PRICE")
 	private float price;
+	
+	@Column(name = "TINYIMAGE")
 	private String tinyImage;
+	
+	@Column(name = "BIGIMAGE")
 	private String bigImage;
+	
+	@Column(name = "DATE")
 	private Date dateTime;
+	
+	@Column(name = "BRAND_ID")
 	private int brandId;
+	
+	@Column(name = "BRAND_TAG")
 	private int brandTag;
+	
+	@Column(name = "TITLE")
 	private String title;
+	
+	@Column(name = "DESCRIPTION")
 	private String description;
+	
+	@Column(name = "KEYWORD")
 	private String keyword;
+	
+	@Column(name = "ACTION")
 	private int action;
+	
+	@Column(name = "ORD")
 	private int ord;
+	
+	@Column(name = "LANG")
 	private String lang;
+	
+	@Column(name = "PICE_OLD")
 	private String piceOld;
+	
+	@Column(name = "IMAGE1")
 	private String image1;
+	
+	@Column(name = "IMAGE2")
 	private String image2;
+	
+	@Column(name = "IMAGE3")
 	private String image3;
+	
+	@Column(name = "IMAGE4")
 	private String image4;
+	
+	@Column(name = "IMAGE5")
 	private String image5;
+	
+	@Column(name = "CODE_PRO")
 	private String codePro;
+	
+	@Column(name = "AMOUNT")
 	private int amount;
+	
+	@Column(name = "AMOUNT_TO_BUY")
 	private int amountToBuy;
+	
+	@Column(name = "AMOUNT_LIKE")
 	private int amount_like;
+	
+	@Column(name = "DATE_BEGIN")
 	private Date beginDate;
+	
+	@Column(name = "DATE_END")
 	private Date endDate;
+	
+	@Column(name = "PROPERTY1")
 	private String property1;
+	
+	@Column(name = "PROPERTY2")
 	private String property2;
+	
+	@Column(name = "PROPERTY3")
 	private String property3;
+	
+	@Column(name = "PROPERTY4")
 	private String property4;
+	
+	@Column(name = "PROPERTY5")
 	private String property5;
+	
+	@Column(name = "PROPERTY6")
 	private String property6;
+	
+	@Column(name = "PROPERTY7")
 	private String property7;
+	
+	@Column(name = "CATE_ID")
 	private int cateId;
+	
+	@Column(name = "CATE_TAG")
 	private String cateTag;
+	
+	@Column(name = "USER_CREATE")
 	private String createUser;
+	
+	@Column(name = "DATE_CREATE")
 	private Date createDate;
+	
+	
 	/**
 	 * @return the id
 	 */
