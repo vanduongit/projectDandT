@@ -7,22 +7,52 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  * @author Thong Nguyen
  *
  */
 public class Promotion {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "ID")
 	private int id;
+	
+	@Column(name = "CONTENT")
 	private String content;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "START_DATE")
 	private Date startDate;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "END_DATE")
 	private Date endDate;
-	private int proId;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "PRO_ID", nullable = false)
+	private Product product;
+	
+	@Column(name = "DISCOUNT_PERCENT")
 	private float discountPercent;
+	
+	@Column(name = "DISCOUNT_VALUE")
 	private float discountValue;
+	
+	@Column(name = "DESCRIPTION")
 	private String description;
+	
+	@Column(name = "ACTIVE")
 	private int active;
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "promotion")
@@ -88,17 +118,18 @@ public class Promotion {
 	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
 	}
+	
 	/**
-	 * @return the proId
+	 * @return the product
 	 */
-	public int getProId() {
-		return proId;
+	public Product getProduct() {
+		return product;
 	}
 	/**
-	 * @param proId the proId to set
+	 * @param product the product to set
 	 */
-	public void setProId(int proId) {
-		this.proId = proId;
+	public void setProduct(Product product) {
+		this.product = product;
 	}
 	/**
 	 * @return the discountPercent
@@ -150,14 +181,15 @@ public class Promotion {
 	}
 	
 	
-	public Promotion(String content, Date startDate, Date endDate, int proId,
-			float discountPercent, float discountValue, String description,
-			int active, Set<OrderDetail> orderDetails) {
+	
+	public Promotion(String content, Date startDate, Date endDate,
+			Product product, float discountPercent, float discountValue,
+			String description, int active, Set<OrderDetail> orderDetails) {
 		super();
 		this.content = content;
 		this.startDate = startDate;
 		this.endDate = endDate;
-		this.proId = proId;
+		this.product = product;
 		this.discountPercent = discountPercent;
 		this.discountValue = discountValue;
 		this.description = description;

@@ -4,15 +4,25 @@
 package com.dtweb.model;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Column;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /**
  * @author Thong Nguyen
  *
  */
 public class Product {
-	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID")
 	private int id;
 	
@@ -46,8 +56,9 @@ public class Product {
 	@Column(name = "DATE")
 	private Date dateTime;
 	
-	@Column(name = "BRAND_ID")
-	private int brandId;
+	@ManyToOne
+	@JoinColumn(name = "BRAND_ID")
+	private Brand brand;
 	
 	@Column(name = "BRAND_TAG")
 	private int brandTag;
@@ -127,8 +138,9 @@ public class Product {
 	@Column(name = "PROPERTY7")
 	private String property7;
 	
-	@Column(name = "CATE_ID")
-	private int cateId;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "CATE_ID")
+	private Category category;
 	
 	@Column(name = "CATE_TAG")
 	private String cateTag;
@@ -138,6 +150,14 @@ public class Product {
 	
 	@Column(name = "DATE_CREATE")
 	private Date createDate;
+	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "product")
+	private Set<Promotion> promotionRecords = new HashSet<Promotion>(
+			0);
+	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "product")
+	private Set<CommentProduct> commentRecords = new HashSet<CommentProduct>(
+			0);
 	
 	
 	/**
@@ -181,6 +201,30 @@ public class Product {
 	 */
 	public String getContent() {
 		return content;
+	}
+	/**
+	 * @return the priority
+	 */
+	public int getPriority() {
+		return priority;
+	}
+	/**
+	 * @param priority the priority to set
+	 */
+	public void setPriority(int priority) {
+		this.priority = priority;
+	}
+	/**
+	 * @return the promotionRecords
+	 */
+	public Set<Promotion> getPromotionRecords() {
+		return promotionRecords;
+	}
+	/**
+	 * @param promotionRecords the promotionRecords to set
+	 */
+	public void setPromotionRecords(Set<Promotion> promotionRecords) {
+		this.promotionRecords = promotionRecords;
 	}
 	/**
 	 * @param content the content to set
@@ -260,18 +304,7 @@ public class Product {
 	public void setDateTime(Date dateTime) {
 		this.dateTime = dateTime;
 	}
-	/**
-	 * @return the brandId
-	 */
-	public int getBrandId() {
-		return brandId;
-	}
-	/**
-	 * @param brandId the brandId to set
-	 */
-	public void setBrandId(int brandId) {
-		this.brandId = brandId;
-	}
+	
 	/**
 	 * @return the brandTag
 	 */
@@ -584,18 +617,8 @@ public class Product {
 	public void setProperty7(String property7) {
 		this.property7 = property7;
 	}
-	/**
-	 * @return the cateId
-	 */
-	public int getCateId() {
-		return cateId;
-	}
-	/**
-	 * @param cateId the cateId to set
-	 */
-	public void setCateId(int cateId) {
-		this.cateId = cateId;
-	}
+	
+	
 	/**
 	 * @return the cateTag
 	 */
@@ -632,58 +655,8 @@ public class Product {
 	public void setCreateDate(Date createDate) {
 		this.createDate = createDate;
 	}
-	public Product(String tag, String name, String content, String detail,
-			int index, float price, String tinyImage, String bigImage,
-			Date dateTime, int brandId, int brandTag, String title,
-			String description, String keyword, int action, int ord,
-			String lang, String piceOld, String image1, String image2,
-			String image3, String image4, String image5, String codePro,
-			int amount, int amountToBuy, int amount_like, Date beginDate,
-			Date endDate, String property1, String property2, String property3,
-			String property4, String property5, String property6,
-			String property7, int cateId, String cateTag, String createUser,
-			Date createDate) {		
-		this.tag = tag;
-		this.name = name;
-		this.content = content;
-		this.detail = detail;
-		this.index = index;
-		this.price = price;
-		this.tinyImage = tinyImage;
-		this.bigImage = bigImage;
-		this.dateTime = dateTime;
-		this.brandId = brandId;
-		this.brandTag = brandTag;
-		this.title = title;
-		this.description = description;
-		this.keyword = keyword;
-		this.action = action;
-		this.ord = ord;
-		this.lang = lang;
-		this.piceOld = piceOld;
-		this.image1 = image1;
-		this.image2 = image2;
-		this.image3 = image3;
-		this.image4 = image4;
-		this.image5 = image5;
-		this.codePro = codePro;
-		this.amount = amount;
-		this.amountToBuy = amountToBuy;
-		this.amount_like = amount_like;
-		this.beginDate = beginDate;
-		this.endDate = endDate;
-		this.property1 = property1;
-		this.property2 = property2;
-		this.property3 = property3;
-		this.property4 = property4;
-		this.property5 = property5;
-		this.property6 = property6;
-		this.property7 = property7;
-		this.cateId = cateId;
-		this.cateTag = cateTag;
-		this.createUser = createUser;
-		this.createDate = createDate;
-	}
+	
+	
 	
 	public Product() {		
 	}

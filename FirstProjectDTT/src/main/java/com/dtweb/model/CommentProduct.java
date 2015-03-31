@@ -5,32 +5,49 @@ package com.dtweb.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 /**
  * @author Thong Nguyen
  *
  */
 public class CommentProduct {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "ID", unique = true, nullable = false)
+	private int id;
 	
-	private int proId;
+	@ManyToOne
+	@JoinColumn(name = "PRO_ID", nullable = false)
+	private Product product;
+	
+	@Column(name = "NAME", nullable = false, length = 256)
 	private String name;
+	
+	@Column(name = "EMAIL", nullable = false, length = 256)
 	private String email;
+	
+	@Column(name = "POINT")
 	private int point;
+	
+	@Column(name = "CONTENT", nullable = false)
 	private String content;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "DATE", nullable = false)
 	private Date date;
+	
+	@Column(name = "ACTIVE")
 	private int active;
-	/**
-	 * @return the proId
-	 */
-	public int getProId() {
-		return proId;
-	}
-	/**
-	 * @param proId the proId to set
-	 */
-	public void setProId(int proId) {
-		this.proId = proId;
-	}
+	
 	/**
 	 * @return the name
 	 */
@@ -103,16 +120,29 @@ public class CommentProduct {
 	public void setActive(int active) {
 		this.active = active;
 	}
-	public CommentProduct(int proId, String name, String email, int point,
-			String content, Date date, int active) {
+	
+	public CommentProduct(Product product, String name, String email,
+			int point, String content, Date date, int active) {
 		super();
-		this.proId = proId;
+		this.product = product;
 		this.name = name;
 		this.email = email;
 		this.point = point;
 		this.content = content;
 		this.date = date;
 		this.active = active;
+	}
+	/**
+	 * @return the product
+	 */
+	public Product getProduct() {
+		return product;
+	}
+	/**
+	 * @param product the product to set
+	 */
+	public void setProduct(Product product) {
+		this.product = product;
 	}
 	public CommentProduct() {		
 	}

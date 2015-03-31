@@ -3,16 +3,42 @@
  */
 package com.dtweb.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.Column;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
 /**
  * @author User
  *
  */
 public class Brand {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "ID", unique = true, nullable = false)
 	private int id;
+	
+	@Column(name = "NAME", nullable = false, length = 255)
 	private String name;
+	
+	@Column(name = "LOGO", length = 255)
 	private String logo;
+	
+	@Column(name = "ORD")
 	private int ord;
+	
+	@Column(name = "LANG", length = 5)
 	private String lang;
+	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "brand")
+	private Set<Product> ProductRecords = new HashSet<Product>(
+			0);
 	/**
 	 * @return the id
 	 */

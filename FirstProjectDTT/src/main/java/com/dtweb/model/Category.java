@@ -3,27 +3,71 @@
  */
 package com.dtweb.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.Column;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
 /**
  * @author ThongNguyen
  *
  */
 public class Category {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "ID", unique = true, nullable = false)
 	private int id;
+	
+	@Column(name = "TAG", length = 255)
 	private String tag;
+	
+	@Column(name = "NAME", nullable = false)
 	private String name;
+	
+	@Column(name = "CONTENT")
 	private String content;
+	
+	@Column(name = "LEVEL")
 	private int level;
+	
+	@Column(name = "PRIORITY")
 	private int prority;
+	
+	@Column(name = "INDEX")
 	private int index;
+	
+	@Column(name = "IMAGE", length = 256)
 	private String image;
+	
+	@Column(name = "TITLE", length = 256)
 	private String title;
+	
+	@Column(name = "DESCRIPTION", length = 256)
 	private String description;
+	
+	@Column(name = "KEYWORD")
 	private String keyword;
+	
+	@Column(name = "ACTIVE")
 	private int active;
+	
+	@Column(name = "ORD")
 	private int ord;
+	
+	@Column(name = "LANG", length = 5)
 	private String lang;
+	
+	@Column(name = "IMAGE2", length = 256)
 	private String image2;
+	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "category")	
+	private Set<Product> productRecords = new HashSet<Product>(0);
 	/**
 	 * @return the id
 	 */
