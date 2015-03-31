@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.dtweb.model.Person;
 
-
+//Duong dai ca vua comment o day
 public interface PersonDAO {
 	 
     public void save(Person p);
