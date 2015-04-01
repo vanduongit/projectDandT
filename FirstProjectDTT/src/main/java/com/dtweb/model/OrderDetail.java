@@ -28,8 +28,9 @@ public class OrderDetail {
 	@Column(name = "ID", length = 200, nullable = false)
 	private int id;	
 	
-	@Column(name = "PRO_ID")
-	private int proId;
+	@ManyToOne
+	@JoinColumn(name = "PRO_ID")
+	private Product product;
 	
 	@Column(name = "QUANTITY")
 	private int quantity;
@@ -78,18 +79,7 @@ public class OrderDetail {
 		this.id = id;
 	}
 	
-	/**
-	 * @return the proId
-	 */
-	public int getProId() {
-		return proId;
-	}
-	/**
-	 * @param proId the proId to set
-	 */
-	public void setProId(int proId) {
-		this.proId = proId;
-	}
+	
 	/**
 	 * @return the quantity
 	 */
@@ -154,11 +144,12 @@ public class OrderDetail {
 	
 	
 	
-	public OrderDetail(int proId, int quantity, float originalPrice,
+	
+	public OrderDetail(Product product, int quantity, float originalPrice,
 			float payPrice, Date date, int status, Promotion promotion,
 			Order order) {
 		super();
-		this.proId = proId;
+		this.product = product;
 		this.quantity = quantity;
 		this.originalPrice = originalPrice;
 		this.payPrice = payPrice;
@@ -167,15 +158,29 @@ public class OrderDetail {
 		this.promotion = promotion;
 		this.order = order;
 	}
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
+	/**
+	 * @return the product
 	 */
-	@Override
-	public String toString() {
-		return "OrderDetail [proId=" + proId + ", quantity=" + quantity
-				+ ", originalPrice=" + originalPrice + ", payPrice=" + payPrice
-				+ ", date=" + date + ", status=" + status + ", promotion="
-				+ promotion + ", order=" + order + "]";
+	public Product getProduct() {
+		return product;
+	}
+	/**
+	 * @param product the product to set
+	 */
+	public void setProduct(Product product) {
+		this.product = product;
+	}
+	/**
+	 * @return the promotion
+	 */
+	public Promotion getPromotion() {
+		return promotion;
+	}
+	/**
+	 * @param promotion the promotion to set
+	 */
+	public void setPromotion(Promotion promotion) {
+		this.promotion = promotion;
 	}
 	public OrderDetail() {		
 	}

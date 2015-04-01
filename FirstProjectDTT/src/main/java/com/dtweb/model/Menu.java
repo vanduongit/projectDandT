@@ -47,9 +47,9 @@ public class Menu implements Serializable{
 	
 	@ManyToOne(cascade={CascadeType.ALL})
     @JoinColumn(name = "PARENT_ID")
-	private Menu parentId;
+	private Menu parent;
 	
-	@OneToMany(mappedBy = "parentId")
+	@OneToMany(mappedBy = "parent")
     private Set<Menu> subordinates = new HashSet<Menu>();
 	/**
 	 * @return the name
@@ -112,31 +112,43 @@ public class Menu implements Serializable{
 		this.ord = ord;
 	}
 	
-	public Menu(String name, String logo, String link, int active, int ord) {
-		super();
-		this.name = name;
-		this.logo = logo;
-		this.link = link;
-		this.active = active;
-		this.ord = ord;		
-	}
-	public Menu getParentId() {
-		return parentId;
-	}
-	public void setParentId(Menu parentId) {
-		this.parentId = parentId;
-	}
+		
 	
-	public Menu(int id, String name, String logo, String link, int active,
-			int ord, Menu parentId) {
+	
+	public Menu(String name, String logo, String link, int active, int ord,
+			Menu parent, Set<Menu> subordinates) {
 		super();
-		this.id = id;
 		this.name = name;
 		this.logo = logo;
 		this.link = link;
 		this.active = active;
 		this.ord = ord;
-		this.parentId = parentId;
+		this.parent = parent;
+		this.subordinates = subordinates;
+	}
+	/**
+	 * @return the parent
+	 */
+	public Menu getParent() {
+		return parent;
+	}
+	/**
+	 * @param parent the parent to set
+	 */
+	public void setParent(Menu parent) {
+		this.parent = parent;
+	}
+	/**
+	 * @return the subordinates
+	 */
+	public Set<Menu> getSubordinates() {
+		return subordinates;
+	}
+	/**
+	 * @param subordinates the subordinates to set
+	 */
+	public void setSubordinates(Set<Menu> subordinates) {
+		this.subordinates = subordinates;
 	}
 	/**
 	 * @return the id

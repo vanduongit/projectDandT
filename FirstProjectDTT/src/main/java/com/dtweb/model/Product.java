@@ -163,6 +163,9 @@ public class Product {
 	private Set<CommentProduct> commentRecords = new HashSet<CommentProduct>(
 			0);
 	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "product")
+	private Set<OrderDetail> orderDetails = new HashSet<OrderDetail>(
+			0);
 	
 	/**
 	 * @return the id
