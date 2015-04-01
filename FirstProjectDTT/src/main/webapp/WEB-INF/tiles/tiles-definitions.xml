@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+       
+<tiles-definitions>
+	<definition name="defaultTemplate" template="/WEB-INF/pages/templates/customer/templates.jsp">
+		<put-attribute name="titles" value=""></put-attribute>
+		<put-attribute name="header" value="/WEB-INF/pages/templates/customer/header.jsp"></put-attribute>
+		<put-attribute name="menu" value="/WEB-INF/pages/templates/customer/menu.jsp"></put-attribute>
+		<put-attribute name="body" value=""></put-attribute>
+		<put-attribute name="footer" value="/WEB-INF/pages/templates/customer/footer.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="showList" extends="defaultTemplate">
+		<put-attribute name="titles" value="All list person"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/pages/showList.jsp"></put-attribute>
+	
+	</definition>
+	
+	<definition name="insert" extends="defaultTemplate">
+		<put-attribute name="titles" value="Insert Person"/>
+		<put-attribute name="body" value="/WEB-INF/pages/insert.jsp"></put-attribute>
+	</definition>
+</tiles-definitions>       

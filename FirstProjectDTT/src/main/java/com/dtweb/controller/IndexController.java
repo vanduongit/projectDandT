@@ -19,7 +19,7 @@ public class IndexController {
 	@RequestMapping(value="/")
 	public String index(Model model){
 		model.addAttribute("person",new Person());
-		return "insert"; 
+		return "insert";
 	}
 	
 	@RequestMapping(value="/show")

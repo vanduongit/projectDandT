@@ -22,6 +22,8 @@ public class PersonDAOImpl implements PersonDAO {
 		session.persist(p);
 		tx.commit();
 		session.close();
+		
+		
 	}
 
 	@SuppressWarnings("unchecked")

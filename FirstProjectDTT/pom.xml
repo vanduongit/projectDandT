@@ -25,7 +25,7 @@
 		<!-- Logging -->
 		<logback.version>1.0.13</logback.version>
 		<slf4j.version>1.7.5</slf4j.version>
-
+		<tiles.version>3.0.5</tiles.version>
 	</properties>
 	<dependencies>
 
@@ -47,13 +47,13 @@
 			<artifactId>spring-web</artifactId>
 			<version>${spring-framework.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring-framework.version}</version>
 		</dependency>
-		
+
 		<!-- Spring ORM support -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -89,7 +89,7 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-		
+
 
 		<dependency>
 			<groupId>junit</groupId>
@@ -97,6 +97,13 @@
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-extras</artifactId>
+			<version>${tiles.version}</version>
+		</dependency>
+
 	</dependencies>
 	<build>
 		<finalName>Spring4IntegrationHibernateWithMaven</finalName>
