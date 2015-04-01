@@ -23,7 +23,7 @@ import javax.persistence.Table;
  *
  */
 @Entity
-@Table(name = "menu")
+@Table(name = "menu", catalog = "sale_watch")
 public class Menu implements Serializable{
 	/**
 	 * 

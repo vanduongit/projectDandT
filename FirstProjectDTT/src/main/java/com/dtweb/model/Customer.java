@@ -19,7 +19,7 @@ import javax.persistence.TemporalType;
  *
  */
 @Entity
-@Table(name = "CUSTOMERS")
+@Table(name = "CUSTOMERS", catalog = "sale_watch")
 public class Customer {
 	
 	@Id

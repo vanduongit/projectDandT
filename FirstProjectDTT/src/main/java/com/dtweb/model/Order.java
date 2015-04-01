@@ -23,7 +23,7 @@ import javax.persistence.TemporalType;
  *
  */
 @Entity
-@Table(name = "orders")
+@Table(name = "orders", catalog = "sale_watch")
 public class Order {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

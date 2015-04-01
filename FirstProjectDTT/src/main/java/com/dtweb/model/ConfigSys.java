@@ -21,28 +21,45 @@ import javax.persistence.TemporalType;
  */
 
 @Entity
-@Table(name = "configsys")
+@Table(name = "configsys", catalog = "sale_watch")
 public class ConfigSys implements Serializable {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "ID", unique = true, nullable = false)
 	private int id;
+	
+	@Column(name = "NAME",  nullable = false, length = 200)
 	private String name;
+	
+	@Column(name = "VALUE",  nullable = false, length = 200)
 	private String value;
+	
+	@Column(name = "DESCRIPTION",  nullable = false)
 	private String description;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "DATE_CREATED", nullable = false)
 	private Date createDate;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "DATE_EFF")	
 	private Date effDate;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "DATE_EXP")	
 	private Date expDate;
+	
+	@Column(name = "ACTIVE")
 	private int active;
 	/**
 	 * @return the id
 	 */
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "ID", unique = true, nullable = false)
+	
 	public int getId() {
 		return id;
 	}
@@ -55,7 +72,6 @@ public class ConfigSys implements Serializable {
 	/**
 	 * @return the name
 	 */
-	@Column(name = "NAME",  nullable = false, length = 200)
 	public String getName() {
 		return name;
 	}
@@ -68,7 +84,6 @@ public class ConfigSys implements Serializable {
 	/**
 	 * @return the value
 	 */
-	@Column(name = "VALUE",  nullable = false, length = 200)
 	public String getValue() {
 		return value;
 	}
@@ -81,7 +96,6 @@ public class ConfigSys implements Serializable {
 	/**
 	 * @return the description
 	 */
-	@Column(name = "DESCRIPTION",  nullable = false)
 	public String getDescription() {
 		return description;
 	}
@@ -94,8 +108,6 @@ public class ConfigSys implements Serializable {
 	/**
 	 * @return the createDate
 	 */
-	@Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "DATE_CREATED", nullable = false)	
 	public Date getCreateDate() {
 		return createDate;
 	}
@@ -108,8 +120,6 @@ public class ConfigSys implements Serializable {
 	/**
 	 * @return the effDate
 	 */
-	@Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "DATE_EFF")	
 	public Date getEffDate() {
 		return effDate;
 	}
@@ -122,8 +132,6 @@ public class ConfigSys implements Serializable {
 	/**
 	 * @return the expDate
 	 */
-	@Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "DATE_EXP")	
 	public Date getExpDate() {
 		return expDate;
 	}
@@ -136,7 +144,6 @@ public class ConfigSys implements Serializable {
 	/**
 	 * @return the active
 	 */
-	@Column(name = "ACTIVE")
 	public int getActive() {
 		return active;
 	}

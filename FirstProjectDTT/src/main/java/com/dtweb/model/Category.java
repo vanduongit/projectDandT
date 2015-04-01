@@ -7,16 +7,20 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 /**
  * @author ThongNguyen
  *
  */
+@Entity
+@Table(name = "category", catalog = "sale_watch")
 public class Category {
 	
 	@Id
