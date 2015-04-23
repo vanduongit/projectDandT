@@ -9,8 +9,7 @@
 	<tiles:insertAttribute name="titles"></tiles:insertAttribute>
 </title>
 </head>
-<body>
-	
+<body>	
 	<tiles:insertAttribute name="header"></tiles:insertAttribute>
 	<tiles:insertAttribute name="menu"></tiles:insertAttribute>
 	<tiles:insertAttribute name="body"></tiles:insertAttribute>

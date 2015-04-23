@@ -11,7 +11,7 @@
 </head>
 <body>
 	<h1>Insert Person</h1>
-
+	
 	<c:url var="add" value="/add" />
 	<form:form action="${add }" commandName="person">
 		<table>
