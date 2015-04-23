@@ -17,7 +17,7 @@ import javax.persistence.Table;
  *
  */
 @Entity
-@Table(name = "ADMINISTRATOR")
+@Table(name = "ADMINISTRATOR", catalog = "sale_watch")
 public class Administrator implements Serializable {
 	
 	/**
