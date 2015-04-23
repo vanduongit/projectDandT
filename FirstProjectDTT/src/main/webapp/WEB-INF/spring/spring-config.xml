@@ -15,7 +15,7 @@
 	<!-- Used to serve static resources like css, images and javascript files -->
 	<mvc:annotation-driven/>		
     <mvc:resources mapping="/resources/**" location="/resources/" />
-	<mvc:resources mapping="/css/**" location="/bootstrap/css/" />
+	<mvc:resources mapping="/bootstrap/**" location="/bootstrap/" />
 	
 	<!-- View Resolver no tiles -->
 
