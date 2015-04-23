@@ -8,6 +8,18 @@
 </head>
 <body>
 	<hr/>
-	<h1>Template Footer</h1>
+	<div class="container">
+		 <div class="row">
+		 	<div class="col-md-4">                                                 
+            	          
+            </div>
+            <div class="col-md-4">                               
+            	            
+            </div>
+            <div class="col-md-4">
+               <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</h5>               
+            </div>
+		 </div>		
+	</div>
 </body>
 </html>
