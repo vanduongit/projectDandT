@@ -7,6 +7,7 @@
 	<definition name="defaultTemplate" template="/WEB-INF/pages/templates/customer/templates.jsp">
 		<put-attribute name="titles" value=""></put-attribute>
 		<put-attribute name="header" value="/WEB-INF/pages/templates/customer/header.jsp"></put-attribute>
+		<put-attribute name="slider" value=""></put-attribute>
 		<put-attribute name="menu" value="/WEB-INF/pages/templates/customer/menu.jsp"></put-attribute>
 		<put-attribute name="body" value=""></put-attribute>
 		<put-attribute name="footer" value="/WEB-INF/pages/templates/customer/footer.jsp"></put-attribute>
@@ -18,8 +19,9 @@
 	
 	</definition>
 	
-	<definition name="insert" extends="defaultTemplate">
+	<definition name="index" extends="defaultTemplate">
 		<put-attribute name="titles" value="Insert Person"/>
+		<put-attribute name="slider" value="/WEB-INF/pages/templates/customer/slider.jsp"></put-attribute>
 		<put-attribute name="body" value="/WEB-INF/pages/insert.jsp"></put-attribute>
 	</definition>
 </tiles-definitions>       

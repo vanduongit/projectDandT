@@ -2,9 +2,12 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"	
 	xsi:schemaLocation="
         http://www.springframework.org/schema/beans     
         http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/tx 
+		http://www.springframework.org/schema/tx/spring-tx.xsd
         http://www.springframework.org/schema/context 
         http://www.springframework.org/schema/context/spring-context.xsd">
 
@@ -16,8 +19,33 @@
 		<property name="password" value="" />
 	</bean>
 
+	<!-- ************ JPA configuration *********** -->
+	<tx:annotation-driven transaction-manager="transactionManager" />  
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory" />
+        <property name="dataSource" ref="dataSource" />
+	
+    </bean>
+	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="persistenceXmlLocation" value="classpath:persistence.xml" />
+    	<property name="persistenceUnitName" value="testPU" />
+    	<property name="dataSource" ref="dataSource" />
+    	<!-- <property name="packagesToScan" value="com.dtweb.*" /> -->
+    	<property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+                <property name="showSql" value="true" />
+                <property name="databasePlatform" value="org.hibernate.dialect.MySQLDialect" />
+            </bean>
+        </property>
+		
+  	</bean>
+
+	
+ 
+	
+
 	<!-- Hibernate 4 SessionFactory Bean definition -->
-	<bean id="hibernate4AnnotatedSessionFactory"
+	<!-- <bean id="hibernate4AnnotatedSessionFactory"
 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="annotatedClasses">
@@ -32,17 +60,7 @@
 				<prop key="hibernate.show_sql">true</prop>
 			</props>
 		</property>
-	</bean>
+	</bean> -->
 	
-	<bean id="personDAO" class="com.dtweb.dao.PersonDAOImpl">
-        <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
-    </bean>
-    <bean id="personService" class="com.dtweb.services.PersonServiceImpl">
-    	<property name="personDAO" ref="personDAO"/>    
-    </bean>
-    
-    <bean id="indexController" class="com.dtweb.controller.IndexController">
-    	<property name="personService" ref="personService"/>
-    </bean>
-
+	
 </beans>

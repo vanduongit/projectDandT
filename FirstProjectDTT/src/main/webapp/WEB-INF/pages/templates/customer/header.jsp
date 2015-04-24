@@ -13,8 +13,8 @@
 </style>
 </head>
 <body>
-	<!-- 
-	<!-- Header 
+	
+	<!-- Header --> 
 	<div class="container">
 		 <div class="row">
 		 	<div class="col-md-4">                                                 
@@ -31,16 +31,16 @@
                <a href=""><span class="glyphicon glyphicon-shopping-cart"></span></a>
             </div>
 		 </div>		
-	</div> -->
+	</div> 
 
 	<!-- Navigation -->
-	<nav class="navbar navbar-inverse  navbar-fixed-top">
+	<!-- <nav class="navbar navbar-inverse  navbar-fixed-top">
 	<div class="container-fluid">
 		<div class="navbar-header">			
 			<a class="navbar-brand" href="#page-top"> MASTER </a>
 		</div>
 				
-		<!-- Collect the nav links, forms, and other content for toggling -->
+		Collect the nav links, forms, and other content for toggling
 		<div class="collapse navbar-collapse" id="myNavbar">			
 			<ul class="nav navbar-nav navbar-right">										
 				<li><a href="#about">Đăng nhập</a></li>
@@ -50,7 +50,7 @@
 					</a>
 				</li>
 			</ul>
-		</div>
+		</div> -->
 		
 		<!-- /.navbar-collapse -->
 	</div>
@@ -68,31 +68,6 @@
 			<li data-target="#myCarousel" data-slide-to="3"></li>
 		</ol>
 
-		<!-- Wrapper for slides -->
-		<div class="carousel-inner" role="listbox">
-			<div class="item active">
-				<img class="img-responsive img-full"
-					src="http://ironsummitmedia.github.io/startbootstrap-business-casual/img/slide-1.jpg"
-					alt="">
-			</div>
-			<div class="item">
-				<img class="img-responsive img-full"
-					src="http://ironsummitmedia.github.io/startbootstrap-business-casual/img/slide-2.jpg"
-					alt="">
-			</div>
-			<div class="item">
-				<img class="img-responsive img-full"
-					src="http://ironsummitmedia.github.io/startbootstrap-business-casual/img/slide-3.jpg"
-					alt="">
-			</div>
-		</div>
-
-	</div>
-	<script>
-		$('.carousel').carousel({
-			interval : 5000
-		//changes the speed
-		})
-	</script>
+		
 </body>
 </html>

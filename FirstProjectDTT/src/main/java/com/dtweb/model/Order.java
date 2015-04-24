@@ -5,6 +5,7 @@ package com.dtweb.model;
 
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -72,8 +73,8 @@ public class Order {
 	@Column(name = "PROVINCE", length = 50)
 	private String province;
 	
-	private Set<OrderDetail> orderDetails = new HashSet<OrderDetail>(
-			0);
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "order")
+	private List<OrderDetail> orderDetails;
 	
 	/**
 	 * @return the id
@@ -90,14 +91,14 @@ public class Order {
 	/**
 	 * @return the orderDetails
 	 */
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "order")
-	public Set<OrderDetail> getOrderDetails() {
+	
+	public List<OrderDetail> getOrderDetails() {
 		return orderDetails;
 	}
 	/**
 	 * @param orderDetails the orderDetails to set
 	 */
-	public void setOrderDetails(Set<OrderDetail> orderDetails) {
+	public void setOrderDetails(List<OrderDetail> orderDetails) {
 		this.orderDetails = orderDetails;
 	}
 	/**
