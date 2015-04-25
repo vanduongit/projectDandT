@@ -1,6 +1,7 @@
 package com.dtweb.dao.impl;
 
 
+import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -14,6 +15,12 @@ public class GenericDaoImpl<T> implements GenericDao<T> {
 	 
 	@PersistenceContext
 	EntityManager entityManager;
+	
+	@SuppressWarnings("unchecked")
+	public GenericDaoImpl() {
+		this.clazz = (Class<T>) ((ParameterizedType) getClass()
+				.getGenericSuperclass()).getActualTypeArguments()[0];
+	}
 	
 	public void setClazz( Class< T > clazzToSet ){
 	      this.clazz = clazzToSet;

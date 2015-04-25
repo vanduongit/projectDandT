@@ -20,7 +20,7 @@
 	</definition>
 	
 	<definition name="index" extends="defaultTemplate">
-		<put-attribute name="titles" value="Insert Person"/>
+		<put-attribute name="titles" value="Home page"/>
 		<put-attribute name="slider" value="/WEB-INF/pages/templates/customer/slider.jsp"></put-attribute>
 		<put-attribute name="body" value="/WEB-INF/pages/insert.jsp"></put-attribute>
 	</definition>
