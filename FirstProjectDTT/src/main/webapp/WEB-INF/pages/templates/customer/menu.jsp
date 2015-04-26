@@ -5,34 +5,41 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+
 </head>
 <body>
 
-	<!-- Navigation -->
-	<nav class="navbar navbar-default" role="navigation">
-		<div class="container">
-					
-			<!-- Collect the nav links, forms, and other content for toggling -->				
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="">Home</a>
-                    </li>
-                    <li>
-                        <a href="">About</a>
-                    </li>
-                    <li>
-                        <a href="">Blog</a>
-                    </li>
-                    <li>
-                        <a href="">Contact</a>
-                    </li>
-                </ul>
+
+	 <!-- NAVBAR
+    ================================================== -->
+    <div class="container">
+        <nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom: 0px;">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="http://www.jssor.com/index.html">Bootstrap Slider</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Download</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
             </div>
-            <!-- /.navbar-collapse -->
-            
-		</div>
-	<!-- /.container -->
-	 </nav>
+       </nav>
+
+    </div>
+
+
+	
 </body>
 </html>
