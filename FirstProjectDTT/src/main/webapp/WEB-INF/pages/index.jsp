@@ -10,6 +10,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<<<<<<< HEAD
 	<!-- Page Content -->
     <div class="container">
     
@@ -208,5 +209,9 @@
     </div>
     
     
+=======
+	<!--  Duong Dai Ca -->
+	<h1>Hello Spring 4 MVC</h1>
+>>>>>>> refs/remotes/origin/branches1
 </body>
 </html>
