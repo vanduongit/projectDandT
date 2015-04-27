@@ -1,0 +1,246 @@
+--
+-- Create schema salewatch
+--
+
+CREATE DATABASE IF NOT EXISTS sale_watch;
+USE sale_watch;
+
+--
+-- Definition of table `brand`
+--
+
+DROP TABLE IF EXISTS `brand`;
+CREATE TABLE `brand` (
+  `ID` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `NAME` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `LOGO` varchar(255),
+  `ORD` int(3),
+  `LANG` varchar(5),
+  PRIMARY KEY (`ID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+--
+-- Definition of table `Category`
+--
+DROP TABLE IF EXISTS `category`;
+CREATE TABLE `category` (
+  `ID` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `TAG` varchar(255) NULL,
+  `NAME` varchar(256) CHARACTER SET utf8 NOT NULL,
+  `CONTENT` text CHARACTER SET utf8,
+   `LEVEL` int(5) NULL,
+  `PRIORITY` smallint(2) NULL,
+  `INDEX` smallint(2) NULL,
+  `IMAGE` varchar(256) NULL,
+  `TITLE` varchar(256) NULL,
+  `DESCRIPTION` text(1000) NULL,
+  `KEYWORD` varchar(256) NULL,
+  `ACTIVE` int(2) NULL,
+  `ORD` int(3) NULL,
+  `LANG` varchar(5) NULL,
+  `IMAGE2` varchar(256) NULL,
+  
+  PRIMARY KEY (`ID`) USING BTREE
+);
+
+
+--
+-- Definition of table `products`
+--
+DROP TABLE IF EXISTS `products`;
+CREATE TABLE `products` (
+  `ID` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `TAG` varchar(255),
+  `NAME` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `CONTENT` text NULL,
+   `DETAIL` text,
+  `PRIORITY` smallint(2) NULL,
+  `INDEX` smallint(2) NULL,
+  `PRICE` float NOT NULL,
+  `TINYIMAGE` varchar(200),
+  `BIGIMAGE` varchar(200),
+  `DATE` datetime,
+  `BRAND_ID` int(10) unsigned,
+  `BRAND_TAG` int(10) NULL,
+  `TITLE` varchar(200) NULL,
+  `DESCRIPTION` text NULL,
+  `KEYWORD` varchar(200) NULL,
+  `ACTION` int(1) NULL,
+  `ORD` int(3),
+  `LANG` varchar(5) NULL,
+  `PICE_OLD` varchar(200) ,
+  `IMAGE1` varchar(200)  NULL,
+  `IMAGE2` varchar(200)  NULL,
+  `IMAGE3` varchar(200) NULL,
+  `IMAGE4` varchar(200) NULL,
+  `IMAGE5` varchar(200) NULL,
+  `CODE_PRO` varchar(200) NULL,
+  `AMOUNT` int(10) NOT NULL,
+  `AMOUNT_TO_BUY` int(10) NULL,
+  `AMOUNT_LIKE` int(10) NULL,
+  `DATE_BEGIN` datetime  NULL,
+  `DATE_END` datetime  NULL,
+  `PROPERTY1` varchar(100) NULL,
+  `PROPERTY2` varchar(100) NULL,
+  `PROPERTY3` varchar(100) NULL,
+  `PROPERTY4` varchar(100) NULL,
+  `PROPERTY5` varchar(100) NULL,
+  `PROPERTY6` varchar(100) NULL,
+  `PROPERTY7` varchar(100) NULL,
+  `CATE_ID` int(10) unsigned NULL, 
+  `CATE_TAG` varchar(200) NULL,
+  `USER_CREATE` varchar(100),
+  `DATE_CREATE` datetime,	
+  PRIMARY KEY (`ID`) USING BTREE,
+    FOREIGN KEY(`BRAND_ID`) REFERENCES brand(`ID`),
+    FOREIGN KEY(`CATE_ID`) REFERENCES category(`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;;
+
+
+--
+-- Definition of table `CommentProduct`
+--
+DROP TABLE IF EXISTS `CommentProduct`;
+CREATE TABLE `CommentProduct` (
+  `ID` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `PRO_ID` int(10) unsigned  NOT NULL,
+  `NAME` varchar(256)  CHARACTER SET utf8 NOT NULL,
+  `EMAIL` varchar(256) NOT NULL,
+  `POINT` int(5) NULL,
+  `CONTENT` text CHARACTER SET utf8 NOT NULL ,
+  `DATE` datetime NOT NULL,
+  `ACTIVE` int(2) NULL,
+  PRIMARY KEY (`ID`) USING BTREE,
+    FOREIGN KEY(`PRO_ID`) REFERENCES PRODUCTS(`ID`)
+);
+
+--
+-- Definition of table `menu`
+--
+DROP TABLE IF EXISTS `menu`;
+CREATE TABLE `menu` (
+  `ID` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `NAME` varchar(256)  CHARACTER SET utf8 NOT NULL,
+  `LOGO` varchar(256),
+  `LINK` varchar(256),
+  `ACTIVE` int(2),
+  `ORD` int(3) NULL,
+  `PARENT_ID` int(10) unsigned ,  
+  PRIMARY KEY (`ID`) USING BTREE,
+    FOREIGN KEY(`PARENT_ID`) REFERENCES MENU(`ID`)
+);
+
+--
+-- Definition of table ORDER
+--
+
+DROP TABLE IF EXISTS `ORDERS`;
+CREATE TABLE `ORDERS`(
+    `ID` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `DATE` DATETIME NOT NULL,
+    `CODE` VARCHAR(100) NOT NULL,
+    `TYPEPAY`VARCHAR(50),
+    `STATUS` INT(2),
+    `IDATE` DATETIME,
+    `XDATE` DATETIME,
+    `REQUEST` TEXT CHARACTER SET utf8,
+    `CUS_NAME` VARCHAR(100) CHARACTER SET utf8,
+    `CUS_PHONE` VARCHAR(100) NOT NULL,
+    `CUS_EMAIL` VARCHAR(100) NOT NULL,
+    `CUS_ADDRESS` VARCHAR(200) CHARACTER SET utf8,
+    `CUS_ADDRESS_SHIP` VARCHAR(200) CHARACTER SET utf8,
+    `PROVINCE` VARCHAR(50) CHARACTER SET utf8,
+    PRIMARY KEY(`ID`) USING BTREE
+    );
+
+--
+-- Definition of table `order_detail`
+--
+DROP TABLE IF EXISTS `order_detail`;
+CREATE TABLE `order_detail` (
+  `ID` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `ORDER_ID` int(10) unsigned   NOT NULL,
+  `PRO_ID` int(10) unsigned  NOT NULL,
+  `QUANTITY` int(4) NOT NULL,
+  `ORIGINAL_PRICE` float NOT NULL,
+  `PAY_PRICE` float NOT NULL,
+  `DATE` datetime NOT NULL,
+  `STATUS` int(2) NOT NULL,
+  `ID_PROMO` int(10) NULL,  
+  PRIMARY KEY (`ID`) USING BTREE,
+    FOREIGN KEY(`ORDER_ID`) REFERENCES ORDERS(`ID`),
+    FOREIGN KEY(`PRO_ID`) REFERENCES PRODUCTS(`ID`)	 	
+);
+
+--
+-- Definition of table `configsys`
+--
+DROP TABLE IF EXISTS `configsys`;
+CREATE TABLE `configsys` (
+  `ID` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `NAME` varchar(200)  NOT NULL,
+  `VALUE` varchar(200) CHARACTER SET utf8 NOT NULL ,
+  `DESCRIPTION` text NULL,
+  `DATE_CREATED` datetime NOT NULL,
+  `DATE_EFF` datetime NULL,
+  `DATE_EXP` datetime NULL,
+  `ACTIVE` int(2) NULL,  
+  PRIMARY KEY (`ID`) USING BTREE
+);
+
+--
+-- Definition of table `promotion`
+--
+DROP TABLE IF EXISTS `promotion`;
+CREATE TABLE `promotion` (
+  `ID` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `CONTENT` text CHARACTER SET utf8,
+  `START_DATE` datetime NULL,
+  `END_DATE` datetime NULL,
+  `PRO_ID` int(10) unsigned  NOT NULL,
+  `DISCOUNT_PERCENT` float NULL,
+  `DISCOUNT_VALUE` float NULL,
+  `DESCRIPTION` text NULL,
+  `ACTIVE` int(2) NULL,   
+  PRIMARY KEY (`ID`) USING BTREE,
+    FOREIGN KEY(`PRO_ID`) REFERENCES PRODUCTS(`ID`)
+);
+
+--
+-- Definition of table CUSTOMER
+--
+
+DROP TABLE IF EXISTS `CUSTOMERS`;
+CREATE TABLE `CUSTOMERS`(
+    `ID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+    `NAME` VARCHAR(256) CHARACTER SET utf8,
+    `USERNAME` VARCHAR(64) NOT NULL,
+    `PASSWORD` VARCHAR(64) NOT NULL,
+    `BIRTHDAY` DATE,
+    `PROVINCE` VARCHAR(100),
+    `CUS_PHONE` VARCHAR(100),
+    `CUS_MOBILE` VARCHAR(100),
+    `CUS_EMAIL` VARCHAR(100),
+    `CUS_ADDRESS` VARCHAR(200),
+    `CUS_ADDRESS_SHIP` VARCHAR(200),
+    `DATE_CREATE` DATETIME,
+    `ACTIVE` INT(2),
+    PRIMARY KEY (`ID`) USING BTREE
+    );
+
+--
+-- Definition of table `ADMINISTRATOR`;
+--
+DROP TABLE IF EXISTS `ADMINISTRATOR`;
+CREATE TABLE `ADMINISTRATOR`(
+    `ID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+    `NAME` VARCHAR(256) CHARACTER SET utf8,
+    `USER_NAME` VARCHAR(50) NOT NULL,
+    `PASSWORD` VARCHAR(50) NOT NULL,
+    `ROLE` VARCHAR(100),
+    `ORD` INT(3),
+    `ACTIVE` INT(2),
+    PRIMARY KEY(`ID`) USING BTREE
+    );
+
+
