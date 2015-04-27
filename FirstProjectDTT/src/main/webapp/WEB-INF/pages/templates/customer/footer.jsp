@@ -17,7 +17,9 @@
             	            
             </div>
             <div class="col-md-4">
-               <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</h5>               
+               <h3>${owner}</h3>               
+               <h4>${hotline}</h4>
+               <h5>${address}</h5>               
             </div>
 		 </div>		
 	</div>
