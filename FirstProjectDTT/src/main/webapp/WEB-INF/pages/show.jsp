@@ -8,21 +8,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>List Person</h1>
 	
-	<c:url var="edit" value="/showEdit"/>
-	<c:url var="remove" value="/remove"/>
-	<table>
-		<c:forEach items="${list}" var="person">
-		<tr>
-			<td>${person.id}</td>
-			<td>${person.name}</td>
-			<td>${person.country}</td>
-			<td><a href="${edit}/${person.id}">Edit</a></td>
-			<td><a href="${remove}/${person.id}">Remove</a></td>
-		</tr>		
-		</c:forEach>
-	</table>
-
 </body>
 </html>
