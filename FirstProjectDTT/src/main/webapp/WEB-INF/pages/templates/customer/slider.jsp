@@ -4,200 +4,81 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">	
-
-<title></title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="bootstrap/js/jquery-1.11.2.min.js"></script>
+<style>
+.carousel-inner>.item>img, .carousel-inner>.item>a>img {
+	width: 100%;
+	margin: auto;
+	
+}
+</style>
 </head>
-<body>	
-    <!-- Use a container to wrap the slider, the purpose is to enable slider to always fit width of the wrapper while window resize -->
-    <div class="container">
-        <!-- Jssor Slider Begin -->
-        <!-- To move inline styles to css file/block, please specify a class name for each element. --> 
-        <!-- ================================================== -->
-        <div id="slider1_container" style="display: none; position: relative; margin: 0 auto; width: 1140px; height: 442px; overflow: hidden;">
+<body>
+	<div class="container">
+		<br>
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+				<li data-target="#myCarousel" data-slide-to="2"></li>
+				<li data-target="#myCarousel" data-slide-to="3"></li>
+			</ol>
 
-            <!-- Loading Screen -->
-            <div u="loading" style="position: absolute; top: 0px; left: 0px;">
-                <div style="filter: alpha(opacity=70); opacity:0.7; position: absolute; display: block;
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner" role="listbox">
 
-                background-color: #000; top: 0px; left: 0px;width: 100%; height:100%;">
-                </div>
-                <div style="position: absolute; display: block; background: url(resources/img/loading.gif) no-repeat center center;
+				<div class="item active">
+					<img src="resources/img/home/01.jpg" alt="Chania">
+					<div class="carousel-caption">
+						<h3>Chania</h3>
+						<p>The atmosphere in Chania has a touch of Florence and
+							Venice.</p>
+					</div>
+				</div>
 
-                top: 0px; left: 0px;width: 100%;height:100%;">
-                </div>
-            </div>
+				<div class="item">
+				<!-- width="460" height="345" -->
+					<img src="resources/img/home/02.jpg" alt="Chania" >
+					<div class="carousel-caption">
+						<h3>Chania</h3>
+						<p>The atmosphere in Chania has a touch of Florence and
+							Venice.</p>
+					</div>
+				</div>
 
-            <!-- Slides Container -->
-            <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1140px; height: 442px;
-            overflow: hidden;">
-                <div>
-                    <img u="image" src="resources/img/home/01.jpg" />
-                </div>
-                <div>
-                    <img u="image" src="resources/img/home/02.jpg" />
-                </div>
-                <div>
-                    <img u="image" src="resources/img/home/03.jpg" />
-                </div>
-                <div>
-                    <img u="image" src="resources/img/home/04.jpg" />
-                </div>
-            </div>
-            
-            <!--#region Bullet Navigator Skin Begin -->
-            <!-- Help: http://www.jssor.com/development/slider-with-bullet-navigator-jquery.html -->
-            <style>
-                /* jssor slider bullet navigator skin 05 css */
-                /*
-                .jssorb05 div           (normal)
-                .jssorb05 div:hover     (normal mouseover)
-                .jssorb05 .av           (active)
-                .jssorb05 .av:hover     (active mouseover)
-                .jssorb05 .dn           (mousedown)
-                */
-                .jssorb05 {
-                    position: absolute;
-                }
-                .jssorb05 div, .jssorb05 div:hover, .jssorb05 .av {
-                    position: absolute;
-                    /* size of bullet elment */
-                    width: 16px;
-                    height: 16px;
-                    background: url(resources/img/b05.png) no-repeat;
-                    overflow: hidden;
-                    cursor: pointer;
-                }
-                .jssorb05 div { background-position: -7px -7px; }
-                .jssorb05 div:hover, .jssorb05 .av:hover { background-position: -37px -7px; }
-                .jssorb05 .av { background-position: -67px -7px; }
-                .jssorb05 .dn, .jssorb05 .dn:hover { background-position: -97px -7px; }
-            </style>
-            <!-- bullet navigator container -->
-            <div u="navigator" class="jssorb05" style="bottom: 16px; right: 6px;">
-                <!-- bullet navigator item prototype -->
-                <div u="prototype"></div>
-            </div>
-            <!--#endregion Bullet Navigator Skin End -->
-            
-            <!--#region Arrow Navigator Skin Begin -->
-            <!-- Help: http://www.jssor.com/development/slider-with-arrow-navigator-jquery.html -->
-            <style>
-                /* jssor slider arrow navigator skin 11 css */
-                /*
-                .jssora11l                  (normal)
-                .jssora11r                  (normal)
-                .jssora11l:hover            (normal mouseover)
-                .jssora11r:hover            (normal mouseover)
-                .jssora11l.jssora11ldn      (mousedown)
-                .jssora11r.jssora11rdn      (mousedown)
-                */
-                .jssora11l, .jssora11r {
-                    display: block;
-                    position: absolute;
-                    /* size of arrow element */
-                    width: 37px;
-                    height: 37px;
-                    cursor: pointer;
-                    background: url(resources/img/a11.png) no-repeat;
-                    overflow: hidden;
-                }
-                .jssora11l { background-position: -11px -41px; }
-                .jssora11r { background-position: -71px -41px; }
-                .jssora11l:hover { background-position: -131px -41px; }
-                .jssora11r:hover { background-position: -191px -41px; }
-                .jssora11l.jssora11ldn { background-position: -251px -41px; }
-                .jssora11r.jssora11rdn { background-position: -311px -41px; }
-            </style>
-            <!-- Arrow Left -->
-            <span u="arrowleft" class="jssora11l" style="top: 123px; left: 8px;">
-            </span>
-            <!-- Arrow Right -->
-            <span u="arrowright" class="jssora11r" style="top: 123px; right: 8px;">
-            </span>
-            <!--#endregion Arrow Navigator Skin End -->
-            <a style="display: none" href="http://www.jssor.com">Bootstrap Slider</a>
-        </div>
-        <!-- Jssor Slider End -->
-    </div>
-    
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="bootstrap/js/jquery-1.9.1.min.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-    <script src="bootstrap/js/docs.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+				<div class="item">
+					<img src="resources/img/home/03.jpg" alt="Flower">
+					<div class="carousel-caption">
+						<h3>Flowers</h3>
+						<p>Beatiful flowers in Kolymbari, Crete.</p>
+					</div>
+				</div>
 
-    <!-- jssor slider scripts-->
-    <!-- use jssor.js + jssor.slider.js instead for development -->
-    <!-- jssor.slider.mini.js = (jssor.js + jssor.slider.js) -->
-    <script type="text/javascript" src="bootstrap/js/jssor.slider.mini.js"></script>
-    <script>
+				<div class="item">
+					<img src="resources/img/home/04.jpg" alt="Flower">
+					<div class="carousel-caption">
+						<h3>Flowers</h3>
+						<p>Beatiful flowers in Kolymbari, Crete.</p>
+					</div>
+				</div>
 
-        jQuery(document).ready(function ($) {
-            var options = {
-                $AutoPlay: true,                                       //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
-                $AutoPlaySteps: 1,                                  //[Optional] Steps to go for each navigation request (this options applys only when slideshow disabled), the default value is 1
-                $AutoPlayInterval: 2000,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
-                $PauseOnHover: 1,                                   //[Optional] Whether to pause when mouse over if a slider is auto playing, 0 no pause, 1 pause for desktop, 2 pause for touch device, 3 pause for desktop and touch device, 4 freeze for desktop, 8 freeze for touch device, 12 freeze for desktop and touch device, default value is 1
+			</div>
 
-                $ArrowKeyNavigation: true,   			            //[Optional] Allows keyboard (arrow key) navigation or not, default value is false
-                $SlideEasing: $JssorEasing$.$EaseOutQuint,          //[Optional] Specifies easing for right to left animation, default value is $JssorEasing$.$EaseOutQuad
-                $SlideDuration: 800,                                //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
-                $MinDragOffsetToSlide: 20,                          //[Optional] Minimum drag offset to trigger slide , default value is 20
-                //$SlideWidth: 600,                                 //[Optional] Width of every slide in pixels, default value is width of 'slides' container
-                //$SlideHeight: 300,                                //[Optional] Height of every slide in pixels, default value is height of 'slides' container
-                $SlideSpacing: 0, 					                //[Optional] Space between each slide in pixels, default value is 0
-                $DisplayPieces: 1,                                  //[Optional] Number of pieces to display (the slideshow would be disabled if the value is set to greater than 1), the default value is 1
-                $ParkingPosition: 0,                                //[Optional] The offset position to park slide (this options applys only when slideshow disabled), default value is 0.
-                $UISearchMode: 1,                                   //[Optional] The way (0 parellel, 1 recursive, default value is 1) to search UI components (slides container, loading screen, navigator container, arrow navigator container, thumbnail navigator container etc).
-                $PlayOrientation: 1,                                //[Optional] Orientation to play slide (for auto play, navigation), 1 horizental, 2 vertical, 5 horizental reverse, 6 vertical reverse, default value is 1
-                $DragOrientation: 1,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
-
-                $ArrowNavigatorOptions: {                           //[Optional] Options to specify and enable arrow navigator or not
-                    $Class: $JssorArrowNavigator$,                  //[Requried] Class to create arrow navigator instance
-                    $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
-                    $AutoCenter: 2,                                 //[Optional] Auto center arrows in parent container, 0 No, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
-                    $Steps: 1,                                      //[Optional] Steps to go for each navigation request, default value is 1
-                    $Scale: false                                   //Scales bullets navigator or not while slider scale
-                },
-
-                $BulletNavigatorOptions: {                                //[Optional] Options to specify and enable navigator or not
-                    $Class: $JssorBulletNavigator$,                       //[Required] Class to create navigator instance
-                    $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
-                    $AutoCenter: 1,                                 //[Optional] Auto center navigator in parent container, 0 None, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
-                    $Steps: 1,                                      //[Optional] Steps to go for each navigation request, default value is 1
-                    $Lanes: 1,                                      //[Optional] Specify lanes to arrange items, default value is 1
-                    $SpacingX: 12,                                   //[Optional] Horizontal space between each item in pixel, default value is 0
-                    $SpacingY: 4,                                   //[Optional] Vertical space between each item in pixel, default value is 0
-                    $Orientation: 1,                                //[Optional] The orientation of the navigator, 1 horizontal, 2 vertical, default value is 1
-                    $Scale: false                                   //Scales bullets navigator or not while slider scale
-                }
-            };
-
-            //Make the element 'slider1_container' visible before initialize jssor slider.
-            $("#slider1_container").css("display", "block");
-            var jssor_slider1 = new $JssorSlider$("slider1_container", options);
-
-            //responsive code begin
-            //you can remove responsive code if you don't want the slider scales while window resizes
-            function ScaleSlider() {
-                var parentWidth = jssor_slider1.$Elmt.parentNode.clientWidth;
-                if (parentWidth) {
-                    jssor_slider1.$ScaleWidth(parentWidth - 30);
-                }
-                else
-                    window.setTimeout(ScaleSlider, 30);
-            }
-            ScaleSlider();
-
-            $(window).bind("load", ScaleSlider);
-            $(window).bind("resize", ScaleSlider);
-            $(window).bind("orientationchange", ScaleSlider);
-            //responsive code end
-        });
-    </script>
+			<!-- Left and right controls -->
+			<a class="left carousel-control" href="#myCarousel" role="button"
+				data-slide="prev"> <span
+				class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a> <a class="right carousel-control" href="#myCarousel" role="button"
+				data-slide="next"> <span
+				class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+	</div>
 </body>
 </html>
