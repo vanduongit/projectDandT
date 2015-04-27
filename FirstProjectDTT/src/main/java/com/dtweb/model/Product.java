@@ -76,8 +76,8 @@ public class Product {
 	@Column(name = "KEYWORD")
 	private String keyword;
 	
-	@Column(name = "ACTION")
-	private int action;
+	@Column(name = "ACTIVE")
+	private int active;
 	
 	@Column(name = "ORD")
 	private int ord;
@@ -360,17 +360,18 @@ public class Product {
 	public void setKeyword(String keyword) {
 		this.keyword = keyword;
 	}
+	
 	/**
-	 * @return the action
+	 * @return the active
 	 */
-	public int getAction() {
-		return action;
+	public int getActive() {
+		return active;
 	}
 	/**
-	 * @param action the action to set
+	 * @param active the active to set
 	 */
-	public void setAction(int action) {
-		this.action = action;
+	public void setActive(int active) {
+		this.active = active;
 	}
 	/**
 	 * @return the ord
@@ -665,6 +666,67 @@ public class Product {
 	
 	
 	
+	
+	
+	public Product(String tag, String name, String content, String detail,
+			int priority, int index, float price, String tinyImage,
+			String bigImage, Date dateTime, Brand brand, int brandTag,
+			String title, String description, String keyword, int active,
+			int ord, String lang, String piceOld, String image1, String image2,
+			String image3, String image4, String image5, String codePro,
+			int amount, int amountToBuy, int amount_like, Date beginDate,
+			Date endDate, String property1, String property2, String property3,
+			String property4, String property5, String property6,
+			String property7, Category category, String cateTag,
+			String createUser, Date createDate,
+			Set<Promotion> promotionRecords,
+			Set<CommentProduct> commentRecords, Set<OrderDetail> orderDetails) {
+		super();
+		this.tag = tag;
+		this.name = name;
+		this.content = content;
+		this.detail = detail;
+		this.priority = priority;
+		this.index = index;
+		this.price = price;
+		this.tinyImage = tinyImage;
+		this.bigImage = bigImage;
+		this.dateTime = dateTime;
+		this.brand = brand;
+		this.brandTag = brandTag;
+		this.title = title;
+		this.description = description;
+		this.keyword = keyword;
+		this.active = active;
+		this.ord = ord;
+		this.lang = lang;
+		this.piceOld = piceOld;
+		this.image1 = image1;
+		this.image2 = image2;
+		this.image3 = image3;
+		this.image4 = image4;
+		this.image5 = image5;
+		this.codePro = codePro;
+		this.amount = amount;
+		this.amountToBuy = amountToBuy;
+		this.amount_like = amount_like;
+		this.beginDate = beginDate;
+		this.endDate = endDate;
+		this.property1 = property1;
+		this.property2 = property2;
+		this.property3 = property3;
+		this.property4 = property4;
+		this.property5 = property5;
+		this.property6 = property6;
+		this.property7 = property7;
+		this.category = category;
+		this.cateTag = cateTag;
+		this.createUser = createUser;
+		this.createDate = createDate;
+		this.promotionRecords = promotionRecords;
+		this.commentRecords = commentRecords;
+		this.orderDetails = orderDetails;
+	}
 	public Product() {		
 	}
 	

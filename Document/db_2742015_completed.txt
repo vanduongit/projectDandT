@@ -65,7 +65,7 @@ CREATE TABLE `products` (
   `TITLE` varchar(200) NULL,
   `DESCRIPTION` text NULL,
   `KEYWORD` varchar(200) NULL,
-  `ACTION` int(1) NULL,
+  `ACTIVE` int(1) NULL,
   `ORD` int(3),
   `LANG` varchar(5) NULL,
   `PICE_OLD` varchar(200) ,

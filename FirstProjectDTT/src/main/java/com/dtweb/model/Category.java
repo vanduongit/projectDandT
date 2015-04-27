@@ -292,6 +292,8 @@ public class Category {
 		this.lang = lang;
 		this.image2 = image2;
 	}
+	public Category() {		
+	}
 	
 	
 	

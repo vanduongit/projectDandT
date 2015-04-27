@@ -11,200 +11,97 @@
 </head>
 <body>
 	<!-- Page Content -->
-    <div class="container">
-    
-   		 <!-- Title -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h3>Products 1</h3>
-            </div>
-        </div>
-        
-    	 <!-- Page Features -->
-        <div class="row text-center">
+	<div class="container">
 
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
+		<!-- Title -->
+		<div class="row">
+			<div class="col-lg-12">
+				<h3>San Pham Noi Bat</h3>
+			</div>
+		</div>
 
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
+		<!-- Page Features -->
+		<div class="row text-center">
+			<!-- list of the best feature products. -->
+			<c:if test="${not empty listProduct}">				
+					<c:forEach var="p" items="${listProduct}">
+						<div class="col-md-3 col-sm-6 hero-feature">
+							<div class="thumbnail">
+								<a href="#"><img src="resources/img/ProductImages/${p.tinyImage}" alt=""></a>
+								<div class="caption">
+									<h3>${p.name}</h3>
+									<p>${p.price}</p>
+									<p>
+										<a href="#" class="btn btn-primary">Buy Now!</a> <a href="#"
+											class="btn btn-default">More Info</a>
+									</p>
+								</div>
+							</div>
+						</div>						
+					</c:forEach>				
+			</c:if>
+		</div>
 
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
+		<!-- Title -->
+		<div class="row">
+			<div class="col-lg-12">
+				<h3>San Pham Hot</h3>
+			</div>
+		</div>
 
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
+		<!-- Page Features -->
+		<div class="row text-center">
+			<!-- list of hottest products -->
+			<c:if test="${not empty listProduct}">				
+						<c:forEach var="p" items="${listProduct}">
+							<div class="col-md-3 col-sm-6 hero-feature">
+								<div class="thumbnail">
+									<a href="#"><img src="resources/img/ProductImages/${p.tinyImage}" alt=""></a>
+									<div class="caption">
+										<h3>${p.name}</h3>
+										<p>${p.price}</p>
+										<p>
+											<a href="#" class="btn btn-primary">Buy Now!</a> <a href="#"
+												class="btn btn-default">More Info</a>
+										</p>
+									</div>
+								</div>
+							</div>						
+						</c:forEach>				
+				</c:if>
+					
 
-        </div>
-        
-        <!-- Title -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h3>Products 2</h3>
-            </div>
-        </div>
-        
-    	 <!-- Page Features -->
-        <div class="row text-center">
+		</div>
 
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
+		<!-- Title -->
+		<div class="row">
+			<div class="col-lg-12">
+				<h3>San Pham</h3>
+			</div>
+		</div>
 
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        
-        <!-- Title -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h3>Products 3</h3>
-            </div>
-        </div>
-        
-    	 <!-- Page Features -->
-        <div class="row text-center">
-
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <!-- /.row -->
-    </div>
+		<!-- Page Features -->
+		<div class="row text-center">
+		<!-- list of hottest products -->
+			<c:if test="${not empty listProduct}">				
+						<c:forEach var="p" items="${listProduct}">
+							<div class="col-md-3 col-sm-6 hero-feature">
+								<div class="thumbnail">
+									<a href="#"><img src="resources/img/ProductImages/${p.tinyImage}" alt=""></a>
+									<div class="caption">
+										<h3>${p.name}</h3>
+										<p>${p.price}</p>
+										<p>
+											<a href="#" class="btn btn-primary">Buy Now!</a> <a href="#"
+												class="btn btn-default">More Info</a>
+										</p>
+									</div>
+								</div>
+							</div>						
+						</c:forEach>				
+				</c:if>
+		</div>
+		<!-- /.row -->
+	</div>
 </body>
 </html>
