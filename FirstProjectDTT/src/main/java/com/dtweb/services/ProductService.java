@@ -6,4 +6,6 @@ import com.dtweb.model.Product;
 
 public interface ProductService {
 	List<Product> getAllProduct();
+	
+	Product getProductById(int id);
 }

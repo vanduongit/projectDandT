@@ -668,6 +668,30 @@ public class Product {
 	
 	
 	
+	public Brand getBrand() {
+		return brand;
+	}
+	public void setBrand(Brand brand) {
+		this.brand = brand;
+	}
+	public Category getCategory() {
+		return category;
+	}
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+	public Set<CommentProduct> getCommentRecords() {
+		return commentRecords;
+	}
+	public void setCommentRecords(Set<CommentProduct> commentRecords) {
+		this.commentRecords = commentRecords;
+	}
+	public Set<OrderDetail> getOrderDetails() {
+		return orderDetails;
+	}
+	public void setOrderDetails(Set<OrderDetail> orderDetails) {
+		this.orderDetails = orderDetails;
+	}
 	public Product(String tag, String name, String content, String detail,
 			int priority, int index, float price, String tinyImage,
 			String bigImage, Date dateTime, Brand brand, int brandTag,

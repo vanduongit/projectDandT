@@ -5,6 +5,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.dtweb.common.Constant;
@@ -56,13 +57,13 @@ public class HomeController {
 //		return "redirect:/show";
 //	}
 //	
-//	@RequestMapping(value="/showEdit/{id}")
-//	public String showEdit(@PathVariable("id") int id,Model model){
-//		
-//		model.addAttribute("person",personService.getPersonById(id));
-//		
-//		return "edit";
-//	}
+	@RequestMapping(value="/product/detail/{id}")
+	public String showEdit(@PathVariable("id") int id,Model model){
+		
+		model.addAttribute("product", productService.getProductById(id));
+		
+		return "detail";
+	}
 //	@RequestMapping(value="/edit", method=RequestMethod.POST)
 //	public String edit(@ModelAttribute("person") Person person){
 //		personService.update(person);

@@ -29,4 +29,9 @@
 		<put-attribute name="titles" value="Danh sách sản phẩm"/>		
 		<put-attribute name="body" value="/WEB-INF/pages/show.jsp"></put-attribute>
 	</definition>
+	
+	<definition name="detail" extends="defaultTemplate">
+		<put-attribute name="titles" value="Chi tiết sản phẩm"/>		
+		<put-attribute name="body" value="/WEB-INF/pages/detail.jsp"></put-attribute>
+	</definition>
 </tiles-definitions>       

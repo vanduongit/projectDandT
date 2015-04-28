@@ -24,12 +24,19 @@ public class ProductServiceImpl implements ProductService {
 		return productDao.findAll();
 	}
 
+	
 	public ProductDao getProductDao() {
 		return productDao;
 	}
 
 	public void setProductDao(ProductDao productDao) {
 		this.productDao = productDao;
+	}
+
+
+	public Product getProductById(int id) {
+		Product p=productDao.findById(id);
+		return p;
 	}
  
 }

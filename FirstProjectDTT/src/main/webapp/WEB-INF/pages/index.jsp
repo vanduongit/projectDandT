@@ -27,7 +27,7 @@
 					<c:forEach var="p" items="${listProduct}">
 						<div class="col-md-3 col-sm-6 hero-feature">
 							<div class="thumbnail">
-								<a href="#"><img src="resources/img/ProductImages/${p.tinyImage}" alt=""></a>
+								<a href="product/detail/${p.id}"><img src="resources/img/ProductImages/${p.tinyImage}" alt=""></a>
 								<div class="caption">
 									<h3>${p.name}</h3>
 									<p>${p.price}</p>
