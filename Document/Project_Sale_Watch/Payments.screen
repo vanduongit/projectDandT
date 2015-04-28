@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
+  <widgets xsi:type="model:WidgetGroup" id="1" x="-16" y="-552" measuredWidth="1249" measuredHeight="1561">
+    <widgets xsi:type="model:WidgetGroup" id="2" height="1561" measuredWidth="1249" measuredHeight="1561">
+      <widgets xsi:type="model:Browser" id="3" width="1249" height="1561" text="Browser&#xA;http://..." measuredWidth="1249" measuredHeight="1561"/>
+    </widgets>
+  </widgets>
+  <widgets xsi:type="model:SearchField" id="4" x="336" y="-448" width="301" text="Nhập tên, hãng sản phẩm" measuredWidth="301" measuredHeight="24">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Link" id="5" x="656" y="-450" text="Nâng cao" measuredWidth="65" measuredHeight="26">
+    <font size="15px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="6" x="105" y="-484" width="176" text="Logo" measuredWidth="176" measuredHeight="71" textAlignment="Center" link="HomePage.screen">
+    <font size="52px"/>
+  </widgets>
+  <widgets xsi:type="model:Link" id="7" x="833" y="-472" text="Đăng nhập" measuredWidth="74" measuredHeight="26">
+    <font size="15px"/>
+  </widgets>
+  <widgets xsi:type="model:Link" id="8" x="931" y="-472" text="Đăng ký" measuredWidth="57" measuredHeight="26">
+    <font size="15px"/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="9" x="1004" y="-474" measuredWidth="32" measuredHeight="32" icon="suitcase (large)"/>
+  <widgets xsi:type="model:Label" id="10" x="833" y="-448" text="Hot Line: 01695306207" measuredWidth="292" measuredHeight="42">
+    <font size="28px"/>
+  </widgets>
+  <widgets xsi:type="model:HLine" id="11" x="137" y="-404" width="982" measuredWidth="982" measuredHeight="6"/>
+  <widgets xsi:type="model:Label" id="12" x="400" y="-352" text="Thông tin khách hàng" measuredWidth="419" measuredHeight="60" foreground="#76a5af">
+    <font size="43px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="13" x="408" y="-264" text="Nếu bạn đã có tài khoản, xin mời" measuredWidth="206" measuredHeight="22">
+    <font bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Link" id="14" x="628" y="-264" text="đăng nhập" measuredWidth="69" measuredHeight="22">
+    <font bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="15" x="408" y="-224" text="Nếu chưa có tài khoản, bạn có thể" measuredWidth="216" measuredHeight="22">
+    <font bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Link" id="16" x="629" y="-225" text="đăng ký" measuredWidth="52" measuredHeight="22">
+    <font bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="17" x="408" y="-184" text="Bạn có thể nhập thông tin trực tiếp ở đây" measuredWidth="265" measuredHeight="22">
+    <font bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="18" x="432" y="-136" text="Họ tên bạn*: " measuredWidth="82" measuredHeight="22">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:TextField" id="19" x="536" y="-136" width="281" text="Phan Văn Dương" measuredWidth="281" measuredHeight="22">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="20" x="432" y="-32" text="Địa chỉ nhận hàng*:" measuredWidth="113" measuredHeight="22">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:TextArea" id="22" x="536" y="40" width="275" height="86" text="Quận 9" measuredWidth="275" measuredHeight="86">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="23" x="432" y="-88" text="Số điện thoại*:" measuredWidth="88" measuredHeight="22">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:TextField" id="24" x="535" y="-88" width="282" text="Yêu cầu chính xác để chúng tôi liên hệ" measuredWidth="282" measuredHeight="22">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="25" x="976" y="504" width="181" height="40" text="Xác nhận" measuredWidth="181" measuredHeight="40" background="#0000ff" link="OrderSuccess.screen">
+    <font size="20px" bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="27" x="408" y="128" text="Đơn hàng của bạn" measuredWidth="355" measuredHeight="60" foreground="#a2c4c9">
+    <font size="43px"/>
+  </widgets>
+  <widgets xsi:type="model:Table" id="28" x="160" y="219" width="981" height="257" text="STT,Sản phẩm,Số lượng,Đơn giá,Thành tiền&#xA;1,Đồng hồ Casio G-Shock GA-201-1ADR GA-201-1ADR \n , 1 ,2.941.000.00₫,2.941.000.00₫" measuredWidth="981" measuredHeight="257" selection="1" alternative="#eeeeee">
+    <font bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Image" id="29" x="296" y="280" width="148" height="182" measuredWidth="148" measuredHeight="182" src="gd-100ns-7dr-03102011-025258.jpg"/>
+  <widgets xsi:type="model:Label" id="30" x="458" y="336" text="Giảm giá 10%, tiết kiệm 309,000 đ" measuredWidth="220" measuredHeight="22" foreground="#ff0000">
+    <font bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:HLine" id="31" x="184" y="784" width="992" measuredWidth="992" measuredHeight="6"/>
+  <widgets xsi:type="model:Label" id="32" x="928" y="800" text="Thông tin liên hệ" measuredWidth="205" measuredHeight="41">
+    <font size="27px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="33" x="940" y="854" text="Số điện thoại: 01695306207" measuredWidth="187" measuredHeight="26">
+    <font size="15px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="34" x="940" y="881" text="Địa chỉ: Quận 9, TP Hồ CHí Minh" measuredWidth="217" measuredHeight="26">
+    <font size="15px"/>
+  </widgets>
+  <widgets xsi:type="model:Link" id="35" x="940" y="908" text="Facebook" measuredWidth="69" measuredHeight="27">
+    <font size="16px"/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="36" x="792" y="505" text="Trở về giỏ hàng" measuredWidth="177" measuredHeight="34" background="#999999" link="Cart.screen">
+    <font size="20px" bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Combo" id="37" x="536" width="134" text="Thành Phố" measuredWidth="134" measuredHeight="22">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="38" x="451" text="Thành phố*:" measuredWidth="76" measuredHeight="22">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="39" x="451" y="40" text="Địa chỉ cụ thể*:" measuredWidth="91" measuredHeight="22">
+    <font/>
+  </widgets>
+  <hRuler/>
+  <vRuler/>
+  <font size="12px"/>
+</model:Screen>

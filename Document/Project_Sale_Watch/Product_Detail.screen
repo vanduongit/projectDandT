@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
+  <widgets xsi:type="model:WidgetGroup" id="95" x="240" y="-544" measuredWidth="1249" measuredHeight="2241">
+    <widgets xsi:type="model:WidgetGroup" id="93" measuredWidth="1249" measuredHeight="2241">
+      <widgets xsi:type="model:Browser" id="18" width="1249" height="2241" text="Browser&#xA;http://..." measuredWidth="1249" measuredHeight="2241"/>
+    </widgets>
+  </widgets>
+  <widgets xsi:type="model:SearchField" id="19" x="575" y="-456" width="301" text="Nhập tên, hãng sản phẩm" measuredWidth="301" measuredHeight="24">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Link" id="20" x="895" y="-458" text="Nâng cao" measuredWidth="67" measuredHeight="28">
+    <font size="15px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="21" x="344" y="-492" width="176" text="Logo" measuredWidth="176" measuredHeight="78" textAlignment="Center" link="HomePage.screen">
+    <font size="52px"/>
+  </widgets>
+  <widgets xsi:type="model:Link" id="22" x="1072" y="-480" text="Đăng nhập" measuredWidth="76" measuredHeight="28">
+    <font size="15px"/>
+  </widgets>
+  <widgets xsi:type="model:Link" id="23" x="1170" y="-480" text="Đăng ký" measuredWidth="57" measuredHeight="28">
+    <font size="15px"/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="24" x="1243" y="-482" measuredWidth="32" measuredHeight="32" icon="suitcase (large)"/>
+  <widgets xsi:type="model:Label" id="25" x="1072" y="-456" text="Hot Line: 01695306207" measuredWidth="288" measuredHeight="46">
+    <font size="28px"/>
+  </widgets>
+  <widgets xsi:type="model:Image" id="26" x="442" y="-383" measuredWidth="288" measuredHeight="388" src="gd-100ns-7dr-03102011-025258.jpg" grayscale="true" vFlip="true"/>
+  <widgets xsi:type="model:HLine" id="33" x="400" y="1504" width="992" measuredWidth="992" measuredHeight="6"/>
+  <widgets xsi:type="model:Label" id="34" x="1144" y="1520" text="Thông tin liên hệ" measuredWidth="205" measuredHeight="45">
+    <font size="27px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="35" x="1156" y="1574" text="Số điện thoại: 01695306207" measuredWidth="188" measuredHeight="28">
+    <font size="15px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="36" x="1156" y="1601" text="Địa chỉ: Quận 9, TP Hồ CHí Minh" measuredWidth="217" measuredHeight="28">
+    <font size="15px"/>
+  </widgets>
+  <widgets xsi:type="model:Link" id="37" x="1156" y="1628" text="Facebook" measuredWidth="69" measuredHeight="29">
+    <font size="16px"/>
+  </widgets>
+  <widgets xsi:type="model:CoverFlow" id="38" x="456" y="104" width="272" height="89" measuredWidth="272" measuredHeight="89"/>
+  <widgets xsi:type="model:Label" id="39" x="895" y="-394" width="462" text="Đồng hồ Casio G-Shock GD-100NS-7DR" measuredWidth="462" measuredHeight="45">
+    <font size="27px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="40" x="895" y="-312" text="Hãng: " measuredWidth="66" measuredHeight="38">
+    <font size="21px"/>
+  </widgets>
+  <widgets xsi:type="model:Panel" id="43" x="1055" y="-323" width="128" height="60" measuredWidth="128" measuredHeight="60"/>
+  <widgets xsi:type="model:Label" id="44" x="1078" y="-310" text="Logo hãng" measuredWidth="95" measuredHeight="33">
+    <font size="19px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="45" x="895" y="-256" text="Tình Trạng:" measuredWidth="109" measuredHeight="38">
+    <font size="21px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="46" x="1055" y="-256" text="Còn hàng" measuredWidth="100" measuredHeight="38" foreground="#0000ff">
+    <font size="21px" bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="47" x="895" y="-208" text="Giá: " measuredWidth="46" measuredHeight="38">
+    <font size="21px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="48" x="1226" y="-201" text="3.268.000,00 ₫" measuredWidth="78" measuredHeight="23" state="disabled">
+    <font underline="false"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="49" x="1055" y="-207" text="2.941.000,00 ₫" measuredWidth="147" measuredHeight="36" foreground="#00ff00">
+    <font size="20px" bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="50" x="1055" y="-170" text="Tiết kiệm:" measuredWidth="43" measuredHeight="20">
+    <font size="9px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="51" x="1121" y="-171" text="300.000,00đ ( - 10%)" measuredWidth="106" measuredHeight="21">
+    <font size="11px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="53" x="895" y="-347" text="Mã sản phẩm:" measuredWidth="77" measuredHeight="21">
+    <font size="11px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="54" x="971" y="-347" text="#123456" measuredWidth="48" measuredHeight="21">
+    <font size="11px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="55" x="895" y="-136" text="Màu: " measuredWidth="58" measuredHeight="38">
+    <font size="21px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="56" x="895" y="-80" text="Cỡ: " measuredWidth="42" measuredHeight="38">
+    <font size="21px"/>
+  </widgets>
+  <widgets xsi:type="model:Combo" id="57" x="1055" y="-136" width="217" text="  Xanh" measuredWidth="217" measuredHeight="38">
+    <font size="21px"/>
+  </widgets>
+  <widgets xsi:type="model:Combo" id="58" x="1055" y="-80" width="217" text="  L" measuredWidth="217" measuredHeight="38">
+    <font size="21px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="59" x="895" y="13" text="Số lượng: " measuredWidth="99" measuredHeight="38">
+    <font size="21px"/>
+  </widgets>
+  <widgets xsi:type="model:TextField" id="60" x="1055" y="13" width="81" text="1" measuredWidth="81" measuredHeight="38" textAlignment="Center">
+    <font size="21px"/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="66" x="1154" y="13" width="16" height="16" measuredWidth="16" measuredHeight="16" icon="add (small)">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="67" x="1154" y="35" width="16" height="16" measuredWidth="16" measuredHeight="16" icon="minus (small)">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:HLine" id="68" x="376" y="216" width="982" measuredWidth="982" measuredHeight="6"/>
+  <widgets xsi:type="model:Button" id="69" x="1062" y="71" text="Thêm vào giỏ hàng" measuredWidth="223" measuredHeight="38" background="#ff0000" icon="suitcase (small)">
+    <font size="20px" bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="70" x="1065" y="130" width="223" text="Mua ngay" measuredWidth="223" measuredHeight="55" background="#0b5394" link="Cart.screen">
+    <font size="32px" bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:TabbedPane" id="72" x="394" y="256" width="964" height="754" text="Thông tin chi tiết, Đánh giá sản phẩm" measuredWidth="964" measuredHeight="754" selection="0">
+    <items x="10" y="0" width="168" height="50" text="Thông tin chi tiết"/>
+    <items x="178" y="0" width="187" height="50" text="Đánh giá sản phẩm"/>
+    <font size="20px"/>
+  </widgets>
+  <widgets xsi:type="model:TabbedPane" id="75" x="404" y="1128" width="968" height="304" text="Sản phẩm liên quan" measuredWidth="968" measuredHeight="304" selection="0">
+    <items x="10" y="0" width="192" height="50" text="Sản phẩm liên quan"/>
+    <font size="20px"/>
+  </widgets>
+  <widgets xsi:type="model:Rectangle" id="76" x="472" y="1200" width="184" height="159" measuredWidth="184" measuredHeight="159">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="77" x="504" y="1366" text="Tên sản phẩm" measuredWidth="113" measuredHeight="31">
+    <font size="17px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="78" x="525" y="1398" text="Giá VNĐ" measuredWidth="62" measuredHeight="28">
+    <font size="15px"/>
+  </widgets>
+  <widgets xsi:type="model:Rectangle" id="79" x="696" y="1200" width="184" height="159" measuredWidth="184" measuredHeight="159">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="80" x="728" y="1366" text="Tên sản phẩm" measuredWidth="113" measuredHeight="31">
+    <font size="17px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="81" x="744" y="1398" text="Giá VNĐ" measuredWidth="62" measuredHeight="28">
+    <font size="15px"/>
+  </widgets>
+  <widgets xsi:type="model:Rectangle" id="82" x="928" y="1200" width="184" height="159" measuredWidth="184" measuredHeight="159">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="83" x="960" y="1366" text="Tên sản phẩm" measuredWidth="113" measuredHeight="31">
+    <font size="17px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="84" x="981" y="1398" text="Giá VNĐ" measuredWidth="62" measuredHeight="28">
+    <font size="15px"/>
+  </widgets>
+  <widgets xsi:type="model:Rectangle" id="85" x="1144" y="1200" width="184" height="159" measuredWidth="184" measuredHeight="159">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="86" x="1184" y="1368" text="Tên sản phẩm" measuredWidth="113" measuredHeight="31">
+    <font size="17px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="87" x="1205" y="1398" text="Giá VNĐ" measuredWidth="62" measuredHeight="28">
+    <font size="15px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="88" x="1265" y="1120" text="Xem tất cả" measuredWidth="97" measuredHeight="36">
+    <font size="20px"/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="89" x="1343" y="1276" measuredWidth="32" measuredHeight="32" icon="filled-arrow-right (large)"/>
+  <widgets xsi:type="model:Icon" id="90" x="442" y="1276" measuredWidth="32" measuredHeight="32" icon="filled-arrow-left (large)"/>
+  <widgets xsi:type="model:HLine" id="91" x="376" y="-412" width="982" measuredWidth="982" measuredHeight="6"/>
+  <hRuler/>
+  <vRuler/>
+  <font size="12px"/>
+</model:Screen>

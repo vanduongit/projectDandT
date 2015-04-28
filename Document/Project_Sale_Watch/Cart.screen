@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
+  <widgets xsi:type="model:WidgetGroup" id="28" y="-568" measuredWidth="1249" measuredHeight="1561">
+    <widgets xsi:type="model:WidgetGroup" id="29" height="1561" measuredWidth="1249" measuredHeight="1561">
+      <widgets xsi:type="model:Browser" id="30" width="1249" height="1561" text="Browser&#xA;http://..." measuredWidth="1249" measuredHeight="1561"/>
+    </widgets>
+  </widgets>
+  <widgets xsi:type="model:SearchField" id="31" x="335" y="-480" width="301" text="Nhập tên, hãng sản phẩm" measuredWidth="301" measuredHeight="24">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Link" id="32" x="655" y="-482" text="Nâng cao" measuredWidth="67" measuredHeight="28">
+    <font size="15px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="33" x="104" y="-516" width="176" text="Logo" measuredWidth="176" measuredHeight="78" textAlignment="Center" link="HomePage.screen">
+    <font size="52px"/>
+  </widgets>
+  <widgets xsi:type="model:Link" id="34" x="832" y="-504" text="Đăng nhập" measuredWidth="76" measuredHeight="28">
+    <font size="15px"/>
+  </widgets>
+  <widgets xsi:type="model:Link" id="35" x="930" y="-504" text="Đăng ký" measuredWidth="57" measuredHeight="28">
+    <font size="15px"/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="36" x="1003" y="-506" measuredWidth="32" measuredHeight="32" icon="suitcase (large)"/>
+  <widgets xsi:type="model:Label" id="37" x="832" y="-480" text="Hot Line: 01695306207" measuredWidth="288" measuredHeight="46">
+    <font size="28px"/>
+  </widgets>
+  <widgets xsi:type="model:HLine" id="38" x="136" y="-436" width="982" measuredWidth="982" measuredHeight="6"/>
+  <widgets xsi:type="model:HLine" id="39" x="136" y="808" width="992" measuredWidth="992" measuredHeight="6"/>
+  <widgets xsi:type="model:Label" id="40" x="880" y="824" text="Thông tin liên hệ" measuredWidth="205" measuredHeight="45">
+    <font size="27px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="41" x="892" y="878" text="Số điện thoại: 01695306207" measuredWidth="188" measuredHeight="28">
+    <font size="15px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="42" x="892" y="905" text="Địa chỉ: Quận 9, TP Hồ CHí Minh" measuredWidth="217" measuredHeight="28">
+    <font size="15px"/>
+  </widgets>
+  <widgets xsi:type="model:Link" id="43" x="892" y="932" text="Facebook" measuredWidth="69" measuredHeight="29">
+    <font size="16px"/>
+  </widgets>
+  <widgets xsi:type="model:Table" id="44" x="136" y="-408" width="981" height="257" text="Xóa ,STT,Sản phẩm,Số lượng,Đơn giá,Thành tiền&#xA;{trash},1,Đồng hồ Casio G-Shock GA-201-1ADR GA-201-1ADR \n ,  ,2.941.000.00₫,2.941.000.00₫" measuredWidth="981" measuredHeight="257" selection="1" alternative="#eeeeee">
+    <font bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:TextField" id="49" x="768" y="-376" width="33" text="1" measuredWidth="33" measuredHeight="23" textAlignment="Center">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Image" id="50" x="259" y="-344" width="148" height="182" measuredWidth="148" measuredHeight="182" src="gd-100ns-7dr-03102011-025258.jpg"/>
+  <widgets xsi:type="model:Label" id="51" x="416" y="-328" text="Giảm giá 10%, tiết kiệm 309,000 đ" measuredWidth="196" measuredHeight="23" foreground="#ff0000">
+    <font bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Panel" id="53" x="136" y="-152" width="982" measuredWidth="982" measuredHeight="100" background="#b6d7a8" foreground="#ffffff"/>
+  <widgets xsi:type="model:HLine" id="54" x="136" y="-53" width="984" measuredWidth="984" measuredHeight="6"/>
+  <widgets xsi:type="model:Label" id="55" x="968" y="-152" text="Tổng cộng:" measuredWidth="110" measuredHeight="36" foreground="#3d85c6">
+    <font size="20px" bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="56" x="968" y="-117" text="2.941.000,00đ" measuredWidth="141" measuredHeight="36" foreground="#cc0000">
+    <font size="20px" bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="57" x="916" y="-48" width="201" height="48" text="Xác nhận đơn hàng" measuredWidth="201" measuredHeight="48" background="#ff0000" link="Payments.screen">
+    <font size="20px" bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="58" x="721" y="-48" width="192" height="48" text="Tiếp tục mua sắm" measuredWidth="192" measuredHeight="48" background="#666666" link="HomePage.screen">
+    <font size="20px" bold="true"/>
+  </widgets>
+  <hRuler/>
+  <vRuler/>
+  <font size="12px"/>
+</model:Screen>
