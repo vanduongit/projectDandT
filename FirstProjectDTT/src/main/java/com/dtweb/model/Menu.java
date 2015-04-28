@@ -10,6 +10,7 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -49,12 +50,14 @@ public class Menu implements Serializable{
     @JoinColumn(name = "PARENT_ID")
 	private Menu parent;
 	
-	@OneToMany(mappedBy = "parent")
+	@OneToMany(fetch = FetchType.EAGER,mappedBy = "parent")
     private Set<Menu> subordinates = new HashSet<Menu>();
+	
 	/**
 	 * @return the name
 	 */
 	public String getName() {
+		
 		return name;
 	}
 	/**

@@ -1,10 +1,15 @@
 package com.dtweb.controller;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.dtweb.common.Constant;
+import com.dtweb.services.ConfigSysService;
+import com.dtweb.services.MenuService;
 import com.dtweb.services.ProductService;
 
 
@@ -15,9 +20,21 @@ public class HomeController {
 	@Autowired
 	ProductService productService;
 	
+	@Autowired
+	MenuService menuService;
+	
+	@Autowired
+	ConfigSysService configService;
+	
+	
 	@RequestMapping(value="/")
 	public String index(Model model){
 		model.addAttribute("listProduct", productService.getAllProduct());
+		model.addAttribute("menu",menuService.getMenu());
+		Map<String,String> mapConfig=configService.getConfig();
+		model.addAttribute(Constant.OWNER, mapConfig.get(Constant.OWNER));
+		model.addAttribute(Constant.ADDRESS, mapConfig.get(Constant.ADDRESS));
+		model.addAttribute(Constant.HOTLINE, mapConfig.get(Constant.HOTLINE));				
 		return "index";
 	}
 //	

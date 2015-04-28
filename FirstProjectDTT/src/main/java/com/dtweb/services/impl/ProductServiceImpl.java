@@ -2,14 +2,18 @@ package com.dtweb.services.impl;
 
 import java.util.List;
 
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.dtweb.dao.ProductDao;
 import com.dtweb.model.Product;
 import com.dtweb.services.ProductService;
 
 @Service
+@Transactional
 public class ProductServiceImpl implements ProductService {
 
 	@Autowired

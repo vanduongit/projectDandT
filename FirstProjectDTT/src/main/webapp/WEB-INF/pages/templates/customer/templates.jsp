@@ -7,14 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <script src="bootstrap/js/bootstrap.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<style>
-  .carousel-inner > .item > img,
-  .carousel-inner > .item > a > img {
-      width: 70%;
-      margin: auto;
-  }
-  </style>
+<script src="bootstrap/js/jquery-1.11.2.min.js"></script>
 <title>
 	<tiles:insertAttribute name="titles"></tiles:insertAttribute>
 </title>
@@ -25,5 +18,8 @@
 	<tiles:insertAttribute name="menu"></tiles:insertAttribute>
 	<tiles:insertAttribute name="body"></tiles:insertAttribute>
 	<tiles:insertAttribute name="footer"></tiles:insertAttribute>
+	
+	 <!-- Placed at the end of the document so the pages load faster -->
+	
 </body>
 </html>

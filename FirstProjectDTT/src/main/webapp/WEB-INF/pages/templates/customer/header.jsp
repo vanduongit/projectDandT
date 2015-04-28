@@ -15,19 +15,20 @@
 <body>
 	
 	<!-- Header --> 
-	<div class="container">
+	<div class="container" >
 		 <div class="row">
-		 	<div class="col-md-4">                                                 
+		 	<div class="col-md-3">                                                 
             	<h1>MASTER</h1>                  
             </div>
-            <div class="col-md-4">                               
+            <div class="col-md-6" style="margin-top: 20px;">                               
             	<form action="" class="form-inline" role="form">
-                	<input type="text" class="form-control" id="usr">
+                	<input type="text" class="form-control" id="usr" style="width: 70%">
                 	<a href="#" class="btn btn-info btn-md"><span class="glyphicon glyphicon-search"></span>Search</a>
             	</form>               
             </div>
-            <div class="col-md-4">
-               <a href="">Đăng nhập</a>
+            <div class="col-md-3" style="margin-top: 20px">
+               <a href="">Đăng nhập</a> | 
+               <a href="">Đăng Ký</a> | 
                <a href=""><span class="glyphicon glyphicon-shopping-cart"></span></a>
             </div>
 		 </div>		

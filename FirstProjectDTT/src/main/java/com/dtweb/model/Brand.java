@@ -20,7 +20,7 @@ import javax.persistence.Table;
  *
  */
 @Entity
-@Table(name = "administrator", catalog = "sale_watch")
+@Table(name = "Brand", catalog = "sale_watch")
 public class Brand {
 	
 	@Id
@@ -116,6 +116,9 @@ public class Brand {
 		this.logo = logo;
 		this.ord = ord;
 		this.lang = lang;
+	}
+	
+	public Brand() {		
 	}
 	
 	
