@@ -113,7 +113,7 @@ public class Product {
 	private int amountToBuy;
 	
 	@Column(name = "AMOUNT_LIKE")
-	private int amount_like;
+	private int amountLike;
 	
 	@Column(name = "DATE_BEGIN")
 	private Date beginDate;
@@ -159,7 +159,7 @@ public class Product {
 	private Set<Promotion> promotionRecords = new HashSet<Promotion>(
 			0);
 	
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "product")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "product")
 	private Set<CommentProduct> commentRecords = new HashSet<CommentProduct>(
 			0);
 	
@@ -171,6 +171,7 @@ public class Product {
 	 * @return the id
 	 */
 	public int getId() {
+	
 		return id;
 	}
 	/**
@@ -508,14 +509,14 @@ public class Product {
 	/**
 	 * @return the amount_like
 	 */
-	public int getAmount_like() {
-		return amount_like;
+	public int getAmountLike() {
+		return amountLike;
 	}
 	/**
 	 * @param amount_like the amount_like to set
 	 */
-	public void setAmount_like(int amount_like) {
-		this.amount_like = amount_like;
+	public void setAmountLike(int amountLike) {
+		this.amountLike = amountLike;
 	}
 	/**
 	 * @return the beginDate
@@ -698,7 +699,7 @@ public class Product {
 			String title, String description, String keyword, int active,
 			int ord, String lang, String piceOld, String image1, String image2,
 			String image3, String image4, String image5, String codePro,
-			int amount, int amountToBuy, int amount_like, Date beginDate,
+			int amount, int amountToBuy, int amountLike, Date beginDate,
 			Date endDate, String property1, String property2, String property3,
 			String property4, String property5, String property6,
 			String property7, Category category, String cateTag,
@@ -733,7 +734,7 @@ public class Product {
 		this.codePro = codePro;
 		this.amount = amount;
 		this.amountToBuy = amountToBuy;
-		this.amount_like = amount_like;
+		this.amountLike = amountLike;
 		this.beginDate = beginDate;
 		this.endDate = endDate;
 		this.property1 = property1;

@@ -1,5 +1,6 @@
 package com.dtweb.controller;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,16 +8,22 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
-import com.dtweb.common.Constant;
 import com.dtweb.services.ConfigSysService;
 import com.dtweb.services.MenuService;
 import com.dtweb.services.ProductService;
 
 
 @Controller
+@SessionAttributes("mapSession")
 public class HomeController {
 	
+	public static final String MAP_SESSION="mapSession";
+	public static final String MENU="menu";
+	public static final String OWNER="owner";
+	public static final String ADDRESS="address";
+	public static final String HOTLINE="hotline";
 	
 	@Autowired
 	ProductService productService;
@@ -28,14 +35,21 @@ public class HomeController {
 	ConfigSysService configService;
 	
 	
+	
 	@RequestMapping(value="/")
 	public String index(Model model){
+		Map<String,Object> mapSession=new HashMap<String, Object>();
 		model.addAttribute("listProduct", productService.getAllProduct());
-		model.addAttribute("menu",menuService.getMenu());
+		
+		mapSession.put(MENU, menuService.getMenu());
+		
 		Map<String,String> mapConfig=configService.getConfig();
-		model.addAttribute(Constant.OWNER, mapConfig.get(Constant.OWNER));
-		model.addAttribute(Constant.ADDRESS, mapConfig.get(Constant.ADDRESS));
-		model.addAttribute(Constant.HOTLINE, mapConfig.get(Constant.HOTLINE));				
+		
+		mapSession.put(OWNER, mapConfig.get(OWNER));
+		mapSession.put(ADDRESS, mapConfig.get(ADDRESS));
+		mapSession.put(HOTLINE, mapConfig.get(HOTLINE));
+		
+		model.addAttribute(MAP_SESSION, mapSession);
 		return "index";
 	}
 //	

@@ -40,7 +40,7 @@ public class CommentProduct {
 	private String email;
 	
 	@Column(name = "POINT")
-	private int point;
+	private Integer point;
 	
 	@Column(name = "CONTENT", nullable = false)
 	private String content;
@@ -79,13 +79,13 @@ public class CommentProduct {
 	/**
 	 * @return the point
 	 */
-	public int getPoint() {
+	public Integer getPoint() {
 		return point;
 	}
 	/**
 	 * @param point the point to set
 	 */
-	public void setPoint(int point) {
+	public void setPoint(Integer point) {
 		this.point = point;
 	}
 	/**

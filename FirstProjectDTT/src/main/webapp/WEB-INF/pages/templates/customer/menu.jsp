@@ -27,7 +27,7 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">                	
                     <ul class="nav navbar-nav">
-                    	<c:forEach items="${menu}" var="m">
+                    	<c:forEach items="${mapSession['menu']}" var="m">
                     		 <c:if test="${m.subordinates.size() > 0}">
                     		 	<li class="dropdown">
 		                        	<a class="dropdown-toggle" data-toggle="dropdown" href="${m.link}">

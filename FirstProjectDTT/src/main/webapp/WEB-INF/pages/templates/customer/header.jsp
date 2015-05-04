@@ -33,42 +33,6 @@
             </div>
 		 </div>		
 	</div> 
-
-	<!-- Navigation -->
-	<!-- <nav class="navbar navbar-inverse  navbar-fixed-top">
-	<div class="container-fluid">
-		<div class="navbar-header">			
-			<a class="navbar-brand" href="#page-top"> MASTER </a>
-		</div>
-				
-		Collect the nav links, forms, and other content for toggling
-		<div class="collapse navbar-collapse" id="myNavbar">			
-			<ul class="nav navbar-nav navbar-right">										
-				<li><a href="#about">Đăng nhập</a></li>
-				<li>
-					<a href="#download">
-						<span class="glyphicon glyphicon-shopping-cart"></span>
-					</a>
-				</li>
-			</ul>
-		</div> -->
-		
-		<!-- /.navbar-collapse -->
-	</div>
-	<!-- /.container --> 
-	</nav>
-
-	<!-- Slider -->
-	<div id="myCarousel" class="carousel slide" data-ride="carousel">
-
-		<!-- Indicators -->
-		<ol class="carousel-indicators">
-			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-			<li data-target="#myCarousel" data-slide-to="1"></li>
-			<li data-target="#myCarousel" data-slide-to="2"></li>
-			<li data-target="#myCarousel" data-slide-to="3"></li>
-		</ol>
-
-		
+	<!--end container --> 
 </body>
 </html>

@@ -13,7 +13,10 @@
 	<tiles:insertAttribute name="titles"></tiles:insertAttribute>
 </title>
 </head>
-<body>	
+<body>		
+	<c:if test="${mapSession == null}">
+		<c:redirect url="${pageContext.request.contextPath}/"/>
+	</c:if>
 	<tiles:insertAttribute name="header"></tiles:insertAttribute>
 	<tiles:insertAttribute name="slider"></tiles:insertAttribute>
 	<tiles:insertAttribute name="menu"></tiles:insertAttribute>

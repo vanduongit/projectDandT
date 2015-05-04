@@ -5,6 +5,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="<c:url value="/bootstrap/js/bootstrap.min.js"/>"></script>
+<script src="<c:url value="/bootstrap/js/jquery-1.11.2.min.js"/>"></script>
 <title>Insert title here</title>
 </head>
 <body>
@@ -68,9 +70,74 @@
 		<!-- End row 1 -->
 		<div class="row">
 			<div class="col-md-12">
-				
+				<!-- Tab -->
+				<div class="tabbable">
+					<ul class="nav nav-tabs">
+				        <li class="active"><a href="#tabDetail" data-toggle="tab">Thông tin chi tiết</a></li>
+				        <li><a href="#tabVote" data-toggle="tab">Đánh giá sản phẩm</a></li>
+	   				 </ul>
+		    		<div class="tab-content">
+		        		<div class="tab-pane active" id="tabDetail">
+		        			<h3>Mô tả sản phẩm</h3>
+		        			<p>${p.description}</p>
+				            <table>
+				            	
+				            	<tr><td>Thuộc tính 1:</td><td>Giá trị</td></tr>
+				            	<tr><td>Thuộc tính 1:</td><td>Giá trị</td></tr>
+				            	<tr><td>Thuộc tính 1:</td><td>Giá trị</td></tr>
+				            	<tr><td>Thuộc tính 1:</td><td>Giá trị</td></tr>
+				            	<tr><td>Thuộc tính 1:</td><td>Giá trị</td></tr>
+				            	<tr><td>Thuộc tính 1:</td><td>Giá trị</td></tr>
+				            	<tr><td>Thuộc tính 1:</td><td>Giá trị</td></tr>
+				            	<tr><td>Thuộc tính 1:</td><td>Giá trị</td></tr>
+				            	
+				            </table>
+				        </div>
+				        <div class="tab-pane" id="tabVote">
+				            <h3>Chất lượng sản phẩm</h3>
+				            <b>Lượt thích</b> 
+				            ${p.amountLike} 
+				            <a href="#" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-thumbs-up"></span>Thích</a>
+				            
+				            <h3>Nhận xét sản phẩm</h3>
+				            <c:if test="${p.commentRecords.size() == 0}">
+				            	<b>Chưa có bình luận nào về sản phẩm</b>
+				            </c:if>
+				            <table>				            		
+					            <c:forEach items="${p.commentRecords}" var="comment">
+									<tr>
+										<th>${comment.name}</th>
+									</tr>		          
+									<tr>
+										<td><p>${comment.content}</td>
+									</tr>  	
+					            </c:forEach>
+				            </table>
+				            
+				            <h3>Bình luận của bạn</h3>
+				            <form id="formComment" role="form">
+				            	<div class="form-group">
+				            		<label for="name">Họ tên bạn:</label>
+      								<input type="text" class="form-control" id="name" placeholder="Enter your name">
+				            	</div>
+				            	
+				            	<div class="form-group">
+				            		<label for="email">Email:</label>
+      								<input type="email" class="form-control" id="email" placeholder="Enter email">
+				            	</div>
+				            	<div class="form-group">
+ 									<label for="comment">Nhận xét:</label>
+ 									<textarea class="form-control" rows="5" id="comment"></textarea>
+								</div>
+				            </form>
+				        </div>
+		    		</div>
+	    		</div>
+	    		<!-- End tab -->
 			</div>
+			<!-- End col -->
 		</div>
+		<!-- End row 2 -->
 	</div>
 	<!-- End container -->
 	
