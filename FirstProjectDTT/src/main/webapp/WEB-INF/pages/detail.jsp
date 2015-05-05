@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script src="<c:url value="/bootstrap/js/bootstrap.min.js"/>"></script>
 <script src="<c:url value="/bootstrap/js/jquery-1.11.2.min.js"/>"></script>
+
 <title>Insert title here</title>
 </head>
 <body>
@@ -96,13 +97,14 @@
 				        <div class="tab-pane" id="tabVote">
 				            <h3>Chất lượng sản phẩm</h3>
 				            <b>Lượt thích</b> 
-				            ${p.amountLike} 
-				            <a href="#" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-thumbs-up"></span>Thích</a>
+				            <div id="result">${p.amountLike}</div>
+				            <a href="javascript:crunchifyAjax()" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-thumbs-up"></span>Thích</a>
 				            
 				            <h3>Nhận xét sản phẩm</h3>
 				            <c:if test="${p.commentRecords.size() == 0}">
 				            	<b>Chưa có bình luận nào về sản phẩm</b>
 				            </c:if>
+				            
 				            <table>				            		
 					            <c:forEach items="${p.commentRecords}" var="comment">
 									<tr>
@@ -140,6 +142,16 @@
 		<!-- End row 2 -->
 	</div>
 	<!-- End container -->
-	
+	<script type="text/javascript">
+    function crunchifyAjax() {
+    	alert('Cảm ơn bạn đã vote cho sản phẩm');
+        $.ajax({
+            url : '../like/${p.id}',
+            success : function(data) {
+                $('#result').html(data);
+            }
+        });
+    }
+	</script>
 </body>
 </html>

@@ -38,5 +38,13 @@ public class ProductServiceImpl implements ProductService {
 		Product p=productDao.findById(id);
 		return p;
 	}
+
+
+	public Product likeProduct(int id) {
+		Product p=productDao.findById(id);
+		//p.setAmount(p.getAmount()+1);
+		//productDao.update(p);
+		return p;
+	}
  
 }

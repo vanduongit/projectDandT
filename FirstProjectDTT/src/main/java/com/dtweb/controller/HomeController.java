@@ -8,8 +8,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import com.dtweb.model.Product;
 import com.dtweb.services.ConfigSysService;
 import com.dtweb.services.MenuService;
 import com.dtweb.services.ProductService;
@@ -77,6 +80,15 @@ public class HomeController {
 		model.addAttribute("product", productService.getProductById(id));
 		
 		return "detail";
+	}
+	
+	@RequestMapping(value="/product/like/{id}", method=RequestMethod.GET)
+	public @ResponseBody String likeProduct(@PathVariable("id") int id,Model model){
+		String data=null;
+		Product p=productService.likeProduct(id);
+		data=p.getAmountLike()+1+"";
+		
+		return data;
 	}
 //	@RequestMapping(value="/edit", method=RequestMethod.POST)
 //	public String edit(@ModelAttribute("person") Person person){
