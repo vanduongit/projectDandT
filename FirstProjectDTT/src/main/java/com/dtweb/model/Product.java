@@ -85,8 +85,6 @@ public class Product {
 	@Column(name = "LANG")
 	private String lang;
 	
-	@Column(name = "PICE_OLD")
-	private String piceOld;
 	
 	@Column(name = "IMAGE1")
 	private String image1;
@@ -155,9 +153,9 @@ public class Product {
 	@Column(name = "DATE_CREATE")
 	private Date createDate;
 	
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "product")
-	private Set<Promotion> promotionRecords = new HashSet<Promotion>(
-			0);
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "PROMO_ID")
+	private Promotion promo;
 	
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "product")
 	private Set<CommentProduct> commentRecords = new HashSet<CommentProduct>(
@@ -222,18 +220,7 @@ public class Product {
 	public void setPriority(int priority) {
 		this.priority = priority;
 	}
-	/**
-	 * @return the promotionRecords
-	 */
-	public Set<Promotion> getPromotionRecords() {
-		return promotionRecords;
-	}
-	/**
-	 * @param promotionRecords the promotionRecords to set
-	 */
-	public void setPromotionRecords(Set<Promotion> promotionRecords) {
-		this.promotionRecords = promotionRecords;
-	}
+	
 	/**
 	 * @param content the content to set
 	 */
@@ -397,19 +384,7 @@ public class Product {
 	 */
 	public void setLang(String lang) {
 		this.lang = lang;
-	}
-	/**
-	 * @return the piceOld
-	 */
-	public String getPiceOld() {
-		return piceOld;
-	}
-	/**
-	 * @param piceOld the piceOld to set
-	 */
-	public void setPiceOld(String piceOld) {
-		this.piceOld = piceOld;
-	}
+	}	
 	/**
 	 * @return the image1
 	 */
@@ -693,18 +668,18 @@ public class Product {
 	public void setOrderDetails(Set<OrderDetail> orderDetails) {
 		this.orderDetails = orderDetails;
 	}
+	
 	public Product(String tag, String name, String content, String detail,
 			int priority, int index, float price, String tinyImage,
 			String bigImage, Date dateTime, Brand brand, int brandTag,
 			String title, String description, String keyword, int active,
-			int ord, String lang, String piceOld, String image1, String image2,
+			int ord, String lang, String image1, String image2,
 			String image3, String image4, String image5, String codePro,
 			int amount, int amountToBuy, int amountLike, Date beginDate,
 			Date endDate, String property1, String property2, String property3,
 			String property4, String property5, String property6,
 			String property7, Category category, String cateTag,
-			String createUser, Date createDate,
-			Set<Promotion> promotionRecords,
+			String createUser, Date createDate, Promotion promo,
 			Set<CommentProduct> commentRecords, Set<OrderDetail> orderDetails) {
 		super();
 		this.tag = tag;
@@ -725,7 +700,6 @@ public class Product {
 		this.active = active;
 		this.ord = ord;
 		this.lang = lang;
-		this.piceOld = piceOld;
 		this.image1 = image1;
 		this.image2 = image2;
 		this.image3 = image3;
@@ -748,9 +722,21 @@ public class Product {
 		this.cateTag = cateTag;
 		this.createUser = createUser;
 		this.createDate = createDate;
-		this.promotionRecords = promotionRecords;
+		this.promo = promo;
 		this.commentRecords = commentRecords;
 		this.orderDetails = orderDetails;
+	}
+	/**
+	 * @return the promo
+	 */
+	public Promotion getPromo() {
+		return promo;
+	}
+	/**
+	 * @param promo the promo to set
+	 */
+	public void setPromo(Promotion promo) {
+		this.promo = promo;
 	}
 	public Product() {		
 	}
