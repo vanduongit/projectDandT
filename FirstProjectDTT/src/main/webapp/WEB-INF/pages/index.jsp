@@ -31,6 +31,7 @@
 								<div class="caption">
 									<h3>${p.name}</h3>
 									<p>${p.price}</p>
+									<p>${p.promo.discountValue}</p>
 									<p>
 										<a href="#" class="btn btn-primary">Buy Now!</a> <a href="#"
 											class="btn btn-default">More Info</a>

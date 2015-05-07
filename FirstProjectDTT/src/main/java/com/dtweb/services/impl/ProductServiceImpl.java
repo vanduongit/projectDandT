@@ -19,8 +19,7 @@ public class ProductServiceImpl implements ProductService {
 	@Autowired
 	ProductDao productDao;
 	
-	public List<Product> getAllProduct() {
-		// TODO Auto-generated method stub
+	public List<Product> getAllProduct() {		
 		return productDao.findAll();
 	}
 

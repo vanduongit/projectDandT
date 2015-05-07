@@ -153,7 +153,7 @@ public class Product {
 	@Column(name = "DATE_CREATE")
 	private Date createDate;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "PROMO_ID")
 	private Promotion promo;
 	
