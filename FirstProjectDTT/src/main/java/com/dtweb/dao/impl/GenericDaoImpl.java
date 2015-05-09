@@ -7,6 +7,8 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import com.dtweb.dao.GenericDao;
 
 public class GenericDaoImpl<T> implements GenericDao<T> {
@@ -40,6 +42,7 @@ public class GenericDaoImpl<T> implements GenericDao<T> {
 		entityManager.persist( entity );
 	}
 
+	
 	public void update(T entity) {
 		entityManager.merge( entity );
 	}

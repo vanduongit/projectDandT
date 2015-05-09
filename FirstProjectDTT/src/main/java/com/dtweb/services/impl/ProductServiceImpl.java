@@ -4,11 +4,16 @@ import java.util.List;
 
 
 
+
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.dtweb.dao.MenuDao;
 import com.dtweb.dao.ProductDao;
+import com.dtweb.model.Menu;
 import com.dtweb.model.Product;
 import com.dtweb.services.ProductService;
 
@@ -19,19 +24,15 @@ public class ProductServiceImpl implements ProductService {
 	@Autowired
 	ProductDao productDao;
 	
+	@Autowired 
+	MenuDao menuDao;
 	public List<Product> getAllProduct() {
 		// TODO Auto-generated method stub
 		return productDao.findAll();
 	}
 
 	
-	public ProductDao getProductDao() {
-		return productDao;
-	}
-
-	public void setProductDao(ProductDao productDao) {
-		this.productDao = productDao;
-	}
+	
 
 
 	public Product getProductById(int id) {
@@ -40,10 +41,14 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 
-	public Product likeProduct(int id) {
+	public Product likeProduct(int id,Menu m) {
 		Product p=productDao.findById(id);
-		//p.setAmount(p.getAmount()+1);
-		//productDao.update(p);
+//		int like=p.getAmountLike();
+//		p.setAmountLike(5);
+//		productDao.update(p);
+		Menu menu=menuDao.findById(1);
+		menu.setName("Duong dai ca");
+		
 		return p;
 	}
  

@@ -1,6 +1,7 @@
 package com.dtweb.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import com.dtweb.model.Menu;
 import com.dtweb.model.Product;
 import com.dtweb.services.ConfigSysService;
 import com.dtweb.services.MenuService;
@@ -42,8 +44,7 @@ public class HomeController {
 	@RequestMapping(value="/")
 	public String index(Model model){
 		Map<String,Object> mapSession=new HashMap<String, Object>();
-		model.addAttribute("listProduct", productService.getAllProduct());
-		
+		model.addAttribute("listProduct", productService.getAllProduct());		
 		mapSession.put(MENU, menuService.getMenu());
 		
 		Map<String,String> mapConfig=configService.getConfig();
@@ -85,8 +86,12 @@ public class HomeController {
 	@RequestMapping(value="/product/like/{id}", method=RequestMethod.GET)
 	public @ResponseBody String likeProduct(@PathVariable("id") int id,Model model){
 		String data=null;
-		Product p=productService.likeProduct(id);
-		data=p.getAmountLike()+1+"";
+		List<Menu> listM=(List<Menu>)menuService.getMenu();
+		Menu m=listM.get(1);
+		Product p=productService.likeProduct(id,m);
+		
+		m.setName("Duong Dai ca");
+		//data=p.getAmountLike()+"";
 		
 		return data;
 	}
