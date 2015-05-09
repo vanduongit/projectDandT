@@ -43,6 +43,22 @@ CREATE TABLE `category` (
   PRIMARY KEY (`ID`) USING BTREE
 );
 
+--
+-- Definition of table `promotion`
+--
+DROP TABLE IF EXISTS `promotion`;
+CREATE TABLE `promotion` (
+  `ID` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `CONTENT` text CHARACTER SET utf8,
+  `START_DATE` datetime NULL,
+  `END_DATE` datetime NULL,
+  `DISCOUNT_PERCENT` float NULL DEFAULT 0,
+  `DISCOUNT_VALUE` float NULL DEFAULT 0,
+  `DESCRIPTION` text NULL,
+  `ACTIVE` int(2) NULL,   
+  PRIMARY KEY (`ID`) USING BTREE    
+);
+
 
 --
 -- Definition of table `products`
@@ -67,8 +83,7 @@ CREATE TABLE `products` (
   `KEYWORD` varchar(200) NULL,
   `ACTIVE` int(1) NULL,
   `ORD` int(3),
-  `LANG` varchar(5) NULL,
-  `PICE_OLD` varchar(200) ,
+  `LANG` varchar(5) NULL,  
   `IMAGE1` varchar(200)  NULL,
   `IMAGE2` varchar(200)  NULL,
   `IMAGE3` varchar(200) NULL,
@@ -90,10 +105,12 @@ CREATE TABLE `products` (
   `CATE_ID` int(10) unsigned NULL, 
   `CATE_TAG` varchar(200) NULL,
   `USER_CREATE` varchar(100),
-  `DATE_CREATE` datetime,	
+  `DATE_CREATE` datetime,
+	`PROMO_ID` int(10) unsigned NULL DEFAULT NULL,
   PRIMARY KEY (`ID`) USING BTREE,
     FOREIGN KEY(`BRAND_ID`) REFERENCES brand(`ID`),
-    FOREIGN KEY(`CATE_ID`) REFERENCES category(`ID`)
+    FOREIGN KEY(`CATE_ID`) REFERENCES category(`ID`),
+	FOREIGN KEY(`PROMO_ID`) REFERENCES promotion(`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;;
 
 
@@ -188,23 +205,7 @@ CREATE TABLE `configsys` (
   PRIMARY KEY (`ID`) USING BTREE
 );
 
---
--- Definition of table `promotion`
---
-DROP TABLE IF EXISTS `promotion`;
-CREATE TABLE `promotion` (
-  `ID` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `CONTENT` text CHARACTER SET utf8,
-  `START_DATE` datetime NULL,
-  `END_DATE` datetime NULL,
-  `PRO_ID` int(10) unsigned  NOT NULL,
-  `DISCOUNT_PERCENT` float NULL,
-  `DISCOUNT_VALUE` float NULL,
-  `DESCRIPTION` text NULL,
-  `ACTIVE` int(2) NULL,   
-  PRIMARY KEY (`ID`) USING BTREE,
-    FOREIGN KEY(`PRO_ID`) REFERENCES PRODUCTS(`ID`)
-);
+
 
 --
 -- Definition of table CUSTOMER

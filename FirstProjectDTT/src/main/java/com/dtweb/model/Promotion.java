@@ -43,9 +43,6 @@ public class Promotion {
 	@Column(name = "END_DATE")
 	private Date endDate;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "PRO_ID", nullable = false)
-	private Product product;
 	
 	@Column(name = "DISCOUNT_PERCENT")
 	private float discountPercent;
@@ -58,6 +55,10 @@ public class Promotion {
 	
 	@Column(name = "ACTIVE")
 	private int active;
+	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "promo")
+	private Set<Product> productRecords = new HashSet<Product>(
+			0);
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "promotion")
 	private Set<OrderDetail> orderDetails = new HashSet<OrderDetail>(
@@ -121,20 +122,8 @@ public class Promotion {
 	 */
 	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
-	}
+	}	
 	
-	/**
-	 * @return the product
-	 */
-	public Product getProduct() {
-		return product;
-	}
-	/**
-	 * @param product the product to set
-	 */
-	public void setProduct(Product product) {
-		this.product = product;
-	}
 	/**
 	 * @return the discountPercent
 	 */
@@ -187,13 +176,12 @@ public class Promotion {
 	
 	
 	public Promotion(String content, Date startDate, Date endDate,
-			Product product, float discountPercent, float discountValue,
+			 float discountPercent, float discountValue,
 			String description, int active, Set<OrderDetail> orderDetails) {
 		super();
 		this.content = content;
 		this.startDate = startDate;
 		this.endDate = endDate;
-		this.product = product;
 		this.discountPercent = discountPercent;
 		this.discountValue = discountValue;
 		this.description = description;
