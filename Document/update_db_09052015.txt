@@ -1,0 +1,4 @@
+
+-- Delete column index in table Products, because same keyword of mysql
+USE SALE_WATCH;
+ALTER TABLE `products` DROP `INDEX`;

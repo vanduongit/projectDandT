@@ -43,9 +43,9 @@ public class ProductServiceImpl implements ProductService {
 
 	public Product likeProduct(int id,Menu m) {
 		Product p=productDao.findById(id);
-//		int like=p.getAmountLike();
-//		p.setAmountLike(5);
-//		productDao.update(p);
+		int like=p.getAmountLike();
+		p.setAmountLike(5);
+		productDao.update(p);
 		Menu menu=menuDao.findById(1);
 		menu.setName("Duong dai ca");
 		

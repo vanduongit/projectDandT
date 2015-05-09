@@ -44,9 +44,7 @@ public class Product {
 	
 	@Column(name = "PRIORITY")
 	private int priority;
-	
-	@Column(name = "INDEX")
-	private int index;
+		
 	
 	@Column(name = "PRICE")
 	private float price;
@@ -238,19 +236,7 @@ public class Product {
 	 */
 	public void setDetail(String detail) {
 		this.detail = detail;
-	}
-	/**
-	 * @return the index
-	 */
-	public int getIndex() {
-		return index;
-	}
-	/**
-	 * @param index the index to set
-	 */
-	public void setIndex(int index) {
-		this.index = index;
-	}
+	}	
 	/**
 	 * @return the price
 	 */
@@ -669,25 +655,26 @@ public class Product {
 		this.orderDetails = orderDetails;
 	}
 	
-	public Product(String tag, String name, String content, String detail,
-			int priority, int index, float price, String tinyImage,
+	
+	public Product(int id, String tag, String name, String content,
+			String detail, int priority, float price, String tinyImage,
 			String bigImage, Date dateTime, Brand brand, int brandTag,
 			String title, String description, String keyword, int active,
-			int ord, String lang, String image1, String image2,
-			String image3, String image4, String image5, String codePro,
-			int amount, int amountToBuy, int amountLike, Date beginDate,
-			Date endDate, String property1, String property2, String property3,
+			int ord, String lang, String image1, String image2, String image3,
+			String image4, String image5, String codePro, int amount,
+			int amountToBuy, int amountLike, Date beginDate, Date endDate,
+			String property1, String property2, String property3,
 			String property4, String property5, String property6,
 			String property7, Category category, String cateTag,
 			String createUser, Date createDate, Promotion promo,
 			Set<CommentProduct> commentRecords, Set<OrderDetail> orderDetails) {
 		super();
+		this.id = id;
 		this.tag = tag;
 		this.name = name;
 		this.content = content;
 		this.detail = detail;
 		this.priority = priority;
-		this.index = index;
 		this.price = price;
 		this.tinyImage = tinyImage;
 		this.bigImage = bigImage;
