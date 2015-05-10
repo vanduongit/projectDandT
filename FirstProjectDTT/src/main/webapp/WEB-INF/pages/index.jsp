@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="ISO-8859-1"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
@@ -16,7 +16,7 @@
 		<!-- Title -->
 		<div class="row">
 			<div class="col-lg-12">
-				<h3>San Pham Noi Bat</h3>
+				<h3>Sản Phẩm Mới</h3>
 			</div>
 		</div>
 
@@ -33,8 +33,8 @@
 										src="resources/img/ProductImages/${p.tinyImage}" alt=""></a>
 									<div class="caption">
 										<h3>${p.name}</h3>										
-										<p>	Gi�: <strike>${p.price} VND</strike></p>
-										<div class="promoteprice"><p>Gi� KM: ${p.promotePrice} VND</p></div>										
+										<p>	Giá: <strike>${p.price} VND</strike></p>
+										<div class="promoteprice"><p>Giá KM: ${p.promotePrice} VND</p></div>										
 										<p>
 											<a href="#" class="btn btn-primary">Buy Now!</a> <a href="#"
 												class="btn btn-default">More Info</a>
@@ -51,7 +51,7 @@
 										src="resources/img/ProductImages/${p.tinyImage}" alt=""></a>
 									<div class="caption"">
 										<h3>${p.name}</h3>																		
-										<div class="promoteprice"><p>Gi�: ${p.price} VND</p></div>
+										<div class="promoteprice"><p>Giá: ${p.price} VND</p></div>
 										<p style="visibility: collapse;">hidden</p>																									
 										<p>
 											<a href="#" class="btn btn-primary">Buy Now!</a> <a href="#"
@@ -69,7 +69,7 @@
 		<!-- Title -->
 		<div class="row">
 			<div class="col-lg-12">
-				<h3>San Pham Hot</h3>
+				<h3>Sản Phẩm Bán Chạy</h3>
 			</div>
 		</div>
 
@@ -86,8 +86,8 @@
 										src="resources/img/ProductImages/${p.tinyImage}" alt=""></a>
 									<div class="caption">
 										<h3>${p.name}</h3>										
-										<p>	Gi�: <strike>${p.price}</strike></p>
-										<p>Gi� KM: ${p.promotePrice}</p>										
+										<p>	Giá: <strike>${p.price}</strike></p>
+										<p>Giá KM: ${p.promotePrice}</p>										
 										<p>
 											<a href="#" class="btn btn-primary">Buy Now!</a> <a href="#"
 												class="btn btn-default">More Info</a>
@@ -104,7 +104,7 @@
 										src="resources/img/ProductImages/${p.tinyImage}" alt=""></a>
 									<div class="caption"">
 										<h3>${p.name}</h3>																		
-										<p>Gi�: ${p.price}</p>
+										<p>Giá: ${p.price}</p>
 										<p style="visibility: collapse;">hidden</p>																									
 										<p>
 											<a href="#" class="btn btn-primary">Buy Now!</a> <a href="#"
@@ -121,7 +121,7 @@
 		<!-- Title -->
 		<div class="row">
 			<div class="col-lg-12">
-				<h3>San Pham</h3>
+				<h3>Sản Phẩm Khuyến Mãi</h3>
 			</div>
 		</div>
 
@@ -137,8 +137,8 @@
 										src="resources/img/ProductImages/${p.tinyImage}" alt=""></a>
 									<div class="caption">
 										<h3>${p.name}</h3>										
-										<p>	Gi�: <strike>${p.price}</strike></p>
-										<p>Gi� KM: ${p.promotePrice}</p>										
+										<p>	Giá: <strike>${p.price}</strike></p>
+										<p>Giá KM: ${p.promotePrice}</p>										
 										<p>
 											<a href="#" class="btn btn-primary">Buy Now!</a> <a href="#"
 												class="btn btn-default">More Info</a>
@@ -155,7 +155,7 @@
 										src="resources/img/ProductImages/${p.tinyImage}" alt=""></a>
 									<div class="caption"">
 										<h3>${p.name}</h3>																		
-										<p>Gi�: ${p.price}</p>
+										<p>Giá: ${p.price}</p>
 										<p style="visibility: collapse;">hidden</p>																									
 										<p>
 											<a href="#" class="btn btn-primary">Buy Now!</a> <a href="#"
