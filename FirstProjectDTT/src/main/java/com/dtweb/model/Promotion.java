@@ -3,6 +3,7 @@
  */
 package com.dtweb.model;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -174,7 +175,7 @@ public class Promotion {
 	
 	
 	public Promotion(String content, Date startDate, Date endDate,
-			 float discountPercent, float discountValue,
+			float discountPercent, float discountValue,
 			String description, int active, Set<OrderDetail> orderDetails) {
 		super();
 		this.content = content;

@@ -1,6 +1,7 @@
 package com.dtweb.dto;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 
 import com.dtweb.model.Brand;

@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="css/HomePage.css">
 </head>
 <body>
 	<!-- Page Content -->
@@ -33,8 +33,8 @@
 										src="resources/img/ProductImages/${p.tinyImage}" alt=""></a>
 									<div class="caption">
 										<h3>${p.name}</h3>										
-										<p>	Giá: <strike>${p.price}</strike></p>
-										<p>Giá KM: ${p.promotePrice}</p>										
+										<p>	Giá: <strike>${p.price} VND</strike></p>
+										<div class="promoteprice"><p>Giá KM: ${p.promotePrice} VND</p></div>										
 										<p>
 											<a href="#" class="btn btn-primary">Buy Now!</a> <a href="#"
 												class="btn btn-default">More Info</a>
@@ -51,7 +51,7 @@
 										src="resources/img/ProductImages/${p.tinyImage}" alt=""></a>
 									<div class="caption"">
 										<h3>${p.name}</h3>																		
-										<p>Giá: ${p.price}</p>
+										<div class="promoteprice"><p>Giá: ${p.price} VND</p></div>
 										<p style="visibility: collapse;">hidden</p>																									
 										<p>
 											<a href="#" class="btn btn-primary">Buy Now!</a> <a href="#"
