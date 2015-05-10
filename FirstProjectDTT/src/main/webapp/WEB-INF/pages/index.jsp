@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
@@ -25,20 +25,43 @@
 			<!-- list of the best feature products. -->
 			<c:if test="${not empty listProduct}">				
 					<c:forEach var="p" items="${listProduct}">
-						<div class="col-md-3 col-sm-6 hero-feature">
-							<div class="thumbnail">
-								<a href="product/detail/${p.id}"><img src="resources/img/ProductImages/${p.tinyImage}" alt=""></a>
-								<div class="caption">
-									<h3>${p.name}</h3>
-									<p>${p.price}</p>
-									<p>${p.promo.discountValue}</p>
-									<p>
-										<a href="#" class="btn btn-primary">Buy Now!</a> <a href="#"
-											class="btn btn-default">More Info</a>
-									</p>
+					<c:choose>
+						<c:when test="${p.promotePrice > 0}">
+							<div class="col-md-3 col-sm-6 hero-feature">
+								<div class="thumbnail">
+									<a href="product/detail/${p.id}"><img
+										src="resources/img/ProductImages/${p.tinyImage}" alt=""></a>
+									<div class="caption">
+										<h3>${p.name}</h3>										
+										<p>	Giá: <strike>${p.price}</strike></p>
+										<p>Giá KM: ${p.promotePrice}</p>										
+										<p>
+											<a href="#" class="btn btn-primary">Buy Now!</a> <a href="#"
+												class="btn btn-default">More Info</a>
+										</p>
+									</div>
 								</div>
 							</div>
-						</div>						
+						</c:when>
+
+						<c:otherwise>
+						<div class="col-md-3 col-sm-6 hero-feature">
+								<div class="thumbnail">
+									<a href="product/detail/${p.id}"><img
+										src="resources/img/ProductImages/${p.tinyImage}" alt=""></a>
+									<div class="caption"">
+										<h3>${p.name}</h3>																		
+										<p>Giá: ${p.price}</p>
+										<p style="visibility: collapse;">hidden</p>																									
+										<p>
+											<a href="#" class="btn btn-primary">Buy Now!</a> <a href="#"
+												class="btn btn-default">More Info</a>
+										</p>
+									</div>
+								</div>
+							</div>
+						</c:otherwise>
+					</c:choose>		
 					</c:forEach>				
 			</c:if>
 		</div>
@@ -52,28 +75,49 @@
 
 		<!-- Page Features -->
 		<div class="row text-center">
-			<!-- list of hottest products -->
+			<!-- list of the best feature products. -->
 			<c:if test="${not empty listProduct}">				
-						<c:forEach var="p" items="${listProduct}">
+					<c:forEach var="p" items="${listProduct}">
+					<c:choose>
+						<c:when test="${p.promotePrice > 0}">
 							<div class="col-md-3 col-sm-6 hero-feature">
 								<div class="thumbnail">
-									<a href="#"><img src="resources/img/ProductImages/${p.tinyImage}" alt=""></a>
+									<a href="product/detail/${p.id}"><img
+										src="resources/img/ProductImages/${p.tinyImage}" alt=""></a>
 									<div class="caption">
-										<h3>${p.name}</h3>
-										<p>${p.price}</p>
+										<h3>${p.name}</h3>										
+										<p>	Giá: <strike>${p.price}</strike></p>
+										<p>Giá KM: ${p.promotePrice}</p>										
 										<p>
 											<a href="#" class="btn btn-primary">Buy Now!</a> <a href="#"
 												class="btn btn-default">More Info</a>
 										</p>
 									</div>
 								</div>
-							</div>						
-						</c:forEach>				
-				</c:if>
-					
+							</div>
+						</c:when>
 
+						<c:otherwise>
+						<div class="col-md-3 col-sm-6 hero-feature">
+								<div class="thumbnail">
+									<a href="product/detail/${p.id}"><img
+										src="resources/img/ProductImages/${p.tinyImage}" alt=""></a>
+									<div class="caption"">
+										<h3>${p.name}</h3>																		
+										<p>Giá: ${p.price}</p>
+										<p style="visibility: collapse;">hidden</p>																									
+										<p>
+											<a href="#" class="btn btn-primary">Buy Now!</a> <a href="#"
+												class="btn btn-default">More Info</a>
+										</p>
+									</div>
+								</div>
+							</div>
+						</c:otherwise>
+					</c:choose>		
+					</c:forEach>				
+			</c:if>
 		</div>
-
 		<!-- Title -->
 		<div class="row">
 			<div class="col-lg-12">
@@ -81,28 +125,49 @@
 			</div>
 		</div>
 
-		<!-- Page Features -->
 		<div class="row text-center">
-		<!-- list of hottest products -->
+			<!-- list of the best feature products. -->
 			<c:if test="${not empty listProduct}">				
-						<c:forEach var="p" items="${listProduct}">
+					<c:forEach var="p" items="${listProduct}">
+					<c:choose>
+						<c:when test="${p.promotePrice > 0}">
 							<div class="col-md-3 col-sm-6 hero-feature">
 								<div class="thumbnail">
-									<a href="#"><img src="resources/img/ProductImages/${p.tinyImage}" alt=""></a>
+									<a href="product/detail/${p.id}"><img
+										src="resources/img/ProductImages/${p.tinyImage}" alt=""></a>
 									<div class="caption">
-										<h3>${p.name}</h3>
-										<p>${p.price}</p>
+										<h3>${p.name}</h3>										
+										<p>	Giá: <strike>${p.price}</strike></p>
+										<p>Giá KM: ${p.promotePrice}</p>										
 										<p>
 											<a href="#" class="btn btn-primary">Buy Now!</a> <a href="#"
 												class="btn btn-default">More Info</a>
 										</p>
 									</div>
 								</div>
-							</div>						
-						</c:forEach>				
-				</c:if>
+							</div>
+						</c:when>
+
+						<c:otherwise>
+						<div class="col-md-3 col-sm-6 hero-feature">
+								<div class="thumbnail">
+									<a href="product/detail/${p.id}"><img
+										src="resources/img/ProductImages/${p.tinyImage}" alt=""></a>
+									<div class="caption"">
+										<h3>${p.name}</h3>																		
+										<p>Giá: ${p.price}</p>
+										<p style="visibility: collapse;">hidden</p>																									
+										<p>
+											<a href="#" class="btn btn-primary">Buy Now!</a> <a href="#"
+												class="btn btn-default">More Info</a>
+										</p>
+									</div>
+								</div>
+							</div>
+						</c:otherwise>
+					</c:choose>		
+					</c:forEach>				
+			</c:if>
 		</div>
-		<!-- /.row -->
-	</div>
 </body>
 </html>

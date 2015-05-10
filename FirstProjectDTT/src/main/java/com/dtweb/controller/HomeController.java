@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import com.dtweb.dto.ProductDTO;
 import com.dtweb.model.Menu;
 import com.dtweb.model.Product;
 import com.dtweb.services.ConfigSysService;
@@ -43,8 +44,8 @@ public class HomeController {
 	
 	@RequestMapping(value="/")
 	public String index(Model model){
-		Map<String,Object> mapSession=new HashMap<String, Object>();
-		model.addAttribute("listProduct", productService.getAllProduct());		
+		Map<String,Object> mapSession=new HashMap<String, Object>();		
+		model.addAttribute("listProduct", productService.getAllProductDTO());		
 		mapSession.put(MENU, menuService.getMenu());
 		
 		Map<String,String> mapConfig=configService.getConfig();
