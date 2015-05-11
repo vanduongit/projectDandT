@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
+  <widgets xsi:type="model:TabbedPane" id="83" x="524" y="1488" width="952" height="280" text="Sản phẩm hãng Senko" measuredWidth="952" measuredHeight="280" selection="0">
+    <items x="10" y="0" width="138" height="27" text="Sản phẩm hãng Senko"/>
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Rectangle" id="84" x="565" y="1536" width="184" height="159" measuredWidth="184" measuredHeight="159">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="85" x="585" y="1702" text="Tên sản phẩm" measuredWidth="113" measuredHeight="31">
+    <font size="17px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="86" x="609" y="1732" text="Giá VNĐ" measuredWidth="62" measuredHeight="28">
+    <font size="15px"/>
+  </widgets>
+  <widgets xsi:type="model:Rectangle" id="87" x="796" y="1536" width="184" height="159" measuredWidth="184" measuredHeight="159">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="88" x="820" y="1704" text="Tên sản phẩm" measuredWidth="113" measuredHeight="31">
+    <font size="17px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="89" x="839" y="1734" text="Giá VNĐ" measuredWidth="62" measuredHeight="28">
+    <font size="15px"/>
+  </widgets>
+  <widgets xsi:type="model:Rectangle" id="90" x="1020" y="1536" width="184" height="159" measuredWidth="184" measuredHeight="159">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="91" x="1052" y="1704" text="Tên sản phẩm" measuredWidth="113" measuredHeight="31">
+    <font size="17px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="92" x="1076" y="1732" text="Giá VNĐ" measuredWidth="62" measuredHeight="28">
+    <font size="15px"/>
+  </widgets>
+  <widgets xsi:type="model:Rectangle" id="93" x="1236" y="1536" width="184" height="159" measuredWidth="184" measuredHeight="159">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="94" x="1268" y="1702" text="Tên sản phẩm" measuredWidth="113" measuredHeight="31">
+    <font size="17px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="95" x="1292" y="1732" text="Giá VNĐ" measuredWidth="62" measuredHeight="28">
+    <font size="15px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="110" x="1379" y="1480" text="Xem tất cả" measuredWidth="97" measuredHeight="36">
+    <font size="20px"/>
+  </widgets>
+  <widgets xsi:type="model:HLine" id="111" x="492" y="2030" width="992" measuredWidth="992" measuredHeight="6"/>
+  <widgets xsi:type="model:Label" id="112" x="1236" y="2046" text="Thông tin liên hệ" measuredWidth="205" measuredHeight="45">
+    <font size="27px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="113" x="1248" y="2100" text="Số điện thoại: 01695306207" measuredWidth="188" measuredHeight="28">
+    <font size="15px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="114" x="1248" y="2127" text="Địa chỉ: Quận 9, TP Hồ CHí Minh" measuredWidth="217" measuredHeight="28">
+    <font size="15px"/>
+  </widgets>
+  <widgets xsi:type="model:Link" id="115" x="1248" y="2154" text="Facebook" measuredWidth="69" measuredHeight="29">
+    <font size="16px"/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="120" x="1440" y="1612" measuredWidth="32" measuredHeight="32" icon="filled-arrow-right (large)"/>
+  <widgets xsi:type="model:Icon" id="123" x="534" y="1612" measuredWidth="32" measuredHeight="32" icon="filled-arrow-left (large)"/>
+  <widgets xsi:type="model:Browser" id="132" x="216" y="8" width="861" height="753" text="Browser&#xA;http://www.DTTWatch.com/Administrator" measuredWidth="861" measuredHeight="753"/>
+  <widgets xsi:type="model:HLine" id="133" x="216" y="120" width="851" measuredWidth="851" measuredHeight="6"/>
+  <widgets xsi:type="model:HLine" id="134" x="216" y="728" width="851" measuredWidth="851" measuredHeight="6"/>
+  <widgets xsi:type="model:WidgetGroup" id="171" x="225" y="65" measuredWidth="832" measuredHeight="67">
+    <widgets xsi:type="model:Image" id="136" width="64" height="52" measuredWidth="64" measuredHeight="52" src="images/home.png"/>
+    <widgets xsi:type="model:Label" id="137" x="95" width="351" text="Đồng Hồ DTT" measuredWidth="351" measuredHeight="67">
+      <font size="43px"/>
+    </widgets>
+    <widgets xsi:type="model:Label" id="138" x="704" y="1" text="Xin chào, Văn Dương" measuredWidth="128" measuredHeight="25" foreground="#3d85c6">
+      <font size="13px"/>
+    </widgets>
+    <widgets xsi:type="model:Image" id="140" x="761" y="31" width="26" height="20" measuredWidth="26" measuredHeight="20" src="images/logout.png"/>
+    <widgets xsi:type="model:Link" id="141" x="790" y="31" text="Thoát" measuredWidth="34" measuredHeight="23">
+      <font/>
+    </widgets>
+  </widgets>
+  <widgets xsi:type="model:Breadcrumbs" id="142" x="221" y="129" text="Trang Chủ,Trang Quản Lí" measuredWidth="154" measuredHeight="23">
+    <font/>
+    <items x="0" y="0" width="56" height="23" text="Trang Chủ"/>
+    <items x="76" y="0" width="75" height="23" text="Trang Quản Lí"/>
+  </widgets>
+  <widgets xsi:type="model:WidgetGroup" id="170" x="226" y="154" height="575" measuredWidth="840" measuredHeight="575">
+    <widgets xsi:type="model:Panel" id="143" width="840" height="575" measuredWidth="840" measuredHeight="575"/>
+    <widgets xsi:type="model:WidgetGroup" id="150" x="10" y="18" height="427" measuredWidth="828" measuredHeight="543">
+      <widgets xsi:type="model:Panel" id="147" width="149" height="167" measuredWidth="149" measuredHeight="167"/>
+      <widgets xsi:type="model:Image" id="148" x="10" y="10" width="131" height="131" measuredWidth="131" measuredHeight="131" src="images/watch.jpg"/>
+      <widgets xsi:type="model:Label" id="149" x="52" y="140" text="Sản Phẩm" measuredWidth="74" measuredHeight="28" foreground="#3d85c6">
+        <font size="15px" bold="true"/>
+      </widgets>
+      <widgets xsi:type="model:Panel" id="152" x="173" width="161" height="168" measuredWidth="161" measuredHeight="168"/>
+      <widgets xsi:type="model:Image" id="153" x="182" y="10" width="135" height="123" measuredWidth="135" measuredHeight="123" src="images/KM.png"/>
+      <widgets xsi:type="model:Label" id="154" x="212" y="140" text="Khuyến Mãi" measuredWidth="88" measuredHeight="28" foreground="#3d85c6">
+        <font size="15px" bold="true"/>
+      </widgets>
+      <widgets xsi:type="model:Panel" id="155" x="345" width="155" height="168" measuredWidth="155" measuredHeight="168"/>
+      <widgets xsi:type="model:Image" id="156" x="355" y="10" width="135" height="123" measuredWidth="135" measuredHeight="123" src="images/brand.jpg"/>
+      <widgets xsi:type="model:Label" id="157" x="372" y="140" text="Nhà Phân Phối" measuredWidth="108" measuredHeight="28" foreground="#3d85c6">
+        <font size="15px" bold="true"/>
+      </widgets>
+      <widgets xsi:type="model:Panel" id="158" x="515" y="2" width="149" height="166" measuredWidth="149" measuredHeight="166"/>
+      <widgets xsi:type="model:Image" id="159" x="525" y="13" width="131" height="120" measuredWidth="131" measuredHeight="120" src="images/comment.jpg"/>
+      <widgets xsi:type="model:Label" id="160" x="556" y="138" text="Bình Luận" measuredWidth="75" measuredHeight="28" foreground="#3d85c6">
+        <font size="15px" bold="true"/>
+      </widgets>
+      <widgets xsi:type="model:WidgetGroup" id="168" x="668" y="4" height="201" measuredWidth="160" measuredHeight="164">
+        <widgets xsi:type="model:Panel" id="162" width="160" height="164" measuredWidth="160" measuredHeight="164"/>
+        <widgets xsi:type="model:Image" id="163" x="15" y="4" width="127" height="125" measuredWidth="127" measuredHeight="125" src="images/customer.jpg"/>
+        <widgets xsi:type="model:Label" id="164" x="32" y="136" text="Khách Hàng" measuredWidth="89" measuredHeight="28" foreground="#3d85c6">
+          <font size="15px" bold="true"/>
+        </widgets>
+      </widgets>
+      <widgets xsi:type="model:WidgetGroup" id="169" x="1" y="172" height="201" measuredWidth="152" measuredHeight="163">
+        <widgets xsi:type="model:WidgetGroup" id="172" measuredWidth="152" measuredHeight="163">
+          <widgets xsi:type="model:Panel" id="165" width="152" height="163" measuredWidth="152" measuredHeight="163"/>
+          <widgets xsi:type="model:Image" id="166" x="10" y="8" width="126" height="124" measuredWidth="126" measuredHeight="124" src="images/order.png"/>
+          <widgets xsi:type="model:Label" id="167" x="39" y="135" text="Đơn Hàng" measuredWidth="75" measuredHeight="28" foreground="#3d85c6">
+            <font size="15px" bold="true"/>
+          </widgets>
+        </widgets>
+      </widgets>
+      <widgets xsi:type="model:WidgetGroup" id="173" x="4" y="172" measuredWidth="809" measuredHeight="371">
+        <widgets xsi:type="model:WidgetGroup" id="174" measuredWidth="809" measuredHeight="371">
+          <widgets xsi:type="model:WidgetGroup" id="178" measuredWidth="809" measuredHeight="371">
+            <widgets xsi:type="model:WidgetGroup" id="179" x="168" width="161" measuredWidth="161" measuredHeight="163">
+              <widgets xsi:type="model:Panel" id="175" width="161" height="163" measuredWidth="161" measuredHeight="163"/>
+              <widgets xsi:type="model:Image" id="176" x="10" y="8" width="139" height="125" measuredWidth="139" measuredHeight="125" src="images/config.jpg"/>
+              <widgets xsi:type="model:Label" id="177" x="41" y="135" width="72" text="Cấu Hình" measuredWidth="72" measuredHeight="28" foreground="#3d85c6">
+                <font size="15px" bold="true"/>
+              </widgets>
+            </widgets>
+            <widgets xsi:type="model:WidgetGroup" id="180" y="208" measuredWidth="496" measuredHeight="163">
+              <widgets xsi:type="model:WidgetGroup" id="196" x="168" measuredWidth="152" measuredHeight="163">
+                <widgets xsi:type="model:Panel" id="181" width="152" height="163" measuredWidth="152" measuredHeight="163"/>
+                <widgets xsi:type="model:Image" id="182" x="6" y="8" width="142" height="126" measuredWidth="142" measuredHeight="126" src="images/menu.png"/>
+                <widgets xsi:type="model:Label" id="183" x="53" y="133" text="Menu" measuredWidth="45" measuredHeight="28" foreground="#3d85c6">
+                  <font size="15px" bold="true"/>
+                </widgets>
+              </widgets>
+              <widgets xsi:type="model:WidgetGroup" id="187" x="344" measuredWidth="152" measuredHeight="163">
+                <widgets xsi:type="model:Panel" id="184" width="152" height="163" measuredWidth="152" measuredHeight="163"/>
+                <widgets xsi:type="model:Image" id="185" x="15" y="8" width="123" height="126" measuredWidth="123" measuredHeight="126" src="images/category.png"/>
+                <widgets xsi:type="model:Label" id="186" x="53" y="133" text="Category" measuredWidth="68" measuredHeight="28" foreground="#3d85c6">
+                  <font size="15px" bold="true"/>
+                </widgets>
+              </widgets>
+              <widgets xsi:type="model:WidgetGroup" id="188" measuredWidth="152" measuredHeight="163">
+                <widgets xsi:type="model:Panel" id="189" width="152" height="163" measuredWidth="152" measuredHeight="163"/>
+                <widgets xsi:type="model:Image" id="190" x="15" y="8" width="127" height="124" measuredWidth="127" measuredHeight="124" src="images/admin.jpg"/>
+                <widgets xsi:type="model:Label" id="191" x="32" y="131" text="Administrator" measuredWidth="104" measuredHeight="28" foreground="#3d85c6">
+                  <font size="15px" bold="true"/>
+                </widgets>
+              </widgets>
+            </widgets>
+            <widgets xsi:type="model:Label" id="198" x="7" y="176" text="Nâng Cao" measuredWidth="73" measuredHeight="28">
+              <font size="15px" bold="true"/>
+            </widgets>
+            <widgets xsi:type="model:HLine" id="199" x="79" y="185" width="730" measuredWidth="730" measuredHeight="6"/>
+          </widgets>
+        </widgets>
+      </widgets>
+    </widgets>
+  </widgets>
+  <hRuler/>
+  <vRuler/>
+  <font size="12px"/>
+</model:Screen>
