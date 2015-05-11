@@ -12,23 +12,32 @@ import java.util.List;
 
 
 
+
+
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.dtweb.common.Utility;
+import com.dtweb.dao.CommentProductDao;
 import com.dtweb.dao.MenuDao;
 import com.dtweb.dao.ProductDao;
 import com.dtweb.dto.ProductDTO;
+import com.dtweb.model.CommentProduct;
 import com.dtweb.model.Menu;
 import com.dtweb.model.Product;
 import com.dtweb.services.ProductService;
 
 @Service
-@Transactional
 public class ProductServiceImpl implements ProductService {
 
 	@Autowired
 	ProductDao productDao;
+	
+	@Autowired
+	CommentProductDao commentProductDao;
 	
 	@Autowired 
 	MenuDao menuDao;
@@ -98,6 +107,25 @@ public class ProductServiceImpl implements ProductService {
 		}
 
 		return productDTOList;
+	}
+
+
+	public List<CommentProduct> commentProduct(int idProduct, String name,
+			String email, String content) {
+		
+		Product product=productDao.findById(idProduct);
+		if(product!=null){
+			CommentProduct cp=new CommentProduct();
+			cp.setName(name);
+			cp.setEmail(email);
+			cp.setContent(content);
+			cp.setActive(1);
+			cp.setDate(Utility.getNowDate());
+			cp.setPoint(1);
+			cp.setProduct(product);
+			commentProductDao.create(cp);
+		}		
+		return (List<CommentProduct>) product.getCommentRecords();
 	}
 
 }

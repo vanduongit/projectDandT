@@ -7,10 +7,13 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+
+
 import org.springframework.transaction.annotation.Transactional;
 
 import com.dtweb.dao.GenericDao;
 
+@Transactional
 public class GenericDaoImpl<T> implements GenericDao<T> {
 
 	private Class< T > clazz;
