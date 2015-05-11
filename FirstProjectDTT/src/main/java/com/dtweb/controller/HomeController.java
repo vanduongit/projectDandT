@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
@@ -89,10 +90,18 @@ public class HomeController {
 		String data=null;
 		List<Menu> listM=(List<Menu>)menuService.getMenu();
 		Menu m=listM.get(1);
-		Product p=productService.likeProduct(id,m);
+		Product p=productService.likeProduct(id,m);				
+		data=p.getAmountLike()+"";		
+		return data;
+	}
+	
+	@RequestMapping(value="/product/comment/{id}", method=RequestMethod.GET)
+	public @ResponseBody String commentProduct(@PathVariable("id") int id,@RequestParam("name") String name,
+			@RequestParam("email") String email,@RequestParam("content") String content,Model model){
 		
-		m.setName("Duong Dai ca");
-		//data=p.getAmountLike()+"";
+		String data=null;
+		
+		productService.commentProduct(id, name, email, content);
 		
 		return data;
 	}

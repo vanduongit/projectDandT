@@ -98,14 +98,14 @@
 				            <h3>Chất lượng sản phẩm</h3>
 				            <b>Lượt thích</b> 
 				            <div id="result">${p.amountLike}</div>
-				            <a href="javascript:crunchifyAjax()" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-thumbs-up"></span>Thích</a>
+				            <a href="javascript:likeProductAjax()" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-thumbs-up"></span>Thích</a>
 				            
-				            <h3>Nhận xét sản phẩm</h3>
+				           <%--  <h3>Nhận xét sản phẩm</h3>
 				            <c:if test="${p.commentRecords.size() == 0}">
 				            	<b>Chưa có bình luận nào về sản phẩm</b>
 				            </c:if>
 				            
-				            <table>				            		
+				        	<table>				            		
 					            <c:forEach items="${p.commentRecords}" var="comment">
 									<tr>
 										<th>${comment.name}</th>
@@ -114,10 +114,10 @@
 										<td><p>${comment.content}</td>
 									</tr>  	
 					            </c:forEach>
-				            </table>
+				            </table>  --%>
 				            
 				            <h3>Bình luận của bạn</h3>
-				            <form id="formComment" role="form">
+				            <form id="formComment" role="form" style="width: 50%">
 				            	<div class="form-group">
 				            		<label for="name">Họ tên bạn:</label>
       								<input type="text" class="form-control" id="name" placeholder="Enter your name">
@@ -129,7 +129,10 @@
 				            	</div>
 				            	<div class="form-group">
  									<label for="comment">Nhận xét:</label>
- 									<textarea class="form-control" rows="5" id="comment"></textarea>
+ 									<textarea class="form-control" rows="5" id="content"></textarea>
+								</div>
+								<div class="form-group">
+									<a href="javascript:commentAjax()" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-message-out"></span>Gửi</a>
 								</div>
 				            </form>
 				        </div>
@@ -143,7 +146,7 @@
 	</div>
 	<!-- End container -->
 	<script type="text/javascript">
-    function crunchifyAjax() {
+    function likeProductAjax() {
     	alert('Cảm ơn bạn đã vote cho sản phẩm');
         $.ajax({
             url : '../like/${p.id}',
@@ -151,6 +154,20 @@
                 $('#result').html(data);
             }
         });
+    }
+    function commentAjax(){
+        var name=$('#name').val();
+        var email=$('#email').val();
+        var content=$('#content').val();
+        alert('Cảm ơn '+name+' đã nhận xét về sản phẩm này');
+        $.ajax({
+            url: '../comment/${p.id}?name='+name+'&email='+'&content='+content,
+            success:function(data){
+                	$('#name').val('');
+                	$('email').val('');
+                	$('content').val('');
+                }
+            });
     }
 	</script>
 </body>
