@@ -34,4 +34,9 @@
 		<put-attribute name="titles" value="Chi tiết sản phẩm"/>		
 		<put-attribute name="body" value="/WEB-INF/pages/detail.jsp"></put-attribute>
 	</definition>
+	
+	<definition name="login" extends="defaultTemplate">
+		<put-attribute name="titles" value="Trang đăng nhập"/>		
+		<put-attribute name="body" value="/WEB-INF/pages/login.jsp"></put-attribute>
+	</definition>
 </tiles-definitions>       

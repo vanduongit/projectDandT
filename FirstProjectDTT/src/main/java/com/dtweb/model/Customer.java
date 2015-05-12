@@ -13,6 +13,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Size;
+import org.hibernate.validator.constraints.NotEmpty;
 
 /**
  * @author Thong Nguyen
@@ -27,13 +29,17 @@ public class Customer {
 	@Column(name = "ID", unique = true, nullable = false)
 	private int id;
 	
-	@Column(name = "NAME", unique = true, nullable = false, length = 256)
+	@Column(name = "NAME", unique = true, nullable = false, length = 256)	
 	private String name;
 	
+	@NotEmpty
+	@Size(min = 1, max = 64)
 	@Column(name = "USERNAME", unique = true, nullable = false, length = 64)
 	private String username;
 	
-	@Column(name = "PASSWORD", unique = false, nullable = false, length = 64)
+	@NotEmpty
+	@Size(min = 1, max = 20)
+	@Column(name = "PASSWORD", unique = false, nullable = false, length = 20)
 	private String password;
 	
 	@Temporal(TemporalType.TIMESTAMP)
@@ -60,7 +66,7 @@ public class Customer {
 	private Date createDate;
 	
 	@Column(name = "ACTIVE")
-	private int active;
+	private int active = 1;
 	/**
 	 * @return the id
 	 */
