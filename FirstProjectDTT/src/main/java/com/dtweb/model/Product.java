@@ -6,6 +6,7 @@ package com.dtweb.model;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -157,9 +158,7 @@ public class Product {
 	private Promotion promo;
 	
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "product")
-	private Set<CommentProduct> commentRecords = new HashSet<CommentProduct>(
-			0);
-	
+	private List<CommentProduct> commentRecords;
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "product")
 	private Set<OrderDetail> orderDetails = new HashSet<OrderDetail>(
 			0);
@@ -625,12 +624,7 @@ public class Product {
 	 */
 	public void setCreateDate(Date createDate) {
 		this.createDate = createDate;
-	}
-	
-	
-	
-	
-	
+	}				
 	public Brand getBrand() {
 		return brand;
 	}
@@ -643,10 +637,11 @@ public class Product {
 	public void setCategory(Category category) {
 		this.category = category;
 	}
-	public Set<CommentProduct> getCommentRecords() {
+	
+	public List<CommentProduct> getCommentRecords() {
 		return commentRecords;
 	}
-	public void setCommentRecords(Set<CommentProduct> commentRecords) {
+	public void setCommentRecords(List<CommentProduct> commentRecords) {
 		this.commentRecords = commentRecords;
 	}
 	public Set<OrderDetail> getOrderDetails() {
@@ -657,63 +652,7 @@ public class Product {
 	}
 	
 	
-	public Product(int id, String tag, String name, String content,
-			String detail, int priority, float price, String tinyImage,
-			String bigImage, Date dateTime, Brand brand, int brandTag,
-			String title, String description, String keyword, int active,
-			int ord, String lang, String image1, String image2, String image3,
-			String image4, String image5, String codePro, int amount,
-			int amountToBuy, int amountLike, Date beginDate, Date endDate,
-			String property1, String property2, String property3,
-			String property4, String property5, String property6,
-			String property7, Category category, String cateTag,
-			String createUser, Date createDate, Promotion promo,
-			Set<CommentProduct> commentRecords, Set<OrderDetail> orderDetails) {
-		super();
-		this.id = id;
-		this.tag = tag;
-		this.name = name;
-		this.content = content;
-		this.detail = detail;
-		this.priority = priority;
-		this.price = price;
-		this.tinyImage = tinyImage;
-		this.bigImage = bigImage;
-		this.dateTime = dateTime;
-		this.brand = brand;
-		this.brandTag = brandTag;
-		this.title = title;
-		this.description = description;
-		this.keyword = keyword;
-		this.active = active;
-		this.ord = ord;
-		this.lang = lang;
-		this.image1 = image1;
-		this.image2 = image2;
-		this.image3 = image3;
-		this.image4 = image4;
-		this.image5 = image5;
-		this.codePro = codePro;
-		this.amount = amount;
-		this.amountToBuy = amountToBuy;
-		this.amountLike = amountLike;
-		this.beginDate = beginDate;
-		this.endDate = endDate;
-		this.property1 = property1;
-		this.property2 = property2;
-		this.property3 = property3;
-		this.property4 = property4;
-		this.property5 = property5;
-		this.property6 = property6;
-		this.property7 = property7;
-		this.category = category;
-		this.cateTag = cateTag;
-		this.createUser = createUser;
-		this.createDate = createDate;
-		this.promo = promo;
-		this.commentRecords = commentRecords;
-		this.orderDetails = orderDetails;
-	}
+	
 	/**
 	 * @return the promo
 	 */
