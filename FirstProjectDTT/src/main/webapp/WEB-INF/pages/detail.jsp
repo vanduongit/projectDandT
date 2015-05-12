@@ -99,7 +99,9 @@
 				            <b>Lượt thích</b> 
 				            <div id="result">${p.amountLike}</div>
 				            <a href="javascript:likeProductAjax()" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-thumbs-up"></span>Thích</a>
+				            <div id="commentContent">
 				            
+				            </div>
 				           <%--  <h3>Nhận xét sản phẩm</h3>
 				            <c:if test="${p.commentRecords.size() == 0}">
 				            	<b>Chưa có bình luận nào về sản phẩm</b>
@@ -161,11 +163,20 @@
         var content=$('#content').val();
         alert('Cảm ơn '+name+' đã nhận xét về sản phẩm này');
         $.ajax({
-            url: '../comment/${p.id}?name='+name+'&email='+'&content='+content,
+        	type:'GET',
+        	dataType: 'json',        	
+            url: '../comment/${p.id}?name='+name+'&email='+email+'&content='+content,
             success:function(data){
+            		alert(data[0].name);
                 	$('#name').val('');
-                	$('email').val('');
-                	$('content').val('');
+                	$('#email').val('');
+                	$('#content').val('');
+                	for(var i=0;i<data.length;i++){
+                		alert('da vao day');                	
+                		$('#commentContent').html(data[i].name);
+                	
+                		
+                	}                	
                 }
             });
     }

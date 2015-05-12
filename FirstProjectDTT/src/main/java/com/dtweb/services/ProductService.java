@@ -14,7 +14,7 @@ public interface ProductService {
 	
 	Product getProductById(int id);
 	
-	Product likeProduct(int id,Menu m);
+	Product likeProduct(int id);
 	
 	/**
 	 * @author DuongPV1

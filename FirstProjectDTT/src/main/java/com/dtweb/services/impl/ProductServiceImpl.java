@@ -3,19 +3,6 @@ package com.dtweb.services.impl;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
-
-
-
-
-
-
-
-
-
-
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -55,13 +42,11 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 
-	public Product likeProduct(int id,Menu m) {
+	public Product likeProduct(int id) {
 		Product p=productDao.findById(id);
 		int like=p.getAmountLike();
-		p.setAmountLike(5);
-		productDao.update(p);
-		Menu menu=menuDao.findById(1);	
-		
+		p.setAmountLike(++like);
+		productDao.update(p);			
 		return p;
 	}
 
@@ -113,8 +98,9 @@ public class ProductServiceImpl implements ProductService {
 			String email, String content) {
 		
 		Product product=productDao.findById(idProduct);
+		CommentProduct cp=null;
 		if(product!=null){
-			CommentProduct cp=new CommentProduct();
+			cp=new CommentProduct();
 			cp.setName(name);
 			cp.setEmail(email);
 			cp.setContent(content);
@@ -124,7 +110,9 @@ public class ProductServiceImpl implements ProductService {
 			cp.setProduct(product);
 			commentProductDao.create(cp);
 		}		
-		return (List<CommentProduct>) product.getCommentRecords();
+		List<CommentProduct> list =product.getCommentRecords();
+		list.add(cp);
+		return list;
 	}
 
 }
