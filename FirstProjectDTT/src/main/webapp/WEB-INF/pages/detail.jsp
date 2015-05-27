@@ -7,7 +7,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script src="<c:url value="/bootstrap/js/bootstrap.min.js"/>"></script>
 <script src="<c:url value="/bootstrap/js/jquery-1.11.2.min.js"/>"></script>
-
 <title>Insert title here</title>
 </head>
 <body>
@@ -100,9 +99,7 @@
 				            <div id="result">${p.amountLike}</div>
 				            <a href="javascript:likeProductAjax()" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-thumbs-up"></span>Thích</a>
 				            <div id="commentContent">
-				            
-				            </div>
-				           <%--  <h3>Nhận xét sản phẩm</h3>
+				             <h3>Nhận xét sản phẩm</h3>
 				            <c:if test="${p.commentRecords.size() == 0}">
 				            	<b>Chưa có bình luận nào về sản phẩm</b>
 				            </c:if>
@@ -110,14 +107,14 @@
 				        	<table>				            		
 					            <c:forEach items="${p.commentRecords}" var="comment">
 									<tr>
-										<th>${comment.name}</th>
+										<th>${comment.name}:</th>
 									</tr>		          
 									<tr>
 										<td><p>${comment.content}</td>
 									</tr>  	
 					            </c:forEach>
-				            </table>  --%>
-				            
+				            </table>  
+				            </div>
 				            <h3>Bình luận của bạn</h3>
 				            <form id="formComment" role="form" style="width: 50%">
 				            	<div class="form-group">
@@ -167,16 +164,15 @@
         	dataType: 'json',        	
             url: '../comment/${p.id}?name='+name+'&email='+email+'&content='+content,
             success:function(data){
-            		alert(data[0].name);
                 	$('#name').val('');
                 	$('#email').val('');
                 	$('#content').val('');
-                	for(var i=0;i<data.length;i++){
-                		alert('da vao day');                	
-                		$('#commentContent').html(data[i].name);
-                	
-                		
-                	}                	
+                	var s='<table>';
+                	for(var i=0;i<data.length;i++){  
+                		s+='<tr><th>'+data[i].name+'</th><td>'+data[i].content+'</td></tr>'                	
+                	}   
+                	s+='</table>';
+                	$('#commentContent').html(s);
                 }
             });
     }

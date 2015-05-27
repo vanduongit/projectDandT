@@ -5,6 +5,7 @@
        
 <tiles-definitions>
 	<definition name="defaultTemplate" template="/WEB-INF/pages/templates/customer/templates.jsp">
+		<put-attribute name="javascriptLibrary" value="/WEB-INF/pages/templates/customer/javascriptLibrary.jsp"></put-attribute>
 		<put-attribute name="titles" value=""></put-attribute>
 		<put-attribute name="header" value="/WEB-INF/pages/templates/customer/header.jsp"></put-attribute>
 		<put-attribute name="slider" value=""></put-attribute>
@@ -38,5 +39,10 @@
 	<definition name="login" extends="defaultTemplate">
 		<put-attribute name="titles" value="Trang đăng nhập"/>		
 		<put-attribute name="body" value="/WEB-INF/pages/login.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="cart" extends="defaultTemplate">
+		<put-attribute name="titles" value="Giỏ hàng"/>		
+		<put-attribute name="body" value="/WEB-INF/pages/cart.jsp"></put-attribute>
 	</definition>
 </tiles-definitions>       
