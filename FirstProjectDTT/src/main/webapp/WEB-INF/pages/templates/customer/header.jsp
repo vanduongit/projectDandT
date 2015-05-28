@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -27,9 +28,31 @@
             	</form>               
             </div>
             <div class="col-md-3" style="margin-top: 20px">
-               <a href="">Đăng nhập</a> | 
-               <a href="">Đăng Ký</a> | 
-               <a href=""><span class="glyphicon glyphicon-shopping-cart"></span></a>
+            
+            <c:choose>
+    			<c:when test="${sessionScope.user != null}">
+    			<div class="row">
+    				<div class="col-md-10">                                                 
+            			<p>Chào mừng, ${sessionScope.user} </p>               
+            		</div>
+            		<div class="col-md-2">                                                 
+            		     <a href=""><span class="glyphicon glyphicon-shopping-cart"></span></a>           
+            		</div>			
+    			
+    			</div>
+        			
+    			</c:when>
+    			<c:otherwise>
+        			<a href="login">Đăng nhập</a> | 
+					<a href="">Đăng Ký</a> |
+					<a href=""><span class="glyphicon glyphicon-shopping-cart"></span></a> 
+    			</c:otherwise>
+			</c:choose>
+            
+			
+	    		
+			
+            
             </div>
 		 </div>		
 	</div> 

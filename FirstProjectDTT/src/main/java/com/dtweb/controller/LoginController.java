@@ -2,6 +2,8 @@ package com.dtweb.controller;
 
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -35,7 +37,7 @@ public class LoginController {
 
 	@RequestMapping(method = RequestMethod.POST)
 	public String processForm(@Validated Customer custom, BindingResult result,
-			Map<String, Object> model) {
+			Map<String, Object> model, HttpSession session) {
 		
 		if (result.hasErrors()) {
 			return "login";
@@ -44,7 +46,7 @@ public class LoginController {
 		Customer c = (Customer) model.get("customer");
 		
 		if (customService.checkCustomer(c)) {
-			System.out.println("successful");
+			session.setAttribute("user", "Thong");			
 			return "index";
 		}
 		
