@@ -21,7 +21,7 @@
 			<div class="col-md-6">
 				<h2>${p.name}</h2>
 				<h6>Mã sản phẩm: ${p.codePro }</h6>
-				<form class="form-inline" action="">
+				<form class="form-inline" action="${pageContext.request.contextPath}/cart/add/${p.id}">
 					<table>
 						<tr>
 							<th>Hãng: </th>
@@ -48,7 +48,7 @@
 							<th>Số lượng:</th>
 							<td>
 								<div class="form-group">      								
-        							<input type="text" class="form-control" maxlength="2" value="1"/>	      								
+        							<input type="text" class="form-control" maxlength="2" value="1" name="quantity"/>	      								
       								<div class="btn-group-vertical" role="group" aria-label="...">
 	 									<button value="add" class="btn btn-xs">+</button>
 	 									<button value="sub" class="btn btn-xs">-</button>	 									
@@ -60,7 +60,7 @@
 							<td></td>
 							<td>
 								<button class="btn btn-danger" style="width: 100%">Thêm vào giỏ hàng</button><br/>
-								<button class="btn btn-primary btn-lg" style="width: 100%">Mua ngay</button><br/>	
+								<input type="submit" class="btn btn-primary btn-lg" value="Mua ngay" style="width:100%"/><br/>	
 							</td>
 						</tr>
 					</table>

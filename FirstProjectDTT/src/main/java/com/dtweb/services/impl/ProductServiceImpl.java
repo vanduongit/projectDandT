@@ -32,12 +32,9 @@ public class ProductServiceImpl implements ProductService {
 		return productDao.findAll();
 	}
 
-	
-	
-
-
 	public Product getProductById(int id) {
 		Product p=productDao.findById(id);
+		
 		return p;
 	}
 
@@ -115,5 +112,33 @@ public class ProductServiceImpl implements ProductService {
 		return list;
 	}
 
+	private ProductDTO tranferToProductDTO(Product p){
+		ProductDTO productDTO = new ProductDTO();
+		productDTO.setId(p.getId());
+		productDTO.setDescription(p.getDescription());
+		productDTO.setTinyImage(p.getTinyImage());
+		productDTO.setName(p.getName());
+		productDTO.setPrice(p.getPrice());
+		
+		if (p.getPromo() != null) {
+			Date todayDate = new Date();			
+
+			// check conditions: promotion of product is active
+			// AND today must between startDate and EndDate of promote program.
+			 if(p.getPromo().getActive() == 1 && todayDate.after(p.getPromo().getStartDate())
+					&& todayDate.before(p.getPromo().getEndDate())) {
+				float promotePrice = 0;
+				if (p.getPromo().getDiscountPercent() > 0) {
+					promotePrice = p.getPrice()
+							- (p.getPrice() * (p.getPromo().getDiscountPercent()/100));
+				} else if (p.getPromo().getDiscountValue() > 0) {
+					promotePrice = p.getPrice()
+							- p.getPromo().getDiscountValue();
+				}					
+				productDTO.setPromotePrice(promotePrice);
+			}				
+		}
+		return productDTO;
+	}
 }
 
