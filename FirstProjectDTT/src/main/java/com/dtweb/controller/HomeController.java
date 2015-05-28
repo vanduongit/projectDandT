@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import com.dtweb.dto.CartDTO;
 import com.dtweb.model.CommentProduct;
 import com.dtweb.model.Menu;
 import com.dtweb.model.Product;
@@ -55,6 +56,7 @@ public class HomeController {
 		mapSession.put(OWNER, mapConfig.get(OWNER));
 		mapSession.put(ADDRESS, mapConfig.get(ADDRESS));
 		mapSession.put(HOTLINE, mapConfig.get(HOTLINE));
+		
 		
 		model.addAttribute(MAP_SESSION, mapSession);
 		return "index";

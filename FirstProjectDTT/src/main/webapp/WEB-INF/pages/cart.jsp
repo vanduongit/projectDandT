@@ -17,25 +17,29 @@
 		<h3>Giỏ hàng sản phẩm</h3>
 		<div class="row">
 			<div class="col-md-12">
-				<table class="table">
+				<table class="table" border="1">
 					<tr>
 						<th>Xóa</th>
 						<th>STT</th>
 						<th>Sản phẩm</th>
 						<th>Số lượng</th>
-						<th>Đơn giá</th>
+						
 						<th>Thành tiền</th>
 					</tr>
-				<%-- 	<c:forEach items='' var=''> --%>
+					<c:forEach items="${cartContain.listProduct}" var="p" varStatus="pStatus"> 
 						<tr>
 							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
+							<td>${pStatus.index+1}</td>
+							<td>
+								<h4>${p.key.name}</h4>
+								${p.key.price} VND
+								<img class="img-responsive" alt="" src="<c:url value="/resources/img/ProductImages/${p.key.bigImage}"/>" width="75px" height="100px"/>
+							</td>
+							<td>${p.value}</td>
+							
+							<td>${p.key.price*p.value} VND</td>
 						</tr>
-					<%-- </c:forEach> --%>
+					 </c:forEach> 
 				</table>
 			</div>
 		</div>
