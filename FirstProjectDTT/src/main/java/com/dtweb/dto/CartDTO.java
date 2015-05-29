@@ -1,8 +1,6 @@
 package com.dtweb.dto;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import com.dtweb.model.Product;

@@ -1,11 +1,15 @@
 package com.dtweb.dto;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
+import java.util.Set;
 
 import com.dtweb.model.Brand;
 import com.dtweb.model.Category;
+import com.dtweb.model.CommentProduct;
+import com.dtweb.model.OrderDetail;
+import com.dtweb.model.Promotion;
 
 /**
  * @author Thong 
@@ -28,6 +32,8 @@ public class ProductDTO implements Serializable {
 	
 	private String detail;
 	
+	private int priority;
+	
 	
 	private float price;
 	
@@ -39,7 +45,24 @@ public class ProductDTO implements Serializable {
 	
 	private Brand brand;
 	
+	private int brandTag;
 	
+	
+	/**
+	 * @return the brandTag
+	 */
+	public int getBrandTag() {
+		return brandTag;
+	}
+
+	/**
+	 * @param brandTag the brandTag to set
+	 */
+	public void setBrandTag(int brandTag) {
+		this.brandTag = brandTag;
+	}
+
+
 	private String title;
 	
 	private String description;
@@ -98,7 +121,71 @@ public class ProductDTO implements Serializable {
 	private Date createDate;	
 	
 	
+	/**
+	 * @return the priority
+	 */
+	public int getPriority() {
+		return priority;
+	}
+
+	/**
+	 * @param priority the priority to set
+	 */
+	public void setPriority(int priority) {
+		this.priority = priority;
+	}
+
+	/**
+	 * @return the promo
+	 */
+	public Promotion getPromo() {
+		return promo;
+	}
+
+	/**
+	 * @param promo the promo to set
+	 */
+	public void setPromo(Promotion promo) {
+		this.promo = promo;
+	}
+
+	/**
+	 * @return the commentProducts
+	 */
+	public List<CommentProduct> getCommentProducts() {
+		return commentProducts;
+	}
+
+	/**
+	 * @param commentProducts the commentProducts to set
+	 */
+	public void setCommentProducts(List<CommentProduct> commentProducts) {
+		this.commentProducts = commentProducts;
+	}
+
+	/**
+	 * @return the orderDetails
+	 */
+	public Set<OrderDetail> getOrderDetails() {
+		return orderDetails;
+	}
+
+	/**
+	 * @param orderDetails the orderDetails to set
+	 */
+	public void setOrderDetails(Set<OrderDetail> orderDetails) {
+		this.orderDetails = orderDetails;
+	}
+
+
 	private float promotePrice;
+	
+	private Promotion promo;
+	
+	private List<CommentProduct> commentProducts;
+	
+	private Set<OrderDetail> orderDetails;
+	
 
 	/**
 	 * @return the id
