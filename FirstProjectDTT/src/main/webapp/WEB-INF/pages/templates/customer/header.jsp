@@ -19,7 +19,7 @@
 	<div class="container" >
 		 <div class="row">
 		 	<div class="col-md-3">                                                 
-            	<h1>MASTER</h1>                  
+            <h1>MASTER</h1>         
             </div>
             <div class="col-md-6" style="margin-top: 20px;">                               
             	<form action="" class="form-inline" role="form">

@@ -734,7 +734,50 @@ public class ProductDTO implements Serializable {
 		this.promotePrice = promotePrice;
 	}
 	
+	@Override
+	public boolean equals(Object obj) {
+		ProductDTO pro=(ProductDTO)obj;
+		if(pro.getId()==this.id){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	@Override
+	public String toString() {
+		return "{\"id\":\"" + id + "\", \"tag\":\"" + tag + "\", \"name\":\""
+				+ name + "\", \"content\":\"" + content + "\", \"detail\":\""
+				+ detail + "\", \"priority\":\"" + priority
+				+ "\", \"price\":\"" + price + "\", \"tinyImage\":\""
+				+ tinyImage + "\", \"bigImage\":\"" + bigImage
+				+ "\", \"dateTime\":\"" + dateTime + "\", \"brand\":\"" + brand
+				+ "\", \"brandTag\":\"" + brandTag + "\", \"title\":\"" + title
+				+ "\", \"description\":\"" + description + "\", \"keyword\":\""
+				+ keyword + "\", \"active\":\"" + active + "\", \"ord\":\""
+				+ ord + "\", \"lang\":\"" + lang + "\", \"image1\":\"" + image1
+				+ "\", \"image2\":\"" + image2 + "\", \"image3\":\"" + image3
+				+ "\", \"image4\":\"" + image4 + "\", \"image5\":\"" + image5
+				+ "\", \"codePro\":\"" + codePro + "\", \"amount\":\"" + amount
+				+ "\", \"amountToBuy\":\"" + amountToBuy
+				+ "\", \"amountLike\":\"" + amountLike + "\", \"beginDate\":\""
+				+ beginDate + "\", \"endDate\":\"" + endDate
+				+ "\", \"property1\":\"" + property1 + "\", \"property2\":\""
+				+ property2 + "\", \"property3\":\"" + property3
+				+ "\", \"property4\":\"" + property4 + "\", \"property5\":\""
+				+ property5 + "\", \"property6\":\"" + property6
+				+ "\", \"property7\":\"" + property7 + "\", \"category\":\""
+				+ category + "\", \"cateTag\":\"" + cateTag
+				+ "\", \"createUser\":\"" + createUser
+				+ "\", \"createDate\":\"" + createDate
+				+ "\", \"promotePrice\":\"" + promotePrice + "\", \"promo\":\""
+				+ promo + "\", \"commentProducts\":\"" + commentProducts
+				+ "\", \"orderDetails\":\"" + orderDetails + "\"}";
+	}
 	
+	@Override
+	public int hashCode() {
+		return this.id;
+	}
 	/**
 	 * Default constructor.
 	 */

@@ -34,7 +34,6 @@ public class ProductServiceImpl implements ProductService {
 
 	public Product getProductById(int id) {
 		Product p=productDao.findById(id);
-		
 		return p;
 	}
 
@@ -119,7 +118,8 @@ public class ProductServiceImpl implements ProductService {
 		productDTO.setTinyImage(p.getTinyImage());
 		productDTO.setName(p.getName());
 		productDTO.setPrice(p.getPrice());
-		
+		productDTO.setBigImage(p.getBigImage());
+		productDTO.setTinyImage(p.getTinyImage());
 		if (p.getPromo() != null) {
 			Date todayDate = new Date();			
 
@@ -139,6 +139,16 @@ public class ProductServiceImpl implements ProductService {
 			}				
 		}
 		return productDTO;
+	}
+
+	/**
+	 * @author DuongPV1
+	 * 
+	 * */
+	public ProductDTO getProductDTOById(int id) {
+		Product p=productDao.findById(id);
+		ProductDTO pDto=tranferToProductDTO(p);
+		return pDto;
 	}
 }
 

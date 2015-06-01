@@ -21,4 +21,9 @@ public interface ProductService {
 	 * 
 	 * */
 	List<CommentProduct> commentProduct(int idProduct,String name,String email,String content);
+	
+	/**
+	 * @author DuongPV1
+	 * */
+	ProductDTO getProductDTOById(int id);
 }
