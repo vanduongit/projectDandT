@@ -34,35 +34,27 @@
 	<div class="container" >
 		 <div class="row">
 		 	<div class="col-md-3">                                                 
-            	<h1>MASTER</h1>                  
+            <h1>MASTER</h1>         
             </div>
             <div class="col-md-6" style="margin-top: 20px;">                               
             	<form action="" class="form-inline" role="form">
-                	<input type="text" class="form-control" id="usr" style="width: 70%">
+                	<input type="text" class="form-control" id="usr" style="width: 70%" placeholder='Bạn muốn tìm gì?'>
                 	<a href="#" class="btn btn-info btn-md"><span class="glyphicon glyphicon-search"></span>Search</a>
             	</form>               
             </div>
             <div class="col-md-3" style="margin-top: 20px">
             
             <c:choose>
-    			<c:when test="${sessionScope.user != null}">
-    			<div class="row">
-    				<div class="col-md-10">                                                 
-            			<p>Chào mừng, ${sessionScope.user} </p>               
-            		</div>
-            		<div class="col-md-2">                                                 
-            		     <a href=""><span class="glyphicon glyphicon-shopping-cart"></span></a>           
-            		</div>			
-    			
-    			</div>
-        			
+    			<c:when test="${sessionScope.user != null}">    			                                            
+            			Chào, <a href='#'>${sessionScope.user}</a> | 
+            			<a href='#'>Đăng xuất</a> |                        		                                               
+            		    <a href="${pageContext.request.contextPath}/cart/show"><span class="glyphicon glyphicon-shopping-cart"></span></a>                       		    			        			
     			</c:when>
     			<c:otherwise>
-    			<div>    				
-        			<a data-toggle="modal" data-target="#login-modal">Đăng nhập</a> | 
-					<a href="login">Đăng Ký</a> |
-					<a href=""><span class="glyphicon glyphicon-shopping-cart"></span></a>
-				</div> 
+
+        			<a href="${pageContext.request.contextPath}/login">Đăng nhập</a> | 
+					<a href="">Đăng Ký</a> |
+					<a href="${pageContext.request.contextPath}/cart/show"><span class="glyphicon glyphicon-shopping-cart"></span></a> 
     			</c:otherwise>
 			</c:choose>
             
