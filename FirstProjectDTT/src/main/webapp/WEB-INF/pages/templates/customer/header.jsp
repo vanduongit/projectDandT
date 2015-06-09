@@ -30,22 +30,15 @@
             <div class="col-md-3" style="margin-top: 20px">
             
             <c:choose>
-    			<c:when test="${sessionScope.user != null}">
-    			<div class="row">
-    				<div class="col-md-10">                                                 
-            			<p>Chào mừng, ${sessionScope.user} </p>               
-            		</div>
-            		<div class="col-md-2">                                                 
-            		     <a href=""><span class="glyphicon glyphicon-shopping-cart"></span></a>           
-            		</div>			
-    			
-    			</div>
-        			
+    			<c:when test="${sessionScope.user != null}">    			                                            
+            			Chào mừng, <a href='#'>${sessionScope.user}</a> | 
+            			<a href='#'>Đăng xuất</a> |                        		                                               
+            		    <a href="${pageContext.request.contextPath}/cart/show"><span class="glyphicon glyphicon-shopping-cart"></span></a>                       		    			        			
     			</c:when>
     			<c:otherwise>
-        			<a href="login">Đăng nhập</a> | 
+        			<a href="${pageContext.request.contextPath}/login">Đăng nhập</a> | 
 					<a href="">Đăng Ký</a> |
-					<a href=""><span class="glyphicon glyphicon-shopping-cart"></span></a> 
+					<a href="${pageContext.request.contextPath}/cart/show"><span class="glyphicon glyphicon-shopping-cart"></span></a> 
     			</c:otherwise>
 			</c:choose>
             

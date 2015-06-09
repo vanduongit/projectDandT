@@ -1,5 +1,8 @@
 package com.dtweb.services.impl;
 
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -99,6 +102,19 @@ public class CartServiceImpl implements CartService {
 
 	public CartDTO getCartDTO() {
 		return this.cart;
+	}
+
+	/**
+	 * @author DuongPV1
+	 *  
+	 * 
+	 * */
+	public void update(HttpServletRequest request) {
+		Map<ProductDTO,Integer> map=cart.getListProduct();
+		for(ProductDTO p:map.keySet()){
+			int newValue=Integer.parseInt(request.getParameter(p.getId()+""));
+			map.put(p,newValue);
+		}
 	}
 	
 	

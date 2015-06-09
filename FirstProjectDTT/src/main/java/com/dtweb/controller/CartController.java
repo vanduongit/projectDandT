@@ -1,9 +1,11 @@
 package com.dtweb.controller;
 
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -50,5 +52,13 @@ public class CartController {
 		cartService.setSession(session);
 		cartService.removeCart(id);
 		return (CartDTO)session.getAttribute("cartContain");
+	}
+	
+	@RequestMapping(value="/cart/update", method=RequestMethod.GET)
+	public String updateCart(HttpServletRequest request, HttpSession session){
+		cartService.setSession(session);
+		cartService.update(request);
+		
+		return "redirect:/cart/show";
 	}
 }

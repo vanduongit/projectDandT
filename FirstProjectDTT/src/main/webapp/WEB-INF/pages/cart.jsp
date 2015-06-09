@@ -17,30 +17,39 @@
 		<h3>Giỏ hàng sản phẩm</h3>
 		<div class="row">
 			<div class="col-md-12" id='cartShop'>
-				<table class="table" border="1">
-					<tr>
-						<th>Xóa</th>
-						<th>STT</th>
-						<th>Sản phẩm</th>
-						<th>Số lượng</th>
-						<th>Thành tiền</th>
-					</tr>
-					<c:if test="${cartContain.listProduct.size()==0 || cartContain==null}">
+			<form action="update" method="get">
+					<table class="table">
 						<tr>
-							<td colspan="5"><h3>Không có sản phẩm nào trong giỏ hàng</h3></td>
+							<th width="10%">Xóa</th>
+							<th width="10%">STT</th>
+							<th width="50%">Sản phẩm</th>
+							<th width="20%">Số lượng</th>
+							<th width="10%">Thành tiền</th>
 						</tr>
-					</c:if>
-					<c:forEach items="${cartContain.listProduct}" var="p" varStatus="pStatus"> 
-						<tr>
-							<td><a href="javascript:removeCart(${p.key.id })" class=""><span class="glyphicon glyphicon-remove"></span></a></td>
-							<td>${pStatus.index+1}</td>
-							<td><h4>${p.key.name}</h4>${p.key.price} VND<img class="img-responsive" alt="" src="<c:url value="/resources/img/ProductImages/${p.key.bigImage}"/>" width="75px" height="100px"/></td>
-							<td>${p.value}</td>
-							
-							<td>${p.key.price*p.value} VND</td>
-						</tr>
-					 </c:forEach> 
-				</table>
+						<c:if test="${cartContain.listProduct.size()==0 || cartContain==null}">
+							<tr>
+								<td colspan="5"><h3>Không có sản phẩm nào trong giỏ hàng</h3></td>
+							</tr>
+						</c:if>
+						<c:forEach items="${cartContain.listProduct}" var="p" varStatus="pStatus"> 
+							<tr>
+								<td><a href="javascript:removeCart(${p.key.id })" class=""><span class="glyphicon glyphicon-remove"></span></a></td>
+								<td>${pStatus.index+1}</td>
+								<td><h4>${p.key.name}</h4>
+									<c:if test="${p.key.promotePrice==0}">
+										${p.key.price} VND
+									</c:if>
+									<c:if test="${p.key.promotePrice!=0}">
+										<s>${p.key.price} VND</s> - <h4>${p.key.promotePrice}</h4>
+									</c:if>
+									<img class="img-responsive" alt="" src="<c:url value="/resources/img/ProductImages/${p.key.bigImage}"/>" width="75px" height="100px"/></td>
+								<td><input type="text" value="${p.value}" class='form-control' style='width:20%' id='${p.key.id}' name='${p.key.id}' maxlength="2"/></td>
+								<td>${p.key.price*p.value} VND</td>
+							</tr>
+						 </c:forEach> 
+						 <tr><td align="right" colspan="5"><input type='submit' class='form-control' style='width:20%' value='Cập nhật giỏ hàng'/></td></tr>
+					</table>
+				</form>
 			</div>
 		</div>
 		<!-- End row 1 -->
@@ -60,13 +69,14 @@
 				dataType:'json',
 				contentType: 'application/json',
 				success:function(data){
-					html+='<table class="table" border="1">';
+					html+='<form action="update" method="get">';
+					html+='<table class="table">';
 					html+='<tr>';
-					html+='<th>Xóa</th>';
-					html+='<th>STT</th>';
-					html+='<th>Sản phẩm</th>';
-					html+='<th>Số lượng</th>';
-					html+='<th>Thành tiền</th>';
+					html+='<th width="10%">Xóa</th>';
+					html+='<th width="10%">STT</th>';
+					html+='<th width="50%">Sản phẩm</th>';
+					html+='<th width="20%">Số lượng</th>';
+					html+='<th width="10%">Thành tiền</th>';
 					html+='</tr>';
 					var index=0;
 					$.each(data['listProduct'],function(k,v){
@@ -78,10 +88,10 @@
 						if(product.promotePrice==0){
 							html+="<td><h4>"+product.name+"</h4>"+product.price+" VND<img class='img-responsive' alt='No Image' src='<c:url value='/resources/img/ProductImages/"+product.bigImage+"'/>' width='75px' height='100px'/></td>";	
 						}else{
-							html+="<td><h4>"+product.name+"</h4>"+product.price+" VND - <h4>"+product.promotePrice+" VND</h4><img class='img-responsive' alt='No Image' src='<c:url value='/resources/img/ProductImages/"+product.bigImage+"'/>' width='75px' height='100px'/></td>";
+							html+="<td><h4>"+product.name+"</h4><s>"+product.price+" VND </s> - <h4>"+product.promotePrice+" VND</h4><img class='img-responsive' alt='No Image' src='<c:url value='/resources/img/ProductImages/"+product.bigImage+"'/>' width='75px' height='100px'/></td>";
 						}
 						
-						html+="<td>"+v+"</td>";
+						html+="<td><input type='text' value='"+v+"' class='form-control' style='width:20%' id='"+product.id+"' name='"+product.id+"' maxlength='2'/></td>";
 						html+="<td>"+v*product.price+" VND</td>";
 						html+="</tr>"
 					});
@@ -90,8 +100,9 @@
 							html+="<td colspan='5'><h3>Không có sản phẩm nào trong giỏ hàng</h3></td>";
 						html+="</tr>";
 					}
+					html+="<tr><td align='right' colspan='5'><input type='submit' class='form-control' style='width:20%' value='Cập nhật giỏ hàng'/></td></tr>";
 					html+='</table>';
-					
+					html+='</form>';
 					$('#cartShop').html(html);
 					$('#totalPrice').html("Tổng cộng: "+data['totalPrice']);
 				},

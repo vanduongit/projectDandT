@@ -1,5 +1,6 @@
 package com.dtweb.services;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import com.dtweb.dto.CartDTO;
@@ -40,5 +41,13 @@ public interface CartService {
 	 * 
 	 * */
 	CartDTO getCartDTO();
+	
+	/**
+	 * @author DuongPV1
+	 * @return 
+	 * 
+	 * */
+	void update(HttpServletRequest request);
+	
 	
 }
