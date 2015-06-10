@@ -36,19 +36,23 @@
 		<put-attribute name="body" value="/WEB-INF/pages/detail.jsp"></put-attribute>
 	</definition>
 	
-	<definition name="login" extends="defaultTemplate">
+	<!-- <definition name="login" extends="defaultTemplate">
 		<put-attribute name="titles" value="Trang đăng nhập"/>		
 		<put-attribute name="body" value="/WEB-INF/pages/login.jsp"></put-attribute>
-	</definition>
+	</definition> -->
 	
 	<definition name="cart" extends="defaultTemplate">
 		<put-attribute name="titles" value="Giỏ hàng"/>		
 		<put-attribute name="body" value="/WEB-INF/pages/cart.jsp"></put-attribute>
 	</definition>
-	
+
 	<definition name="payment" extends="defaultTemplate">
 		<put-attribute name="titles" value="Xác nhận đơn hàng"/>
 		<put-attribute name="body" value="/WEB-INF/pages/payment.jsp"/>
 	</definition>
-	
+
+	<definition name="login" extends="defaultTemplate">
+		<put-attribute name="titles" value="page use to test"/>		
+		<put-attribute name="body" value="/WEB-INF/pages/test.jsp"></put-attribute>
+	</definition>
 </tiles-definitions>       
