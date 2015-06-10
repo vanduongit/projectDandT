@@ -57,7 +57,10 @@
 			<div class="col-md-12 text-right" id='totalPrice'>Tổng cộng: ${cartContain.totalPrice}</div>
 		</div>
 		<div class="row">
-			<div class="col-md-12 text-right"><a href="" class="button">Tiếp tục mua sắm</a></div>
+			<div class="col-md-12 text-right"><a href="${pageContext.request.contextPath}" class="button">Tiếp tục mua sắm</a></div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 text-right"><a href="movetopayment" class="button">Đăt hàng</a></div>
 		</div>
 	</div>
 	<script type="text/javascript">

@@ -31,7 +31,7 @@
             
             <c:choose>
     			<c:when test="${sessionScope.user != null}">    			                                            
-            			Chào, <a href='#'>${sessionScope.user}</a> | 
+            			Chào, <a href='#'>${sessionScope.user.name}</a> | 
             			<a href='#'>Đăng xuất</a> |                        		                                               
             		    <a href="${pageContext.request.contextPath}/cart/show"><span class="glyphicon glyphicon-shopping-cart"></span></a>                       		    			        			
     			</c:when>

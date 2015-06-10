@@ -61,4 +61,10 @@ public class CartController {
 		
 		return "redirect:/cart/show";
 	}
+	
+	@RequestMapping(value="/cart/movetopayment",method=RequestMethod.GET)
+	public String paymentCart(HttpSession session){
+		
+		return "payment";
+	}
 }

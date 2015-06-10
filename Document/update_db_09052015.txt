@@ -1,12 +1,17 @@
 
 -- Delete column index in table Products, because same keyword of mysql
 USE SALE_WATCH;
+
 ALTER TABLE `products` DROP `INDEX`;
 
 --Thong add 5/13/2015 set default for attribute ACTIVE in table Customer
 USE SALE_WATCH;
+
 ALTER TABLE Customers
 ALTER ACTIVE SET DEFAULT 0;
 
 
 
+
+ALTER TABLE `customers` CHANGE `CUS_ADDRESS` `CUS_ADDRESS` VARCHAR(200) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci NULL DEFAULT NULL;
+ALTER TABLE `customers` CHANGE `CUS_ADDRESS_SHIP` `CUS_ADDRESS_SHIP` VARCHAR(200) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci NULL DEFAULT NULL;

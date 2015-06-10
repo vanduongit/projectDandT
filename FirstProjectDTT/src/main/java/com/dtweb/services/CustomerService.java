@@ -11,4 +11,8 @@ public interface CustomerService {
 	 */
 	boolean checkCustomer(Customer custom);
 
+	/**
+	 * @author DuongPV1
+	 * */
+	Customer findByUsername(String username);
 }

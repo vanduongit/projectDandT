@@ -39,7 +39,7 @@
 		 <hr/><br/>
 		 <div class="row">
 		 	<div class="col-md-12">
-		 	<p class="text-muted">Phan Văn Dương và Nguyễn Văn Thông hợp tác xây dụng website này, ngày 6/92015. Số điện thoại: 01695 306207. Email: vanduongit1706@gmail.com
+		 	<p class="text-muted">Phan Văn Dương và Nguyễn Văn Thông hợp tác xây dụng website này, ngày 6/9/2015. Số điện thoại: 01695 306207. Email: vanduongit1706@gmail.com
 		 	</p>
 		 	</div>
 		 </div>

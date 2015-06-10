@@ -45,4 +45,10 @@
 		<put-attribute name="titles" value="Giỏ hàng"/>		
 		<put-attribute name="body" value="/WEB-INF/pages/cart.jsp"></put-attribute>
 	</definition>
+	
+	<definition name="payment" extends="defaultTemplate">
+		<put-attribute name="titles" value="Xác nhận đơn hàng"/>
+		<put-attribute name="body" value="/WEB-INF/pages/payment.jsp"/>
+	</definition>
+	
 </tiles-definitions>       

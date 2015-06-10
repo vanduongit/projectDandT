@@ -36,4 +36,16 @@ public class CustomerDaoImpl extends GenericDaoImpl<Customer> implements Custome
 		
 	}
 
+	/**
+	 * @author DuongPV1
+	 * 
+	 * */
+	public Customer findByUsername(String username) {
+		String hql = "FROM Customer C WHERE C.username = :user";
+		Query query = entityManager.createQuery(hql);
+		query.setParameter("user", username);
+		List<Customer> results = (List<Customer>)query.getResultList();
+		return results.isEmpty()?null:results.get(0);
+	}
+
 }

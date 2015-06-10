@@ -19,5 +19,10 @@ public class CustomerServiceImpl implements CustomerService {
 	public boolean checkCustomer(Customer custom) {		
 		return customDao.checkCustomer(custom);
 	}
+	public Customer findByUsername(String username) {
+		
+		return customDao.findByUsername(username);
+	}
 
+	
 }

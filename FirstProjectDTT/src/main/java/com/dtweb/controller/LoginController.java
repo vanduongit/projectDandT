@@ -46,7 +46,7 @@ public class LoginController {
 		Customer c = (Customer) model.get("customer");
 		
 		if (customService.checkCustomer(c)) {
-			session.setAttribute("user", "Thong");			
+			session.setAttribute("user", customService.findByUsername(c.getUsername()));			
 			return "index";
 		}
 		
