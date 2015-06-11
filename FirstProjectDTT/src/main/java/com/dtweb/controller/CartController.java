@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.dtweb.dto.CartDTO;
+import com.dtweb.dto.CustomerDTO;
 import com.dtweb.services.CartService;
 import com.dtweb.services.ProductService;
 
@@ -58,9 +60,25 @@ public class CartController {
 	}
 	
 	@RequestMapping(value="/cart/movetopayment",method=RequestMethod.GET)
-	public String paymentCart(HttpSession session){
-		
-		return "payment";
+	public String paymentCart(HttpSession session, Model model){
+		String url;
+		cartService.setSession(session);
+		if(cartService.checkEmptyCart()){
+			url="redirect:/cart/show";
+		}else{
+			model.addAttribute("customer", new CustomerDTO());
+			url="payment";
+		}
+		return url;
+	}
+	
+	@RequestMapping(value="/cart/order",method=RequestMethod.GET)
+	public String orderCart(@ModelAttribute("customer") CustomerDTO customer, HttpSession session){
+		String url;
+		cartService.setSession(session);
+		cartService.order(customer);
+		url="ordersuccess";
+		return url;
 	}
 }
 

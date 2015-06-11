@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import com.dtweb.dto.CartDTO;
+import com.dtweb.dto.CustomerDTO;
 
 /**
  * @author DuongPV1
@@ -49,5 +50,15 @@ public interface CartService {
 	 * */
 	void update(HttpServletRequest request);
 	
+	/**
+	 * @author DuongPV1
+	 * 
+	 * */
+	boolean checkEmptyCart();
 	
+	/**
+	 * @author DuongPV1
+	 * 
+	 * */
+	void order(CustomerDTO customer);
 }

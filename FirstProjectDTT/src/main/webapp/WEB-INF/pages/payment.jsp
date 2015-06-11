@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>   
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -23,7 +24,7 @@
 					<p>Chào ${user.name }</p>
 					<p>Thông tin của bạn như bên dưới, hãy chỉnh sửa nếu muốn thay đổi</p>
 				</c:if>
-				<form action="#" role="form">
+				<form:form action="order" role="form" commandName="customer" method="GET">
 					<div class="form-group">
 						<label for="name">Họ tên khách hàng: </label>
 						<input type="text" class="form-control" id="name" name="name" placeholder="Nhập họ tên của bạn" value="${user.name}">
@@ -45,10 +46,14 @@
 					</div>
 					<div class="form-group">
 						<label for="address" >Địa chỉ cụ thể: <p class="text-muted"><i>Ví dụ: 3/4/5 đường Lã Xuân Oai, phường Tăng Nhơn Phú A, quận 9, Tp. Hồ Chí Minh</i></p></label>
-						<textarea class="form-control" id="address" rows="5" placeholder="Xin nhập địa chỉ chính xác">${user.cusAddressShip}</textarea>
+						<textarea class="form-control" id="address" name="address" rows="5" placeholder="Xin nhập địa chỉ chính xác">${user.cusAddressShip}</textarea>
+					</div>
+					<div class="form-group">
+						<label for="notes">Ghi chú:</label>
+						<textarea class="form-control" id="notes" name="notes" rows="5" placeholder="Ghi chú cho sản phẩm này"></textarea>
 					</div>
 					<input type="submit" class="btn btn-primary btn-lg" value="Xác nhận"/><br/>
-				</form>
+				</form:form>
 			</div>
 			<!-- End col 1 -->
 			<div class="col-md-6">
