@@ -15,6 +15,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -137,10 +139,7 @@ public class Product {
 	@Column(name = "PROPERTY7")
 	private String property7;
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "CATE_ID")
-	private Category category;
-
+	
 	@Column(name = "CATE_TAG")
 	private String cateTag;
 
@@ -158,6 +157,18 @@ public class Product {
 	private List<CommentProduct> commentRecords;
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "product")
 	private Set<OrderDetail> orderDetails = new HashSet<OrderDetail>(0);
+	
+	@ManyToMany(fetch = FetchType.EAGER)
+	@JoinTable(name="product_category", joinColumns = @JoinColumn(name = "product_id", nullable = false), inverseJoinColumns = @JoinColumn(name = "cate_id", nullable = false))
+	private List<Category> listCategory;
+	
+	public List<Category> getListCategory() {
+		return listCategory;
+	}
+
+	public void setListCategory(List<Category> listCategory) {
+		this.listCategory = listCategory;
+	}
 
 	/**
 	 * @return the id
@@ -738,13 +749,7 @@ public class Product {
 		this.brand = brand;
 	}
 
-	public Category getCategory() {
-		return category;
-	}
-
-	public void setCategory(Category category) {
-		this.category = category;
-	}
+	
 
 	public List<CommentProduct> getCommentRecords() {
 		return commentRecords;

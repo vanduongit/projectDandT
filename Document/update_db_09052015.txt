@@ -15,3 +15,13 @@ ALTER ACTIVE SET DEFAULT 0;
 
 ALTER TABLE `customers` CHANGE `CUS_ADDRESS` `CUS_ADDRESS` VARCHAR(200) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci NULL DEFAULT NULL;
 ALTER TABLE `customers` CHANGE `CUS_ADDRESS_SHIP` `CUS_ADDRESS_SHIP` VARCHAR(200) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci NULL DEFAULT NULL;
+UPDATE `sale_watch`.`products` SET `CATE_ID` = NULL WHERE `products`.`ID` = 8
+UPDATE `sale_watch`.`products` SET `CATE_ID` = NULL WHERE `products`.`ID` = 6
+UPDATE `sale_watch`.`products` SET `CATE_ID` = NULL WHERE `products`.`ID` = 5
+ALTER TABLE products DROP FOREIGN KEY products_ibfk_2;
+ALTER TABLE `products` DROP `CATE_ID`;
+CREATE TABLE `sale_watch`.`product_category` ( `product_id` INT(10) UNSIGNED NOT NULL , `cate_id` INT(10) UNSIGNED NOT NULL ) ENGINE = InnoDB;
+ALTER TABLE `product_category` ADD INDEX(`cateId`);
+ALTER TABLE `product_category` ADD INDEX(`productId`);
+ALTER TABLE `product_category` ADD CONSTRAINT `to_product_fk1` FOREIGN KEY (`product_id`) REFERENCES `sale_watch`.`products`(`ID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+ALTER TABLE `product_category` ADD CONSTRAINT `to_cate_fk1` FOREIGN KEY (`cate_id`) REFERENCES `sale_watch`.`category`(`ID`) ON DELETE RESTRICT ON UPDATE RESTRICT;

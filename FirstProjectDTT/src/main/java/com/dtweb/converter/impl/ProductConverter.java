@@ -78,7 +78,6 @@ public class ProductConverter implements BaseConverter<Product, ProductDTO>  {
 			entity.setProperty5(dto.getProperty5());
 			entity.setProperty6(dto.getProperty6());
 			entity.setProperty7(dto.getProperty7());
-			entity.setCategory(dto.getCategory());
 			entity.setCateTag(dto.getCateTag());
 			entity.setCreateUser(dto.getCreateUser());
 			entity.setPromo(dto.getPromo());
@@ -128,7 +127,6 @@ public class ProductConverter implements BaseConverter<Product, ProductDTO>  {
 			productDTO.setProperty5(entity.getProperty5());
 			productDTO.setProperty6(entity.getProperty6());
 			productDTO.setProperty7(entity.getProperty7());
-			productDTO.setCategory(entity.getCategory());
 			productDTO.setCateTag(entity.getCateTag());
 			productDTO.setCreateUser(entity.getCreateUser());
 			productDTO.setPromo(entity.getPromo());

@@ -47,8 +47,8 @@
 										<p>	Giá: <strike>${p.price} VND</strike></p>
 										<div class="promoteprice"><p>Giá KM: ${p.promotePrice} VND</p></div>										
 										<p>
-											<a href="#" class="btn btn-primary">Buy Now!</a> <a href="#"
-												class="btn btn-default">More Info</a>
+											<a href="cart/add/${p.id}?quantity=1" class="btn btn-primary">Mua ngay</a> <a href="product/detail/${p.id}"
+												class="btn btn-default">Chi tiết</a>
 										</p>
 									</div>
 								</div>
@@ -65,8 +65,8 @@
 										<div class="promoteprice"><p>Giá: ${p.price} VND</p></div>
 										<p style="visibility: collapse;">hidden</p>																									
 										<p>
-											<a href="#" class="btn btn-primary">Buy Now!</a> <a href="#"
-												class="btn btn-default">More Info</a>
+											<a href="cart/add/${p.id}?quantity=1" class="btn btn-primary">Mua ngay</a> <a href="product/detail/${p.id}"
+												class="btn btn-default">Chi tiết</a>
 										</p>
 									</div>
 								</div>

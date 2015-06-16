@@ -57,6 +57,7 @@ public class ProductServiceImpl implements ProductService {
 		// convert all products to ProductDTO to use in UI.
 		List<ProductDTO> productDTOList = new ArrayList<ProductDTO>();
 		for (Product p : productsList) {
+			System.out.println("-------------"+p.getListCategory().size());
 			ProductDTO productDTO = new ProductDTO();
 			productDTO.setId(p.getId());
 			productDTO.setDescription(p.getDescription());

@@ -1,0 +1,1 @@
+INSERT INTO `sale_watch`.`product_category` (`product_id`, `cate_id`) VALUES ('1', '2'), ('2', '2')
