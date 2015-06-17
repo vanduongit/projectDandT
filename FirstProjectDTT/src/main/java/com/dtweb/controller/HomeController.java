@@ -120,6 +120,12 @@ public class HomeController {
 //		this.personService = personService;
 //	}
 
+	@RequestMapping(value="product/search", method=RequestMethod.GET)
+	public String searchProduct(@RequestParam("key")String key, Model model){
+		String url="search";
+		model.addAttribute("listProduct", productService.searchProduct(key));
+		return url;
+	}
 	public ProductService getProductService() {
 		return productService;
 	}

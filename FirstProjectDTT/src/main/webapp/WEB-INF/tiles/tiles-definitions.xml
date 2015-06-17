@@ -60,4 +60,9 @@
 		<put-attribute name="titles" value="Đặt hàng thành công"/>
 		<put-attribute name="body" value="/WEB-INF/pages/ordersuccess.jsp"></put-attribute>
 	</definition>
+	
+	<definition name="search" extends="defaultTemplate">
+		<put-attribute name="titles" value="Kết quả tìm kiếm"/>
+		<put-attribute name="body" value="/WEB-INF/pages/show.jsp"></put-attribute>
+	</definition>
 </tiles-definitions>       

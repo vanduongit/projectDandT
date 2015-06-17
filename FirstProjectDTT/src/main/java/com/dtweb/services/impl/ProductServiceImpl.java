@@ -3,11 +3,13 @@ package com.dtweb.services.impl;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.dtweb.common.Utility;
+import com.dtweb.converter.impl.ProductConverter;
 import com.dtweb.dao.CommentProductDao;
 import com.dtweb.dao.MenuDao;
 import com.dtweb.dao.ProductDao;
@@ -49,7 +51,7 @@ public class ProductServiceImpl implements ProductService {
 
 
 
-
+	@Transactional
 	public List<ProductDTO> getAllProductDTO() {
 		// call to DAO to get all products from table Products.
 		List<Product> productsList = productDao.findAll();
@@ -150,6 +152,17 @@ public class ProductServiceImpl implements ProductService {
 		Product p=productDao.findById(id);
 		ProductDTO pDto=tranferToProductDTO(p);
 		return pDto;
+	}
+
+	/**
+	 * @author DuongPV1
+	 * 
+	 * */
+	public List<ProductDTO> searchProduct(String key) {
+		List<Product> listProduct=productDao.searchProductByName(key);
+		ProductConverter pc=new ProductConverter();
+		List<ProductDTO> listProductDTO=pc.convertToListProductDTO(listProduct);
+		return listProductDTO;
 	}
 }
 

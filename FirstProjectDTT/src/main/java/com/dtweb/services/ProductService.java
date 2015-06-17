@@ -26,4 +26,10 @@ public interface ProductService {
 	 * @author DuongPV1
 	 * */
 	ProductDTO getProductDTOById(int id);
+	
+	/**
+	 * @author DuongPV1
+	 * 
+	 * */
+	List<ProductDTO> searchProduct(String key);
 }

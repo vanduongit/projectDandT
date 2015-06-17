@@ -37,9 +37,9 @@
             <h1>MASTER</h1>         
             </div>
             <div class="col-md-6" style="margin-top: 20px;">                               
-            	<form action="" class="form-inline" role="form">
-                	<input type="text" class="form-control" id="usr" style="width: 70%" placeholder='Bạn muốn tìm gì?'>
-                	<a href="#" class="btn btn-info btn-md"><span class="glyphicon glyphicon-search"></span>Search</a>
+            	<form action="${pageContext.request.contextPath}/product/search" class="form-inline" role="form">
+                	<input type="text" class="form-control" name="key" id="usr" style="width: 70%" placeholder='Bạn muốn tìm gì?'>
+                	<button type="submit" class="btn btn-info btn-md"><span class="glyphicon glyphicon-search"></span>Search</button>
             	</form>               
             </div>
             <div class="col-md-3" style="margin-top: 20px">
