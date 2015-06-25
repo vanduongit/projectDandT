@@ -20,7 +20,7 @@ public class MenuServiceImpl implements MenuService {
 	@Autowired
 	MenuDao menuDao;
 	public List<Menu> getMenu() {
-		List<Menu> listMenu1=menuDao.findAll();
+		List<Menu> listMenu1=menuDao.getMenuActive();
 		List<Menu> listMenu2=new ArrayList<Menu>();
 		for(Menu m:listMenu1){
 			if(m.getParent()==null){

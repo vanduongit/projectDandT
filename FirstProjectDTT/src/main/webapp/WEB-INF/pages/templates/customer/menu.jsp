@@ -10,7 +10,7 @@
 </head>
 <body>
 
-
+	
 	 <!-- NAVBAR
     ================================================== -->
     <div class="container">
@@ -30,18 +30,18 @@
                     	<c:forEach items="${mapSession['menu']}" var="m">
                     		 <c:if test="${m.subordinates.size() > 0}">
                     		 	<li class="dropdown">
-		                        	<a class="dropdown-toggle" data-toggle="dropdown" href="${m.link}">
+		                        	<a class="dropdown-toggle" data-toggle="dropdown" href="${pageContext.request.contextPath}/${m.link}">
 		                        		${m.name}<span class="caret"></span>
 		          					</a>
 		          					<ul class="dropdown-menu">
 			          					<c:forEach items="${m.subordinates}" var="sm">			          						
-			                        		<li><a href="${sm.link}">${sm.name}</a></li>			                        
+			                        		<li><a href="${pageContext.request.contextPath}/${m.link}/${sm.link}">${sm.name}</a></li>			                        
 			          					</c:forEach>
 		                        	</ul>
                         		</li>
                     		 </c:if>
                     		 <c:if test="${m.subordinates.size() == 0}">
-                    		 	<li><a href="${m.link}">${m.name}</a></li>
+                    		 	<li><a href="${pageContext.request.contextPath}/${m.link}">${m.name}</a></li>
                     		 </c:if>
                     	</c:forEach>                       
                     </ul>
