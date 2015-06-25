@@ -25,3 +25,10 @@ ALTER TABLE `product_category` ADD INDEX(`cateId`);
 ALTER TABLE `product_category` ADD INDEX(`productId`);
 ALTER TABLE `product_category` ADD CONSTRAINT `to_product_fk1` FOREIGN KEY (`product_id`) REFERENCES `sale_watch`.`products`(`ID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 ALTER TABLE `product_category` ADD CONSTRAINT `to_cate_fk1` FOREIGN KEY (`cate_id`) REFERENCES `sale_watch`.`category`(`ID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+-- add new column name_unsign by Thong
+ALTER TABLE products ADD (name_unsign varchar(255) CHARACTER SET utf8);
+
+ALTER TABLE `category` CHANGE `TITLE` `TITLE` VARCHAR(256) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci NULL DEFAULT NULL;
+ALTER TABLE `category` CHANGE `DESCRIPTION` `DESCRIPTION` TEXT CHARACTER SET utf8 COLLATE utf8_vietnamese_ci NULL DEFAULT NULL;
+ALTER TABLE `category` CHANGE `KEYWORD` `KEYWORD` VARCHAR(256) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci NULL DEFAULT NULL;
