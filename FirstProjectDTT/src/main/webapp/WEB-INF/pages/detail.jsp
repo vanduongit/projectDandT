@@ -16,7 +16,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6">
-				<img class="img-responsive" alt="" src="<c:url value="/resources/img/ProductImages/${p.bigImage}"/>"/>
+				<img class="img-responsive" alt="" src="<c:url value="/resources/img/${p.bigImage}"/>"/>
 			</div>
 			<div class="col-md-6">
 				<h2>${p.name}</h2>

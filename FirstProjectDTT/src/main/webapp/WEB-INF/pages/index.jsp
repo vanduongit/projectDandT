@@ -41,7 +41,7 @@
 							<div class="col-md-3 col-sm-6 hero-feature">
 								<div class="thumbnail">
 									<a href="product/detail/${p.id}"><img
-										src="resources/img/ProductImages/${p.tinyImage}" alt=""></a>
+										src="resources/img/${p.tinyImage}" alt=""></a>
 									<div class="caption">
 										<h3>${p.name}</h3>										
 										<p>	Giá: <strike>${p.price} VND</strike></p>
@@ -59,7 +59,7 @@
 						<div class="col-md-3 col-sm-6 hero-feature">
 								<div class="thumbnail">
 									<a href="product/detail/${p.id}"><img
-										src="resources/img/ProductImages/${p.tinyImage}" alt=""></a>
+										src="resources/img/${p.tinyImage}" alt=""></a>
 									<div class="caption"">
 										<h3>${p.name}</h3>																		
 										<div class="promoteprice"><p>Giá: ${p.price} VND</p></div>
@@ -94,7 +94,7 @@
 							<div class="col-md-3 col-sm-6 hero-feature">
 								<div class="thumbnail">
 									<a href="product/detail/${p.id}"><img
-										src="resources/img/ProductImages/${p.tinyImage}" alt=""></a>
+										src="resources/img/${p.tinyImage}" alt=""></a>
 									<div class="caption">
 										<h3>${p.name}</h3>										
 										<p>	Giá: <strike>${p.price}</strike></p>
@@ -112,7 +112,7 @@
 						<div class="col-md-3 col-sm-6 hero-feature">
 								<div class="thumbnail">
 									<a href="product/detail/${p.id}"><img
-										src="resources/img/ProductImages/${p.tinyImage}" alt=""></a>
+										src="resources/img/${p.tinyImage}" alt=""></a>
 									<div class="caption"">
 										<h3>${p.name}</h3>																		
 										<p>Giá: ${p.price}</p>
@@ -145,7 +145,7 @@
 							<div class="col-md-3 col-sm-6 hero-feature">
 								<div class="thumbnail">
 									<a href="product/detail/${p.id}"><img
-										src="resources/img/ProductImages/${p.tinyImage}" alt=""></a>
+										src="resources/img/${p.tinyImage}" alt=""></a>
 									<div class="caption">
 										<h3>${p.name}</h3>										
 										<p>	Giá: <strike>${p.price}</strike></p>
@@ -163,7 +163,7 @@
 						<div class="col-md-3 col-sm-6 hero-feature">
 								<div class="thumbnail">
 									<a href="product/detail/${p.id}"><img
-										src="resources/img/ProductImages/${p.tinyImage}" alt=""></a>
+										src="resources/img/${p.tinyImage}" alt=""></a>
 									<div class="caption"">
 										<h3>${p.name}</h3>																		
 										<p>Giá: ${p.price}</p>

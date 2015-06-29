@@ -76,7 +76,7 @@ public class Product {
 	@Column(name = "KEYWORD")
 	private String keyword;
 
-	@Column(name = "ACTIVE")
+	@Column(name = "IS_ACTIVE")
 	private int active;
 
 	@Column(name = "ORD")
@@ -103,19 +103,19 @@ public class Product {
 	@Column(name = "CODE_PRO")
 	private String codePro;
 
-	@Column(name = "AMOUNT")
+	@Column(name = "NUMBER")
 	private int amount;
 
-	@Column(name = "AMOUNT_TO_BUY")
+	@Column(name = "SELL_NUMBER")
 	private int amountToBuy;
 
-	@Column(name = "AMOUNT_LIKE")
+	@Column(name = "LIKE_NUMBER")
 	private int amountLike;
 
-	@Column(name = "DATE_BEGIN")
+	@Column(name = "EFFECTIVE_DATE")
 	private Date beginDate;
 
-	@Column(name = "DATE_END")
+	@Column(name = "EXPIRE_DATE")
 	private Date endDate;
 
 	@Column(name = "PROPERTY1")
@@ -143,11 +143,28 @@ public class Product {
 	@Column(name = "CATE_TAG")
 	private String cateTag;
 
-	@Column(name = "USER_CREATE")
+	@Column(name = "CREATED_USER")
 	private String createUser;
 
-	@Column(name = "DATE_CREATE")
+	/**
+	 * @return the modifiedDate
+	 */
+	public String getModifiedDate() {
+		return modifiedDate;
+	}
+
+	/**
+	 * @param modifiedDate the modifiedDate to set
+	 */
+	public void setModifiedDate(String modifiedDate) {
+		this.modifiedDate = modifiedDate;
+	}
+
+	@Column(name = "CREATED_DATE")
 	private Date createDate;
+	
+	@Column(name = "MODIFIED_DATE")
+	private String modifiedDate;
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "PROMO_ID")
