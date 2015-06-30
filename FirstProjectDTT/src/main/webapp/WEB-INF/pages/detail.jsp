@@ -80,18 +80,16 @@
 		        		<div class="tab-pane active" id="tabDetail">
 		        			<h3>Mô tả sản phẩm</h3>
 		        			<p>${p.description}</p>
-				            <table>
+		        			<table>
+		        			<tr>
+		        			<td>
+		        			${p.content}
+		        			</td>
+		        			</tr>
+		        			</table>
+				            
+				            			            	
 				            	
-				            	<tr><td>Thuộc tính 1:</td><td>Giá trị</td></tr>
-				            	<tr><td>Thuộc tính 1:</td><td>Giá trị</td></tr>
-				            	<tr><td>Thuộc tính 1:</td><td>Giá trị</td></tr>
-				            	<tr><td>Thuộc tính 1:</td><td>Giá trị</td></tr>
-				            	<tr><td>Thuộc tính 1:</td><td>Giá trị</td></tr>
-				            	<tr><td>Thuộc tính 1:</td><td>Giá trị</td></tr>
-				            	<tr><td>Thuộc tính 1:</td><td>Giá trị</td></tr>
-				            	<tr><td>Thuộc tính 1:</td><td>Giá trị</td></tr>
-				            	
-				            </table>
 				        </div>
 				        <div class="tab-pane" id="tabVote">
 				            <h3>Chất lượng sản phẩm</h3>

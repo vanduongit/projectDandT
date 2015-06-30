@@ -60,7 +60,7 @@
 								<div class="thumbnail">
 									<a href="product/detail/${p.id}"><img
 										src="resources/img/${p.tinyImage}" alt=""></a>
-									<div class="caption"">
+									<div class="caption">
 										<h3>${p.name}</h3>																		
 										<div class="promoteprice"><p>Giá: ${p.price} VND</p></div>
 										<p style="visibility: collapse;">hidden</p>																									
@@ -113,7 +113,7 @@
 								<div class="thumbnail">
 									<a href="product/detail/${p.id}"><img
 										src="resources/img/${p.tinyImage}" alt=""></a>
-									<div class="caption"">
+									<div class="caption">
 										<h3>${p.name}</h3>																		
 										<p>Giá: ${p.price}</p>
 										<p style="visibility: collapse;">hidden</p>																									
@@ -164,7 +164,7 @@
 								<div class="thumbnail">
 									<a href="product/detail/${p.id}"><img
 										src="resources/img/${p.tinyImage}" alt=""></a>
-									<div class="caption"">
+									<div class="caption">
 										<h3>${p.name}</h3>																		
 										<p>Giá: ${p.price}</p>
 										<p style="visibility: collapse;">hidden</p>																									
@@ -179,6 +179,8 @@
 					</c:choose>		
 					</c:forEach>				
 			</c:if>
+		</div>
+		
 		</div>
 </body>
 </html>
