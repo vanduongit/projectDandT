@@ -1,4 +1,4 @@
-﻿delete * from `products`;
+﻿delete from `products`;
 
 INSERT INTO `products` (`ID`, `TAG`, `NAME`, `CONTENT`, `DETAIL`, `PRIORITY`, `PRICE`, `TINYIMAGE`, `BIGIMAGE`, `DATE`, `BRAND_ID`, `BRAND_TAG`, `TITLE`, `DESCRIPTION`, `KEYWORD`, `IS_ACTIVE`, `ORD`, `LANG`, `IMAGE1`, `IMAGE2`, `IMAGE3`, `IMAGE4`, `IMAGE5`, `CODE_PRO`, `NUMBER`, `SELL_NUMBER`, `LIKE_NUMBER`, `EFFECTIVE_DATE`, `EXPIRE_DATE`, `PROPERTY1`, `PROPERTY2`, `PROPERTY3`, `PROPERTY4`, `PROPERTY5`, `PROPERTY6`, `PROPERTY7`, `CATE_TAG`, `CREATED_USER`, `CREATED_DATE`, `PROMO_ID`, `name_unsign`, `MODIFIED_DATE`) VALUES
 (1, NULL, 'BOOTS', '<div><span class="text_exposed_show" style="display: inline; font-size: 12pt;">- Giảm thiểu các vết tấy đỏ do mụn gây ra.&nbsp;</span></div>', 'aaa', 0, 0, 'upload_images/DuongDacTri/boots.jpg', 'upload_images/DuongDacTri/boots.jpg', '2015-07-09 11:30:35', NULL, 0, 'Gel dưỡng da mụn ban đêm Anti-blemish overnight cream gel, dòng Tea tree oil witch Hazel', NULL, NULL, b'1', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, '2015-07-09 11:30:35', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Admin', '2015-07-09 11:30:35', NULL, NULL, NULL),
