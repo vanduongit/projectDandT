@@ -35,7 +35,7 @@
 							<div class="col-md-4 col-sm-8 hero-feature">
 								<div class="thumbnail">
 									<a href="${contextPath}/product/detail/${p.id}"><img
-										src="${contextPath}/resources/img/ProductImages/${p.tinyImage}" alt=""></a>
+										src="${contextPath}/resources/img/${p.tinyImage}" alt=""></a>
 									<div class="caption">
 										<h3>${p.name}</h3>										
 										<p>	Giá: <strike>${p.price} VND</strike></p>

@@ -42,7 +42,7 @@
 									<c:if test="${p.key.promotePrice!=0}">
 										<s>${p.key.price} VND</s> - <h4>${p.key.promotePrice}</h4>
 									</c:if>
-									<img class="img-responsive" alt="" src="<c:url value="/resources/img/ProductImages/${p.key.bigImage}"/>" width="75px" height="100px"/></td>
+									<img class="img-responsive" alt="" src="<c:url value="/resources/img/${p.key.bigImage}"/>" width="75px" height="100px"/></td>
 								<td><input type="text" value="${p.value}" class='form-control' style='width:20%' id='${p.key.id}' name='${p.key.id}' maxlength="2"/></td>
 								<td>${p.key.price*p.value} VND</td>
 							</tr>

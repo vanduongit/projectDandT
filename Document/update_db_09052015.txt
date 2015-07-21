@@ -15,6 +15,8 @@ ALTER ACTIVE SET DEFAULT 0;
 
 ALTER TABLE `customers` CHANGE `CUS_ADDRESS` `CUS_ADDRESS` VARCHAR(200) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci NULL DEFAULT NULL;
 ALTER TABLE `customers` CHANGE `CUS_ADDRESS_SHIP` `CUS_ADDRESS_SHIP` VARCHAR(200) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci NULL DEFAULT NULL;
+
+-- add table category_product
 UPDATE `sale_watch`.`products` SET `CATE_ID` = NULL WHERE `products`.`ID` = 8
 UPDATE `sale_watch`.`products` SET `CATE_ID` = NULL WHERE `products`.`ID` = 6
 UPDATE `sale_watch`.`products` SET `CATE_ID` = NULL WHERE `products`.`ID` = 5
