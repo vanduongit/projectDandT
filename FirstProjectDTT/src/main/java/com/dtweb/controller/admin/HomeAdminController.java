@@ -29,4 +29,9 @@ public class HomeAdminController {
 		model.put("MENU_ADV_BODY", menuAdvance);
 		return "homeAdmin";
 	}
+	
+	@RequestMapping(value="/addProduct")
+	public String showAddProduct(ModelMap model){
+		return "addProduct";
+	}
 }
