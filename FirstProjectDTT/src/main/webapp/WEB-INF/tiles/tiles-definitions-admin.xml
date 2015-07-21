@@ -4,18 +4,6 @@
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
        
 <tiles-definitions>
-	<definition name="homeAdminTemplate" template="/WEB-INF/pages/templates/admin/home_template.jsp">
-		<put-attribute name="titles" value=""></put-attribute>
-		<put-attribute name="header" value="/WEB-INF/pages/templates/admin/header.jsp"></put-attribute>
-		<put-attribute name="menu" value=""></put-attribute>
-		<put-attribute name="body" value=""></put-attribute>
-		<put-attribute name="footer" value="/WEB-INF/pages/templates/customer/footer.jsp"></put-attribute>
-	</definition>
-	<definition name="homeAdmin" extends="homeAdminTemplate">
-		<put-attribute name="titles" value="Home Administrator"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/pages/admin/body_home.jsp"></put-attribute>
-	
-	</definition>
 	
 	<definition name="mainAdminTemplate" template="/WEB-INF/pages/templates/admin/main_template.jsp">
 		<put-attribute name="titles" value=""></put-attribute>

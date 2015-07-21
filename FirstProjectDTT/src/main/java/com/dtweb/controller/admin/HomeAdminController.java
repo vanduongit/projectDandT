@@ -27,7 +27,7 @@ public class HomeAdminController {
 		menuAdvance.put("Danh mục", "menu.png");
 		menuAdvance.put("Nhóm sản phẩm", "category.png");
 		model.put("MENU_ADV_BODY", menuAdvance);
-		return "homeAdmin";
+		return "addProduct";
 	}
 	
 	@RequestMapping(value="/addProduct")
