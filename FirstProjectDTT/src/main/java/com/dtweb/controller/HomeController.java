@@ -126,6 +126,21 @@ public class HomeController {
 		model.addAttribute("listProduct", productService.searchProduct(key));
 		return url;
 	}
+	@RequestMapping(value="product/showCategory", method=RequestMethod.GET)
+	public String showProductCategory(@RequestParam("cateId")String cateId, Model model){
+		String url="showCate";
+		
+		try{
+			
+			model.addAttribute("listProduct", productService.getProductByCate(Integer.parseInt(cateId)));
+		}catch(NumberFormatException ex){
+			System.out.println("Loi category");
+		}
+		
+		return url;
+	}
+	
+	
 	public ProductService getProductService() {
 		return productService;
 	}

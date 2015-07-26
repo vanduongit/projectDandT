@@ -32,4 +32,11 @@ public interface ProductService {
 	 * 
 	 * */
 	List<ProductDTO> searchProduct(String key);
+	
+	/**
+	 * @author DuongPV1
+	 * 
+	 * */
+	List<ProductDTO> getProductByCate(int cateId);
+	
 }

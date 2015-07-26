@@ -9,16 +9,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
 	
-	<script src="<c:url value="/bootstrap/js/jquery-1.11.2.min.js"/>"></script>
-	<script src="<c:url value="/bootstrap/js/bootstrap.min.js"/>"></script>
 	
 		
-	<link href="<c:url value="/css/font-awesome.min.css"/>" rel="stylesheet" />	
-	<link href="<c:url value="/css/style.css"/>" rel="stylesheet" />
-	<script src="<c:url value="/js/modernizr-2.6.2.min.js"/>"></script>
 	
 	
 <style>

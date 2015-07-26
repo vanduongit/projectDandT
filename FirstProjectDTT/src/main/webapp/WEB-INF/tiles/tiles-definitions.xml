@@ -65,4 +65,9 @@
 		<put-attribute name="titles" value="Kết quả tìm kiếm"/>
 		<put-attribute name="body" value="/WEB-INF/pages/show.jsp"></put-attribute>
 	</definition>
+	
+	<definition name="showCate" extends="defaultTemplate">
+		<put-attribute name="titles" value="Sản phẩm"/>
+		<put-attribute name="body" value="/WEB-INF/pages/showCate.jsp"></put-attribute>
+	</definition>
 </tiles-definitions>       

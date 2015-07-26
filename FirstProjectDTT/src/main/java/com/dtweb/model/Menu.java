@@ -45,6 +45,8 @@ public class Menu implements Serializable{
 	private int active;
 	@Column(name = "ORD")
 	private int ord;
+	@Column(name="CATE_ID")
+	private int cateId;
 	
 	@ManyToOne(cascade={CascadeType.ALL})
     @JoinColumn(name = "PARENT_ID")
@@ -167,6 +169,12 @@ public class Menu implements Serializable{
 	}
 	
 	public Menu() {		
+	}
+	public int getCateId() {
+		return cateId;
+	}
+	public void setCateId(int cateId) {
+		this.cateId = cateId;
 	}
 	
 

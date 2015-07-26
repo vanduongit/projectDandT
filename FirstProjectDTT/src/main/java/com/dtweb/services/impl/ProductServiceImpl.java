@@ -10,12 +10,12 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.dtweb.common.Utility;
 import com.dtweb.converter.impl.ProductConverter;
+import com.dtweb.dao.CategoryDao;
 import com.dtweb.dao.CommentProductDao;
-import com.dtweb.dao.MenuDao;
 import com.dtweb.dao.ProductDao;
 import com.dtweb.dto.ProductDTO;
+import com.dtweb.model.Category;
 import com.dtweb.model.CommentProduct;
-import com.dtweb.model.Menu;
 import com.dtweb.model.Product;
 import com.dtweb.services.ProductService;
 
@@ -28,8 +28,10 @@ public class ProductServiceImpl implements ProductService {
 	@Autowired
 	CommentProductDao commentProductDao;
 	
-	@Autowired 
-	MenuDao menuDao;
+	@Autowired
+	CategoryDao categoryDao;
+	
+	
 	public List<Product> getAllProduct() {
 		return productDao.findAll();
 	}
@@ -162,6 +164,21 @@ public class ProductServiceImpl implements ProductService {
 		List<Product> listProduct=productDao.searchProductByName(key);
 		ProductConverter pc=new ProductConverter();
 		List<ProductDTO> listProductDTO=pc.convertToListProductDTO(listProduct);
+		return listProductDTO;
+	}
+
+	/**
+	 * @author DuongPV1
+	 * 
+	 * */
+	@Transactional
+	public List<ProductDTO> getProductByCate(int cateId) {
+		Category cate = categoryDao.findById(cateId);
+		ProductConverter pc=new ProductConverter();
+		List<ProductDTO> listProductDTO=null;
+		if(cate!=null){
+			listProductDTO=pc.convertToListProductDTO(cate.getProducts());
+		}
 		return listProductDTO;
 	}
 }

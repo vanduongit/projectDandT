@@ -35,13 +35,13 @@
 		          					</a>
 		          					<ul class="dropdown-menu">
 			          					<c:forEach items="${m.subordinates}" var="sm">			          						
-			                        		<li><a href="${pageContext.request.contextPath}/${m.link}/${sm.link}">${sm.name}</a></li>			                        
+			                        		<li><a href="${pageContext.request.contextPath}/product/showCategory?cateId=${sm.cateId}">${sm.name}</a></li>			                        
 			          					</c:forEach>
 		                        	</ul>
                         		</li>
                     		 </c:if>
                     		 <c:if test="${m.subordinates.size() == 0}">
-                    		 	<li><a href="${pageContext.request.contextPath}/${m.link}">${m.name}</a></li>
+                    		 	<li><a href="${pageContext.request.contextPath}/product/showCategory?cateId=${m.cateId}">${m.name}</a></li>
                     		 </c:if>
                     	</c:forEach>                       
                     </ul>

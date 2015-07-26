@@ -13,15 +13,14 @@
 			<div class="col-md-3">
 				<p class="lead">Nhãn hiệu</p>
 				<div class="list-group">
-					<a href="#" class="list-group-item">Đồng Hồ Casio</a>
-					<a href="#" class="list-group-item">Đồng Hồ Senko</a>
-					<a href="#" class="list-group-item">Đồng Hồ </a>
+					<a href="#" class="list-group-item"></a>
+					<a href="#" class="list-group-item"></a>
 				</div>
 				
 				<p class="lead">Phân loại</p>
 				<div class="list-group">
-					<a href="#" class="list-group-item">Đồng Hồ Nam</a>
-					<a href="#" class="list-group-item">Đồng Hồ Nữ</a>
+					<a href="#" class="list-group-item"></a>
+					<a href="#" class="list-group-item"></a>
 				</div>
 			</div>
 			<!-- End col 3 -->
